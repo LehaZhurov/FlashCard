@@ -446,6 +446,30 @@ input:hover {
     background: linear-gradient(127deg, rgba(215,193,17,1) 0%, rgba(231,228,0,1) 31%, rgba(234,236,7,1) 53%, rgba(181,178,0,1) 100%);
 }
 
+.deck-paginate{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: var(--secondary-dark);
+    margin-bottom: -40px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+}
+
+.deck-paginte-item{
+    text-decoration: none;
+    margin-right:10px;
+    margin-left:10px;
+    color:var(--secondary-text);
+}
+
+.active-paginate-item{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--secondary-light);
+}
 @media (max-width: 1200px) {
     .block_picture_text {
         flex-direction: column;
