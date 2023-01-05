@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,800;1,400&display=swap"
         rel="stylesheet">
     <title>Index</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -22,8 +23,8 @@
             </div>
         </div>
         <div id="content">
-            <div class="form_block">
-                <form action="#">
+            <div class="form_block"  style = 'background-image: url(storage/img/world.png);'>
+                <form method="POST" action="{{ route('register') }}">
                     <h1>Регистрация</h1>
                     <label for="name">Имя</label>
                     <input type="text" id='name' name="name" placeholder="Имя">

@@ -25,7 +25,7 @@ RUN apt-get update --fix-missing \
     && apt-get install -y  python \
     && rm -rf /var/lib/apt/lists/*
 #Node JS
-RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
 RUN command -v node

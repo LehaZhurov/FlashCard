@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
     --primary: #64b5f6;
@@ -19,10 +19,13 @@
     --legend-color: rgb(201, 198, 1);
 }
 
+.error{
+    color:var(--red);
+}
+
 * {
     transition: background-color 2s;
     transition: width 0.5s;
-    transition: display 1s;
 }
 
 img {
@@ -66,7 +69,7 @@ body {
 }
 
 #index_header {
-    background-image: url(../../public/img/world.png);
+    background-image: url(storage/img/world.png);
     background-repeat: no-repeat;
     background-position: center center;
     /* Путь к фоновому изображению */
@@ -201,6 +204,13 @@ form {
     width: 30%;
 }
 
+form p{
+    font-size:20px;
+}
+a{
+    text-decoration:none;
+    color:var(--secondary-text);
+}
 label {
     text-align: start;
     width: 100%;
@@ -246,7 +256,6 @@ input:hover {
 .checkbox {
     display: flex;
     width: 100%;
-    justify-content: start;
     align-items: center;
 }
 
