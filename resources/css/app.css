@@ -284,13 +284,25 @@ input:hover {
     background-position: center center;
 }
 
-#balance {
+#menu {
     background-color: var(--secondary-light);
     text-align: center;
     font-size: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px;
+}
+#menu span {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+#menu form {
+    width: auto;
+}
+#menu button {
+    width: auto;
 }
 
 .tabs {

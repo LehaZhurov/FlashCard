@@ -3,19 +3,16 @@
     Добро пожаловать
 @endsection
 @section('header')
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-
-        <x-dropdown-link :href="route('logout')"
-            onclick="event.preventDefault();
-                                this.closest('form').submit();">
-            {{ __('Выйти') }}
-        </x-dropdown-link>
-    </form>
+   
     </div>
-    <div id='balance'>
-        <span title='Буквопыль использутся для создания новых карт'>30000</span>
-        <i class='bx bxs-vial'></i>
+    <div id='menu'>
+        <span title='Буквопыль использутся для создания новых карт'>30000 <i class='bx bxs-vial'></i></span>
+        {{-- <button>Играть</button> --}}
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a href="{{route('logout')}}" onclick="event.preventDefault();
+            this.closest('form').submit();"> Выйти</a>
+        </form>
     </div>
 @endsection
 @section('content')
@@ -144,8 +141,9 @@
                         <h1>Животные</h1>
                         <div class="deck-card-option">
                             <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
+                                <button class='danger'><i class='bx bxs-trash' ></i></button>
+                                <button><i class='bx bxs-edit'></i></button>
+                                <button><i class='bx bx-play'></i></button>
                             </div>
                         </div>
                     </div>
