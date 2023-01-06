@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
-     @vite(['resources/css/app.css', 'resources/js/app.js'])
+     @vite(['resources/css/app.css','resources/css/modal.css','resources/css/slider.css',])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,800;1,400&display=swap"

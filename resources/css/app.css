@@ -535,6 +535,7 @@ input:hover {
     margin:15px;
 }
 
+
 @media (max-width: 1200px) {
     .block_picture_text {
         flex-direction: column;

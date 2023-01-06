@@ -42,7 +42,7 @@
                         </div>
                         <div class="card-option">
                             <div class="button-group-column">
-                                <button>Создать</button>
+                                <button><a href="#createCard">Создать</a></button>
                             </div>
                         </div>
                     </div>
@@ -205,4 +205,5 @@
             </div>
         </div>
     </div>
+@include('elements/createcardmodal')
 @endsection

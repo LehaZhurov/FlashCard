@@ -1,6 +1,6 @@
 @extends('components/head')
 @section('title')
-    Регистрация
+    Вход
 @endsection
 <div id="work">
     @include('components/header')

@@ -13,6 +13,7 @@
     </div>
 </div>
 </div>
+@vite(['resources/js/app.js','resources/js/slider.js'])
 </body>
 
 </html>

@@ -6,6 +6,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
+                'resources/css/modal.css',
+                'resources/css/slider.css',
                 'resources/js/app.js',
             ],
             refresh: true,

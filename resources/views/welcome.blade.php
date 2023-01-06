@@ -7,7 +7,7 @@
             <div id="index_header" style='background-image: url(storage/img/world.png);'>
                 <div>
                     <h1>Миллионы слов и фраз уже ждут тебя!</h1>
-                    <button>Начать</button>
+                    <button><a href="/dashboard">Начать</a></button>
                 </div>
             </div>
             <div id="index_body">
