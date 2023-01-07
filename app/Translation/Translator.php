@@ -58,16 +58,16 @@ class Translator
             $i++;
         }
         $i = 0;
-        foreach ($html->find('div.lemma_content') as $lemma_content) {
-            $meaninggroup = $lemma_content->find('div.meaninggroup', 0);
-            $translation_lines = $meaninggroup->find('div.translation_lines', 0);
-            foreach ($translation_lines->find('div.translation') as $translation_lines) {
-                $translation_desc = $translation_lines->find('div.translation_desc', 0)->plaintext;
-                // $tag_trans = $translation_desc->find('div.tag_trans',0)->plaintext;
-                $translation_desc = str_replace('  ', ' ', $translation_desc);
-                $translation_desc = explode(' ', $translation_desc);
+        foreach ($html->find('div.lemma_content') as $lemmaConten) {
+            $meaninggroup = $lemmaConten->find('div.meaninggroup', 0);
+            $translationLines = $meaninggroup->find('div.translation_lines', 0);
+            foreach ($translationLines->find('div.translation') as $translationLines) {
+                $translationDesc = $translationLines->find('div.translation_desc', 0)->plaintext;
+                // $tag_trans = $translationDesc->find('div.tag_trans',0)->plaintext;
+                $translationDesc = str_replace('  ', ' ', $translationDesc);
+                $translationDesc = explode(' ', $translationDesc);
                 $str = '';
-                foreach ($translation_desc as $value) {
+                foreach ($translationDesc as $value) {
                     if ($value != 'Прослушать') {
                         $str = $str . " " . $value;
                     }
