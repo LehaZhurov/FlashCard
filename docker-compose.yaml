@@ -29,11 +29,15 @@ services:
       POSTGRES_PASSWORD: admin
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
-    
   adminer:
     container_name: postgres-adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
+  chrome:
+    container_name: chrome
+    image: browserless/chrome
+    ports:
+      - 3000:3000
     

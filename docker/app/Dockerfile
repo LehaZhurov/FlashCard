@@ -38,4 +38,3 @@ RUN mv composer.phar /usr/local/bin/composer && \
 RUN command -v composer
 
 
-
