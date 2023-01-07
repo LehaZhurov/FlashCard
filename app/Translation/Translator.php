@@ -24,15 +24,6 @@ class Translator
         $browser = new Browser($connection);
         $page = $browser->createPage();
         $page->navigate($url)->waitForNavigation();
-        $page->addPreScript('example', ['onLoad' => true]);
-        $screenshot = $page->screenshot([
-            'captureBeyondViewport' => true,
-            'clip' => $page->getFullPageClip(),
-            'format' => 'jpeg', // default to 'png' - possible values: 'png', 'jpeg',
-        ]);
-
-        // save the screenshot
-        $screenshot->saveToFile('./file.png');
         return $page;
     }
 
