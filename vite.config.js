@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/css/modal.css',
                 'resources/css/slider.css',
                 'resources/js/app.js',
+                'resources/js/slider.js',
             ],
             refresh: true,
         }),

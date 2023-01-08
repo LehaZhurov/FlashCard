@@ -4,9 +4,24 @@
     "src": "resources/js/app.js",
     "isEntry": true
   },
+  "resources/js/slider.js": {
+    "file": "assets/slider.44e5486b.js",
+    "src": "resources/js/slider.js",
+    "isEntry": true
+  },
   "resources/css/app.css": {
     "file": "assets/app.00e8c282.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/modal.css": {
+    "file": "assets/modal.36ad1794.css",
+    "src": "resources/css/modal.css",
+    "isEntry": true
+  },
+  "resources/css/slider.css": {
+    "file": "assets/slider.e1a47ec1.css",
+    "src": "resources/css/slider.css",
     "isEntry": true
   }
 }

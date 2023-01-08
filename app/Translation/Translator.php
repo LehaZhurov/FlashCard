@@ -10,7 +10,7 @@ class Translator
 {
 
     private $tranurl = 'https://www.deepl.com/translator#';
-    private $translate = [];
+    private $translate = ['dictionary' => [], 'translate' => []];
     private $devtoolsUrl = "ws://chrome:3000/";
     public function __construct()
     {
@@ -24,6 +24,7 @@ class Translator
         $browser = new Browser($connection);
         $page = $browser->createPage();
         $page->navigate($url)->waitForNavigation();
+        sleep(3);
         return $page;
     }
 
@@ -31,7 +32,6 @@ class Translator
     {
         $this->tranurl = $this->tranurl . $sourceLang . '/' . $targetLang . '/' . $word;
         $page = $this->getPage($this->tranurl);
-        sleep(1);
         $html = $page->getHtml();
         $page->close();
         return $html;
@@ -76,8 +76,8 @@ class Translator
             }
             $i++;
         }
-        foreach ($html->find('li.lmt__translations_as_text__item') as $li) {
-            $this->translate['translate'][] = $li->plaintext;
+        foreach ($html->find('button.lmt__translations_as_text__text_btn') as $button) {
+            $this->translate['translate'][] = $button->plaintext;
         }
     }
 
