@@ -10,7 +10,7 @@ class Translator
 {
 
     private $tranurl = 'https://www.deepl.com/translator#';
-    private $translate = ['dictionary' => [], 'translate' => []];
+    private $translate = ['dictionary' => [], 'translate' => [],'powered by deep.com'];
     private $devtoolsUrl = "ws://chrome:3000/";
     public function __construct()
     {
