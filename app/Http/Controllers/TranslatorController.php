@@ -5,9 +5,9 @@ use App\Translation\Translator;
 class TranslatorController extends Controller
 {
 
-    public function search(string $name)
+    public function translate(string $word)
     {
-        return Translator::translate($name);
+        return Translator::translate($word);
     }
 
 }

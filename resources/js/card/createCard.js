@@ -1,6 +1,6 @@
 import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
-
+import { createWord} from '../word/createWord';
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
 let stepTooBlock = document.querySelector('#stepTooDisplay');
@@ -35,6 +35,7 @@ async function stepOne() {
     if (!word.value) {
         return false;
     }
+    createWord(word.value);
     word.setAttribute('disabled', true);
     card['word'] = word.value;
     initSlider();
