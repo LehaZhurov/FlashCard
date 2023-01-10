@@ -3,15 +3,15 @@
     Добро пожаловать
 @endsection
 @section('header')
-   
     </div>
     <div id='menu'>
         <span title='Буквопыль использутся для создания новых карт'>30000 <i class='bx bxs-vial'></i></span>
         {{-- <button>Играть</button> --}}
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <a href="{{route('logout')}}" onclick="event.preventDefault();
-            this.closest('form').submit();"> Выйти</a>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+            this.closest('form').submit();">
+                Выйти</a>
         </form>
     </div>
 @endsection
@@ -141,7 +141,7 @@
                         <h1>Животные</h1>
                         <div class="deck-card-option">
                             <div class="button-group-row">
-                                <button class='danger'><i class='bx bxs-trash' ></i></button>
+                                <button class='danger'><i class='bx bxs-trash'></i></button>
                                 <button><i class='bx bxs-edit'></i></button>
                                 <button><i class='bx bx-play'></i></button>
                             </div>
@@ -205,5 +205,8 @@
             </div>
         </div>
     </div>
-@include('elements/createcardmodal')
+    @include('elements/createcardmodal')
+@endsection
+@section('scripts')
+    @vite(['resources/js/card/createCard.js',])
 @endsection

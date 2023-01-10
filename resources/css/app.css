@@ -8,7 +8,7 @@
     --primary-dark: #2286c3;
     --secondary: #1976d2;
     --secondary-light: #63a4ff;
-    --secondary-dark: #004ba0;
+    --secondary-dark: #0250a8;
     --primary-text: #000000;
     --secondary-text: #ffffff;
     --green: rgba(4, 201, 36, 1);
@@ -26,6 +26,7 @@
 * {
     transition: background-color 2s;
     transition: width 0.5s;
+    transition: border-color 0.5s;
 }
 
 img {
@@ -413,9 +414,13 @@ input:hover {
     margin-top: 10px;
 }
 
+.card-gif{
+    width: 100%;
+}
 .card-gif img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    max-height: 400px;
     opacity: 0.9;
 }
 

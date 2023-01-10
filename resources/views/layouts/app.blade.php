@@ -4,5 +4,6 @@
     <div id="content">
         @yield('content')
     </div>
+    @yield('scripts')
     @include('components/footer')
 

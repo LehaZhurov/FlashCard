@@ -6,44 +6,55 @@
                 <a href="#close" title="Close" class="close">×</a>
             </div>
             <div class="modal-body">
-                <div id='createCardStepOne' class='modal-flex-box'>
-                    <h1>Введите слово</h1>
-                    <form action="#">
-                        <label for="world">Введите слово на английском</label>
-                        <input type="text" name='world' id='world' placeholder="Cлово">
-                        <button>Найти</button>
-                    </form>
+                <div id="stepOneDisplay" style='display:block;'>
+                    <div id='createCardStepOne' class='modal-flex-box'>
+                        <h1>Введите слово</h1>
+                        <form action="#">
+                            <label for="word" >Введите слово на английском</label>
+                            <input type="text" name='word' id='word' placeholder="Cлово" >
+                            <button id='btn-step-one' type="button">Далее</button>
+                        </form>
+                    </div>
                 </div>
-                <div id='createCardStepToo' class='modal-flex-box'>
-                    <h1>Выбирите гифку</h1>
-                    <div class="itc-slider slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
-                        <div class="itc-slider__wrapper">
-                            <div class="itc-slider__items">
-                                <div class="itc-slider__item">
-                                    <div class="slider-gif">
-                                        <img src="https://i.giphy.com/media/hsxHqVGqz4vxg5N7xb/giphy.webp"
-                                            alt="">
+                <div id="stepTooDisplay" style="display:none;">
+                    <div id='createCardStepToo' class='modal-flex-box'>
+                        <h1>Выбирите гифку</h1>
+                        <div id="slider-block">
+                            <div class="slider">
+                                <div class="slider__wrapper">
+                                    <div class="slider__items" id='select-gif'>
+                                        
                                     </div>
-                                </div>
-                                <div class="itc-slider__item">
-                                    <div class="slider-gif">
-                                        <img src="https://i.giphy.com/media/11tTNkNy1SdXGg/giphy.webp" alt="">
-                                    </div>
-                                </div>
-                                <div class="itc-slider__item">
-                                    <div class="slider-gif">
-                                        <img src="https://i.giphy.com/media/QGzPdYCcBbbZm/giphy.webp" alt="">
-                                    </div>
+                                    <a class="slider__control slider__control_prev" href="#" role="button"><</a>
+                                    <a class="slider__control slider__control_next" href="#" role="button">></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Кнопки для перехода к предыдущему и следующему слайду -->
-                        <button class="itc-slider__btn itc-slider__btn_next"></button>
-                        <button class="itc-slider__btn itc-slider__btn_prev"></button>
+                        <div class ='button-group-row'>
+                            <button id = 'btn-step-one-prev'>Назад</button>
+                            <button id = 'btn-step-too'>Далее</button>
+                        </div>
                     </div>
                 </div>
-                <div id='createCardStepThree' class='modal-flex-box'>
-                    <h1>Сохранить карту?</h1>
+                <div id="stepThreeDisplay" style='display:none;'>
+                    <div id='createCardStepThree' class='modal-flex-box'>
+                        <h1>Сохранить карту?</h1>
+                        <div class="card common" style = 'width:100%;'>
+                            <div class="card-gif">
+                                <img src="https://i.giphy.com/media/XOrFcrJVjhUkwLr4PH/giphy.webp" alt="" id = 'creatingCardImg'>
+                            </div>
+                            <div class="card-text">
+                                <p id = 'creatingCardWord'>Will you buy me a new car for Christmas?</p>
+                                <p id = 'creatingCardTranslate'>Ты купишь мне новую машину на Рождество?</p>
+                            </div>
+                            <div class="card-option">
+                                <div class="button-group-column">
+                                    <button>Сохранить</button>
+                                    <button id = 'btn-step-too-prev'>Назад</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

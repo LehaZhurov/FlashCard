@@ -5,23 +5,28 @@
     "isEntry": true
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.44e5486b.js",
+    "file": "assets/slider.0b62e9b3.js",
     "src": "resources/js/slider.js",
     "isEntry": true
   },
-  "resources/css/app.css": {
-    "file": "assets/app.00e8c282.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
-  },
-  "resources/css/modal.css": {
-    "file": "assets/modal.36ad1794.css",
-    "src": "resources/css/modal.css",
+  "resources/js/card/createCard.js": {
+    "file": "assets/createCard.ce7e9e88.js",
+    "src": "resources/js/card/createCard.js",
     "isEntry": true
   },
   "resources/css/slider.css": {
-    "file": "assets/slider.e1a47ec1.css",
+    "file": "assets/slider.263c5004.css",
     "src": "resources/css/slider.css",
+    "isEntry": true
+  },
+  "resources/css/modal.css": {
+    "file": "assets/modal.fbdfcd40.css",
+    "src": "resources/css/modal.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.39de8020.css",
+    "src": "resources/css/app.css",
     "isEntry": true
   }
 }

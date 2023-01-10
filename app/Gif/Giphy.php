@@ -9,8 +9,9 @@ class Giphy
     private $token = 'oWdBUpIKGSnNMPKBQSR03Sj1WjTrcII8';
     private $url = 'https://api.giphy.com/v1/gifs/';
 
-    private function search(string $q, int $limit = 25, int $ofset = 0, string $lang = 'en'): array
+    private function search(string $q, int $limit = 50, int $ofset = 0, string $lang = 'en'): array
     {
+        $q = str_replace(' ', '+', $q);
         $endpoint = $this->url .
         'search?api_key=' . $this->token .
             '&q=' . $q .
@@ -23,8 +24,9 @@ class Giphy
         return $result;
     }
 
-    private function random(string $tag)
+    private function random(string $tag): array
     {
+        $tag = str_replace(' ', '+', $tag);
         $endpoint = $this->url .
         'random?api_key=' . $this->token .
             '&tag=' . $tag .
@@ -36,7 +38,8 @@ class Giphy
         return $result;
     }
 
-    private function highlightRequiredFromSearchedItem(stdClass $searchItem){
+    private function highlightRequiredFromSearchedItem(stdClass $searchItem)
+    {
         $necessary['id'] = $searchItem->id;
         $necessary['page_url'] = $searchItem->url;
         $necessary['src'] = $searchItem->images->original->webp;
