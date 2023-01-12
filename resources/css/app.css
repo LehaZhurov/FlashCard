@@ -540,6 +540,10 @@ input:hover {
     margin:15px;
 }
 
+.nonescroll{
+    overflow-y: hidden;
+}
+
 
 @media (max-width: 1200px) {
     .block_picture_text {

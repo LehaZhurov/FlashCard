@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TranslatorController;
 use App\Http\Controllers\GifController;
 use App\Http\Controllers\WordController;
+use App\Http\Controllers\CardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +27,4 @@ Route::get('/translation/{word}', [TranslatorController::class, 'translate'])->n
 Route::get('/gif/search/{word}/{limit?}/{offset?}/{lang?}', [GifController::class, 'search'])->name('searchGif');
 Route::get('/gif/random/{tag?}', [GifController::class, 'random'])->name('randomGif');
 Route::get('/word/create/{word}', [WordController::class, 'create'])->name('createWord');
+Route::post('/card/create', [CardController::class, 'create'])->name('createCard');

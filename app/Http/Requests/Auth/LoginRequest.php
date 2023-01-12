@@ -32,6 +32,17 @@ class LoginRequest extends FormRequest
         ];
     }
 
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Поле Email - обязательно.',
+            'email.email' => 'Не валидный Email',
+            'telephone.max' => 'Телефон введен не верно.',
+            'password.required' => 'Поле Пароль - обязательно.',
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *

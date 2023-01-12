@@ -1,6 +1,8 @@
 import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
-import { createWord} from '../word/createWord';
+import { createWord } from '../word/createWord';
+import { load } from "../load";
+
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
 let stepTooBlock = document.querySelector('#stepTooDisplay');
@@ -12,12 +14,12 @@ btnStepOne.onclick = () => { stepOne(); }
 let i = 5;
 function awaitTranslateIndicator() {
     if (!word.hasAttribute('disabled')) {
-        btnStepOne.innerText = "Далее"
+        btnStepOne.innerText = "Далее";
         btnStepOne.setAttribute('style', 'background:var(--secondary-dark)');
         return;
     }
     if (i == 95) {
-        i = 10
+        i = 5;
         return awaitTranslateIndicator();
     }
     btnStepOne.innerText = "Ищем гифки и перевод"
@@ -123,9 +125,10 @@ function sliderItem(src) {
 document.querySelector('#btn-step-one-prev').onclick = () => { prevStepOne(); }
 
 function prevStepOne() {
-    stepOneBlock.style.display = 'block';
     word.value = '';
+    stepOneBlock.style.display = 'block';
     stepTooBlock.style.display = 'none';
+    stepThreeBlock.style.display = 'none';
 }
 document.querySelector('#btn-step-too').onclick = () => { stepToo(); }
 function stepToo() {
@@ -142,8 +145,13 @@ function fillCard() {
     creatingCardWord.innerHTML = card['word'];
     let creatingCardTranslate = document.querySelector('#creatingCardTranslate');
     creatingCardTranslate.innerHTML = ' '
-    for (let i = 0; i < card['data']['translate'].length - 1; i++) {
-        creatingCardTranslate.innerHTML += " " + card['data']['translate'][i];
+    let dataTraslateLength = card['data']['translate'].length - 2;
+    for (let i = 0; i <= dataTraslateLength; i++) {
+        let punctuatioMark = " , ";
+        if (i == dataTraslateLength) {
+            punctuatioMark = ';';
+        }
+        creatingCardTranslate.innerHTML += " " + card['data']['translate'][i] + punctuatioMark;
     }
     let creatingCardImg = document.querySelector('#creatingCardImg');
     creatingCardImg.src = card['src'];
@@ -151,6 +159,24 @@ function fillCard() {
 
 document.querySelector('#btn-step-too-prev').onclick = () => { prevStepToo(); }
 function prevStepToo() {
+    stepTooBlock.style.display = 'none';
     stepTooBlock.style.display = 'block';
     stepThreeBlock.style.display = 'none';
+}
+document.querySelector('#btn-save-new-card').onclick = () => { saveNewCard(); }
+function saveNewCard() {
+    prevStepOne();
+    load('body', 'Сохроняем карту', true);
+    let word = card['word'];
+    let gif = card['src'];
+    let form = new FormData;
+    form.append('word', word);
+    form.append('gif', gif);
+    SendRequest("POST", '/card/create', form)
+        .then(responce => {
+            load('body', 'Сохроняем карту', false);
+            location = "#close";
+        }).catch(err => {
+            console.log(err);
+        })
 }

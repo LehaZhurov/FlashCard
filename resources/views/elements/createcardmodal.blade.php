@@ -49,7 +49,7 @@
                             </div>
                             <div class="card-option">
                                 <div class="button-group-column">
-                                    <button>Сохранить</button>
+                                    <button id = 'btn-save-new-card'>Сохранить</button>
                                     <button id = 'btn-step-too-prev'>Назад</button>
                                 </div>
                             </div>
