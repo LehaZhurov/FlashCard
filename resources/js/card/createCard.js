@@ -1,7 +1,7 @@
 import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
-import { load } from "../load";
+import { startLoad,stopLoad } from "../load";
 
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
@@ -56,7 +56,6 @@ async function getTranslation(word) {
     await SendRequest("GET", '/translation/' + word)
         .then(responce => {
             card['data'] = responce;
-            console.log(card);
         }).catch(err => {
             console.log(err);
         })
@@ -130,7 +129,9 @@ function prevStepOne() {
     stepTooBlock.style.display = 'none';
     stepThreeBlock.style.display = 'none';
 }
+
 document.querySelector('#btn-step-too').onclick = () => { stepToo(); }
+
 function stepToo() {
     let indexSelectedGif = document.querySelector('ol>li.active').innerHTML;
     card['src'] = card['gifs'][indexSelectedGif].src;
@@ -158,15 +159,18 @@ function fillCard() {
 }
 
 document.querySelector('#btn-step-too-prev').onclick = () => { prevStepToo(); }
+
 function prevStepToo() {
     stepTooBlock.style.display = 'none';
     stepTooBlock.style.display = 'block';
     stepThreeBlock.style.display = 'none';
 }
+
 document.querySelector('#btn-save-new-card').onclick = () => { saveNewCard(); }
+
 function saveNewCard() {
     prevStepOne();
-    load('body', 'Сохроняем карту', true);
+    startLoad('body', 'Сохраняем карту');
     let word = card['word'];
     let gif = card['src'];
     let form = new FormData;
@@ -174,7 +178,7 @@ function saveNewCard() {
     form.append('gif', gif);
     SendRequest("POST", '/card/create', form)
         .then(responce => {
-            load('body', 'Сохроняем карту', false);
+            stopLoad();
             location = "#close";
         }).catch(err => {
             console.log(err);

@@ -28,3 +28,4 @@ Route::get('/gif/search/{word}/{limit?}/{offset?}/{lang?}', [GifController::clas
 Route::get('/gif/random/{tag?}', [GifController::class, 'random'])->name('randomGif');
 Route::get('/word/create/{word}', [WordController::class, 'create'])->name('createWord');
 Route::post('/card/create', [CardController::class, 'create'])->name('createCard');
+Route::get('/card/getCards', [CardController::class, 'getCards'])->name('getCards');

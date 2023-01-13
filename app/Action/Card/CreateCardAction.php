@@ -9,7 +9,7 @@ class CreateCardAction{
         
     public static function execute(string $word,string $gif) : Card
     {
-        $userId = $id = Auth::id();
+        $userId = Auth::id();
         $wordId = SearchWordAction::execute($word)->id;
         $card = new Card;
         $card->url = $gif;
@@ -17,7 +17,6 @@ class CreateCardAction{
         $card->word_id = $wordId;
         $card->save();
         return getCardFromIdQuery::find($card->id);
-        // return $card;
     }    
         
 }

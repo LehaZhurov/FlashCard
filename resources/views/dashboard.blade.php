@@ -208,5 +208,5 @@
     @include('elements/createcardmodal')
 @endsection
 @section('scripts')
-    @vite(['resources/js/card/createCard.js',])
+    @vite(['resources/js/card/createCard.js','resources/js/card/getCards.js'])
 @endsection
