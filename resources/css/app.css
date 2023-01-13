@@ -386,7 +386,7 @@ input:hover {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     background-color: var(--secondary-dark);
     padding: 10px;
@@ -585,7 +585,7 @@ input:hover {
         grid-template-columns: 50% 50%;
     }
     .card{
-        height:600px;
+        height:auto;
     }
 }
 
