@@ -146,10 +146,10 @@ function fillCard() {
     creatingCardWord.innerHTML = card['word'];
     let creatingCardTranslate = document.querySelector('#creatingCardTranslate');
     creatingCardTranslate.innerHTML = ' '
-    let dataTraslateLength = card['data']['translate'].length - 2;
-    for (let i = 0; i <= dataTraslateLength; i++) {
+    let dataTranslateLength = card['data']['translate'].length - 2;
+    for (let i = 0; i <= dataTranslateLength; i++) {
         let punctuatioMark = " , ";
-        if (i == dataTraslateLength) {
+        if (i == dataTranslateLength) {
             punctuatioMark = ';';
         }
         creatingCardTranslate.innerHTML += " " + card['data']['translate'][i] + punctuatioMark;

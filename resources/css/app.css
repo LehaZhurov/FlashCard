@@ -22,11 +22,10 @@
 .error{
     color:var(--red);
 }
-
+ 
 * {
     transition: background-color 2s;
     transition: width 0.5s;
-    transition: border-color 0.5s;
 }
 
 img {
@@ -386,7 +385,7 @@ input:hover {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    /* justify-content: start; */
     align-items: center;
     background-color: var(--secondary-dark);
     padding: 10px;

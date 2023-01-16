@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="deck-paginate">
+            <div class="deck-paginate" id = 'collection-pagination'>
                 <a href="#" class="deck-paginte-item active-paginate-item">1</a>
                 <a href="#" class="deck-paginte-item">2</a>
                 <a href="#" class="deck-paginte-item">3</a>
@@ -208,5 +208,5 @@
     @include('elements/createcardmodal')
 @endsection
 @section('scripts')
-    @vite(['resources/js/card/createCard.js','resources/js/card/getCards.js'])
+    @vite(['resources/js/card/createCard.js','resources/js/card/cardCollection.js'])
 @endsection

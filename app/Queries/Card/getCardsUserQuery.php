@@ -21,7 +21,7 @@ class getCardsUserQuery
                 'cards.user_id', 'cards.created_at', 'cards.repeats',
                 'words.value', 'words.data'
             );
-        $cardsUser = Paginator::create($cardsUserQuery, 10);
+        $cardsUser = Paginator::build($cardsUserQuery, 25);
         return $cardsUser;
     }
 

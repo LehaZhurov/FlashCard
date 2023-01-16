@@ -7,7 +7,7 @@ let block;
 export function startLoad(blockId, text = 'Загрузка') {
     block = document.querySelector('#' + blockId);
     block.classList.add('nonescroll');
-    // up();
+    up();
     let loadblock = createLoadBLock();
     let loadAnimationBlock = document.createElement('div');
     let img = createLoadAnimation();
