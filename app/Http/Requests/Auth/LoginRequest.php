@@ -38,7 +38,6 @@ class LoginRequest extends FormRequest
         return [
             'email.required' => 'Поле Email - обязательно.',
             'email.email' => 'Не валидный Email',
-            'telephone.max' => 'Телефон введен не верно.',
             'password.required' => 'Поле Пароль - обязательно.',
         ];
     }

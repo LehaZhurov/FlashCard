@@ -1,7 +1,7 @@
 import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
-import { startLoad,stopLoad } from "../load";
+import { startLoad, stopLoad } from "../load";
 import { getCards } from "./cardCollection";
 
 let card = [];
@@ -104,11 +104,18 @@ function initSlider() {
 }
 
 function appendGif(data) {
-    let sliderItems = document.querySelector('#select-gif');
-    sliderItems.innerHTML = ' ';
-    for (let i = 0; i < data.length; i++) {
-        sliderItems.appendChild(sliderItem(data[i].src));
+    try {
+        console.log(data,data.length);
+        let countGif = data.length;
+        let sliderItems = document.querySelector('#select-gif');
+        sliderItems.innerHTML = ' ';
+        for (let i = 0; i < countGif; i++) {
+            sliderItems.appendChild(sliderItem(data[i].src));
+        }
+    } catch (e) {
+        prevStepOne();
     }
+
 
 }
 
@@ -136,11 +143,15 @@ function prevStepOne() {
 document.querySelector('#btn-step-too').onclick = () => { stepToo(); }
 
 function stepToo() {
-    let indexSelectedGif = document.querySelector('ol>li.active').innerHTML;
-    card['src'] = card['gifs'][indexSelectedGif].src;
-    fillCard();
-    stepTooBlock.style.display = 'none';
-    stepThreeBlock.style.display = 'block';
+    try {
+        let indexSelectedGif = document.querySelector('ol>li.active').innerHTML;
+        card['src'] = card['gifs'][indexSelectedGif].src;
+        fillCard();
+        stepTooBlock.style.display = 'none';
+        stepThreeBlock.style.display = 'block';
+    } catch (e) {
+        prevStepOne();
+    }
 }
 
 function fillCard() {
@@ -189,8 +200,8 @@ function saveNewCard() {
         })
 }
 
-function updateCollectionPage(){
-    if(window.currentPage < 2){
+function updateCollectionPage() {
+    if (window.currentPage < 2) {
         getCards(1);
     }
 }

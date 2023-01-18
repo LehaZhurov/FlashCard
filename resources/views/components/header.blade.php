@@ -1,6 +1,6 @@
 <div id="header">
     <div id="logo">
-        FLASHCARDS
+        <a href="/">FLASHCARDS</a>
     </div>
     @yield('header')
 </div>
