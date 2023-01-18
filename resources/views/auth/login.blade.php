@@ -16,6 +16,7 @@
                 <input type="password" id='password' name="password" placeholder="Пароль">
                 <x-input-error :messages="$errors->get('password')" />
                 <button>Вперед</button>
+                <a href="/register">Создать аккаунт</a>
             </form>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
 import { startLoad,stopLoad } from "../load";
+import { getCards } from "./cardCollection";
 
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
@@ -9,9 +10,29 @@ let stepTooBlock = document.querySelector('#stepTooDisplay');
 let stepThreeBlock = document.querySelector('#stepThreeDisplay');
 let word = document.querySelector('#word');
 let btnStepOne = document.querySelector('#btn-step-one');
-btnStepOne.onclick = () => { stepOne(); }
 
+btnStepOne.onclick = () => { stepOne(); }
 let i = 5;
+
+
+async function stepOne() {
+    if (!word.value) {
+        return false;
+    }
+    createWord(word.value);
+    word.setAttribute('disabled', true);
+    card['word'] = word.value;
+    initSlider();
+    await getTranslation(word.value);
+    await getGif(word.value);
+    stepOneBlock.style.display = 'none';
+    stepTooBlock.style.display = 'block';
+    word.removeAttribute('disabled');
+    slideShow('.slider', {
+        isAutoplay: false
+    });
+}
+
 function awaitTranslateIndicator() {
     if (!word.hasAttribute('disabled')) {
         btnStepOne.innerText = "Далее";
@@ -31,24 +52,6 @@ function awaitTranslateIndicator() {
     }, 10)
     i++;
     return;
-}
-
-async function stepOne() {
-    if (!word.value) {
-        return false;
-    }
-    createWord(word.value);
-    word.setAttribute('disabled', true);
-    card['word'] = word.value;
-    initSlider();
-    await getTranslation(word.value);
-    await getGif(word.value);
-    stepOneBlock.style.display = 'none';
-    stepTooBlock.style.display = 'block';
-    word.removeAttribute('disabled');
-    slideShow('.slider', {
-        isAutoplay: false
-    });
 }
 
 async function getTranslation(word) {
@@ -180,7 +183,14 @@ function saveNewCard() {
         .then(responce => {
             stopLoad();
             location = "#close";
+            updateCollectionPage();
         }).catch(err => {
             console.log(err);
         })
+}
+
+function updateCollectionPage(){
+    if(window.currentPage < 2){
+        getCards(1);
+    }
 }

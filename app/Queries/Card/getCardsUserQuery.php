@@ -20,8 +20,9 @@ class getCardsUserQuery
                 'cards.id', 'cards.level', 'cards.url',
                 'cards.user_id', 'cards.created_at', 'cards.repeats',
                 'words.value', 'words.data'
-            );
-        $cardsUser = Paginator::build($cardsUserQuery, 25);
+            )
+            ->orderBy('cards.id','DESC');
+        $cardsUser = Paginator::build($cardsUserQuery, 3);
         return $cardsUser;
     }
 

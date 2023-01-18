@@ -52,7 +52,7 @@ class Giphy
         foreach ($searchResult->data as $key => $item) {
             $necessary['data'][] = $this->highlightRequiredFromSearchedItem($item);
         }
-        $necessary['pagination'] = (array) $searchResult->pagination;
+        // $necessary['pagination'] = (array) $searchResult->pagination;
         $necessary['meta'] = (array) $searchResult->meta;
         return $necessary;
     }

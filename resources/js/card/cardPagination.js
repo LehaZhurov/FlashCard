@@ -1,6 +1,8 @@
 import { getCards } from "./cardCollection"
 
 export function cardPagination(pagination) {
+    window.currentPage = pagination.current_page;
+
     let deckPagination = document.querySelector('#collection-pagination');
     deckPagination.innerHTML = ' ';
 
@@ -40,6 +42,5 @@ export function cardPagination(pagination) {
         deckPagination.appendChild(nextPage);
     }
 
-
-
 }
+

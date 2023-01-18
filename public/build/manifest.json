@@ -10,23 +10,23 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.f9aada9a.js",
+    "file": "assets/createCard.e9ac5ec2.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_load.4cf3e6c8.js"
+      "_cardCollection.31e443bc.js"
     ]
   },
   "resources/js/card/cardCollection.js": {
-    "file": "assets/cardCollection.a8a5de7e.js",
+    "file": "assets/cardCollection.c1dc3200.js",
     "src": "resources/js/card/cardCollection.js",
     "isEntry": true,
     "imports": [
-      "_load.4cf3e6c8.js"
+      "_cardCollection.31e443bc.js"
     ]
   },
-  "_load.4cf3e6c8.js": {
-    "file": "assets/load.4cf3e6c8.js"
+  "_cardCollection.31e443bc.js": {
+    "file": "assets/cardCollection.31e443bc.js"
   },
   "resources/css/slider.css": {
     "file": "assets/slider.263c5004.css",
