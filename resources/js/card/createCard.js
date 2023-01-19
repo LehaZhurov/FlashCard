@@ -160,8 +160,8 @@ function fillCard() {
     creatingCardWord.innerHTML = card['word'];
     let creatingCardTranslate = document.querySelector('#creatingCardTranslate');
     creatingCardTranslate.innerHTML = ' '
-    let dataTranslateLength = card['data']['translate'].length - 2;
-    for (let i = 0; i <= dataTranslateLength; i++) {
+    let dataTranslateLength = card['data']['translate'].length;
+    for (let i = 0; i < dataTranslateLength; i++) {
         let punctuatioMark = " , ";
         if (i == dataTranslateLength) {
             punctuatioMark = ';';

@@ -16,7 +16,7 @@ class WordResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'word' => $this->value,
+            'word' => str_replace('_',' ',$this->value),
             'info' => json_decode($this->data),
             'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at))
         ];

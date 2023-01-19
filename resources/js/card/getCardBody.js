@@ -6,10 +6,10 @@ export function getCardBody(data){
     let foreign = document.createElement('p');
     foreign.innerText = data.word;
     let native = document.createElement('p');
-    let dataTranslateLength = data['info']['translate'].length - 2;
-    for (let i = 0; i <= dataTranslateLength; i++) {
+    let dataTranslateLength = data['info']['translate'].length;
+    for (let i = 0; i < dataTranslateLength; i++) {
         let punctuatioMark = " , ";
-        if (i == dataTranslateLength) {
+        if (i == dataTranslateLength - 1) {
             punctuatioMark = ';';
         }
         native.innerText += " " + data['info']['translate'][i] + punctuatioMark;

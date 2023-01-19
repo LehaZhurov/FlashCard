@@ -5,7 +5,8 @@ class IsThereSuchWordAction{
         
     public static function execute(string $newWord) : bool 
     {
-        $word = Word::query()->where('value','=',$newWord);
+        $newWord = preg_replace('/\s+/', '_', $newWord);
+        $word = Word::query()->where('value', '=', $newWord);
         if($word->exists()){
             return false;
         }

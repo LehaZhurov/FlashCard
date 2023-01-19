@@ -8,7 +8,9 @@ class SearchWordAction
 
     public static function execute(string $word): Word
     {
-        return Word::where('value','=',$word)->first();
+        $word = preg_replace('/\s+/', '_', $word);
+        return Word::where('value', '=', $word)->get()->first();
+
     }
 
 }

@@ -8,7 +8,7 @@ class CreateWordAction{
     {
         $translate = Translator::translate($newWord);
         $word = new Word();
-        $word->value = $newWord;
+        $word->value = preg_replace('/\s+/', '_', $newWord);
         $word->data = json_encode($translate);
         $word->save();
         return $word;
