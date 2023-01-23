@@ -4,8 +4,11 @@ import { getCardHeader } from "./getCardHeader";
 import { getCardBody } from "./getCardBody";
 import { getFooterCardFromCollection } from "./getFooterCardFromCollection";
 import { cardPagination } from "./cardPagination";
+
+
 let cardDeck = document.querySelector('#deck-card');
 let levels = ['', 'common', 'rare', 'epic', 'legend'];
+
 
 export function getCards(page) {
     startLoad('body', 'Загружаем вашу коллекцию');

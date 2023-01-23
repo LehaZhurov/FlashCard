@@ -1,4 +1,4 @@
-import { getCards } from "./cardCollection"
+import { getCards } from "./getCardCollection"
 
 export function cardPagination(pagination) {
     window.currentPage = pagination.current_page;

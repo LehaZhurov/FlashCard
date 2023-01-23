@@ -21,7 +21,7 @@ class getCardsUserQuery
                 'cards.user_id', 'cards.created_at', 'cards.repeats',
                 'words.value', 'words.data'
             )
-            ->orderBy('cards.id','DESC');
+            ->orderBy('cards.id', 'DESC');
         $cardsUser = Paginator::build($cardsUserQuery, 3);
         return $cardsUser;
     }

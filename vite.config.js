@@ -11,7 +11,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/slider.js',
                 'resources/js/card/createCard.js',
-                'resources/js/card/cardCollection.js',
+                'resources/js/card/getCardCollection.js',
             ],
             refresh: true,
         }),

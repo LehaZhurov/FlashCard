@@ -2,7 +2,7 @@ import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
 import { startLoad, stopLoad } from "../load";
-import { getCards } from "./cardCollection";
+import { getCards } from "./getCardCollection";
 
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
@@ -105,7 +105,7 @@ function initSlider() {
 
 function appendGif(data) {
     try {
-        console.log(data,data.length);
+        console.log(data, data.length);
         let countGif = data.length;
         let sliderItems = document.querySelector('#select-gif');
         sliderItems.innerHTML = ' ';
@@ -163,7 +163,7 @@ function fillCard() {
     let dataTranslateLength = card['data']['translate'].length;
     for (let i = 0; i < dataTranslateLength; i++) {
         let punctuatioMark = " , ";
-        if (i == dataTranslateLength) {
+        if (i == dataTranslateLength - 1) {
             punctuatioMark = ';';
         }
         creatingCardTranslate.innerHTML += " " + card['data']['translate'][i] + punctuatioMark;

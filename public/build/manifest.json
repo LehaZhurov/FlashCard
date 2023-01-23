@@ -10,32 +10,32 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.421d57c9.js",
+    "file": "assets/createCard.c8809769.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_cardCollection.fffcd158.js"
+      "_getCardCollection.f0c1a426.js"
     ]
   },
-  "resources/js/card/cardCollection.js": {
-    "file": "assets/cardCollection.dc3c9784.js",
-    "src": "resources/js/card/cardCollection.js",
+  "resources/js/card/getCardCollection.js": {
+    "file": "assets/getCardCollection.daa8c119.js",
+    "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_cardCollection.fffcd158.js"
+      "_getCardCollection.f0c1a426.js"
     ]
   },
-  "_cardCollection.fffcd158.js": {
-    "file": "assets/cardCollection.fffcd158.js"
-  },
-  "resources/css/app.css": {
-    "file": "assets/app.dd694c15.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
+  "_getCardCollection.f0c1a426.js": {
+    "file": "assets/getCardCollection.f0c1a426.js"
   },
   "resources/css/slider.css": {
     "file": "assets/slider.263c5004.css",
     "src": "resources/css/slider.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.dd694c15.css",
+    "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/modal.css": {

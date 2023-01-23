@@ -43,16 +43,14 @@
                             <div class="card-gif">
                                 <img src="https://i.giphy.com/media/XOrFcrJVjhUkwLr4PH/giphy.webp" alt="" id = 'creatingCardImg'>
                             </div>
-                            <div class="card-text">
+                            <div class="card-text" style='display:block;'>
                                 <p id = 'creatingCardWord'>Will you buy me a new car for Christmas?</p>
                                 <p id = 'creatingCardTranslate'>Ты купишь мне новую машину на Рождество?</p>
                             </div>
-                            <div class="card-option">
-                                <div class="button-group-column">
-                                    <button id = 'btn-save-new-card'>Сохранить</button>
-                                    <button id = 'btn-step-too-prev'>Назад</button>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="button-group-row">
+                            <button id = 'btn-step-too-prev'>Назад</button>
+                            <button id = 'btn-save-new-card'>Сохранить</button>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,15 @@
 <?php
 namespace App\Action\Card;
-use App\Models\Card;
-use Auth;
-use App\Action\Word\SearchWordAction;
-use App\Queries\Card\getCardFromIdQuery;
 
-class CreateCardAction{
-        
-    public static function execute(string $word,string $gif) : Card
+use App\Action\Word\SearchWordAction;
+use App\Models\Card;
+use App\Queries\Card\getCardFromIdQuery;
+use Auth;
+
+class CreateCardAction
+{
+
+    public static function execute(string $word, string $gif): Card
     {
         $userId = Auth::id();
         $wordId = SearchWordAction::execute($word)->id;
@@ -17,6 +19,6 @@ class CreateCardAction{
         $card->word_id = $wordId;
         $card->save();
         return getCardFromIdQuery::find($card->id);
-    }    
-        
+    }
+
 }

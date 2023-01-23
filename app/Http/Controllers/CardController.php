@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Action\Card\CreateCardAction;
 use App\Http\Requests\Card\CreateCardRequest;
+use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
 use App\Queries\Card\getCardsUserQuery;
-use Illuminate\Database\Eloquent\Collection;
-use App\Http\Resources\Card\CardPaginationResource;
+
 class CardController extends Controller
 {
     public function create(CreateCardRequest $request): CardResource
