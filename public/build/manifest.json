@@ -1,8 +1,12 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.4eaf1f81.js",
+    "file": "assets/app.6d5bd334.js",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_getBalance.c8558d1e.js",
+      "_SendRequest.f2a9e872.js"
+    ]
   },
   "resources/js/slider.js": {
     "file": "assets/slider.0b62e9b3.js",
@@ -10,28 +14,38 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.c8809769.js",
+    "file": "assets/createCard.46c05cdd.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.f0c1a426.js"
+      "_SendRequest.f2a9e872.js",
+      "_getCardCollection.9f89fe36.js",
+      "_getBalance.c8558d1e.js"
     ]
   },
   "resources/js/card/getCardCollection.js": {
-    "file": "assets/getCardCollection.daa8c119.js",
+    "file": "assets/getCardCollection.757bddbb.js",
     "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.f0c1a426.js"
+      "_SendRequest.f2a9e872.js",
+      "_getCardCollection.9f89fe36.js"
     ]
   },
-  "_getCardCollection.f0c1a426.js": {
-    "file": "assets/getCardCollection.f0c1a426.js"
+  "_getBalance.c8558d1e.js": {
+    "file": "assets/getBalance.c8558d1e.js",
+    "imports": [
+      "_SendRequest.f2a9e872.js"
+    ]
   },
-  "resources/css/slider.css": {
-    "file": "assets/slider.263c5004.css",
-    "src": "resources/css/slider.css",
-    "isEntry": true
+  "_SendRequest.f2a9e872.js": {
+    "file": "assets/SendRequest.f2a9e872.js"
+  },
+  "_getCardCollection.9f89fe36.js": {
+    "file": "assets/getCardCollection.9f89fe36.js",
+    "imports": [
+      "_SendRequest.f2a9e872.js"
+    ]
   },
   "resources/css/app.css": {
     "file": "assets/app.dd694c15.css",
@@ -41,6 +55,11 @@
   "resources/css/modal.css": {
     "file": "assets/modal.f3921c69.css",
     "src": "resources/css/modal.css",
+    "isEntry": true
+  },
+  "resources/css/slider.css": {
+    "file": "assets/slider.263c5004.css",
+    "src": "resources/css/slider.css",
     "isEntry": true
   }
 }

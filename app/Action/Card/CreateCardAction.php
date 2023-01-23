@@ -9,9 +9,8 @@ use Auth;
 class CreateCardAction
 {
 
-    public static function execute(string $word, string $gif): Card
+    public static function execute(string $word, string $gif,int $userId): Card
     {
-        $userId = Auth::id();
         $wordId = SearchWordAction::execute($word)->id;
         $card = new Card;
         $card->url = $gif;

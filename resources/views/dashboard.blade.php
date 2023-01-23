@@ -5,7 +5,7 @@
 @section('header')
     </div>
     <div id='menu'>
-        <span title='Буквопыль использутся для создания новых карт'>30000 <i class='bx bxs-vial'></i></span>
+        <span title='Буквопыль использутся для создания новых карт'><span id="balance">30000</span><i class='bx bxs-vial'></i></span>
         {{-- <button>Играть</button> --}}
         <form method="POST" action="{{ route('logout') }}">
             @csrf

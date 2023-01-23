@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class WordController extends Controller
 {
 
-    public function create(Request $request)
+    public function create(Request $request): WordResource
     {
         $word = $request->get('word');
         if (IsThereSuchWordAction::execute($word)) {

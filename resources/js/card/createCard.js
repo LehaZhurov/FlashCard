@@ -3,6 +3,8 @@ import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
 import { startLoad, stopLoad } from "../load";
 import { getCards } from "./getCardCollection";
+import {getBalance} from "../balance/getBalance";
+
 
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
@@ -105,7 +107,6 @@ function initSlider() {
 
 function appendGif(data) {
     try {
-        console.log(data, data.length);
         let countGif = data.length;
         let sliderItems = document.querySelector('#select-gif');
         sliderItems.innerHTML = ' ';
@@ -195,7 +196,10 @@ function saveNewCard() {
             stopLoad();
             location = "#close";
             updateCollectionPage();
+            getBalance();
         }).catch(err => {
+            location = "#close";
+            stopLoad();
             console.log(err);
         })
 }

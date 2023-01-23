@@ -22,7 +22,6 @@ export function cardPagination(pagination) {
         prevPage.setAttribute('href', '#' + pagination.prev_page);
         prevPage.onclick = () => {
             getCards(pagination.prev_page);
-            console.log(pagination.prev_page);
         }
         deckPagination.appendChild(prevPage);
     }
@@ -37,7 +36,6 @@ export function cardPagination(pagination) {
         nextPage.innerText = pagination.next_page;
         nextPage.onclick = () => {
             getCards(pagination.next_page);
-            console.log(pagination.next_page);
         }
         deckPagination.appendChild(nextPage);
     }

@@ -40,9 +40,17 @@ class Giphy
 
     private function highlightRequiredFromSearchedItem(stdClass $searchItem)
     {
+
+        $srcs = $searchItem->images->original;
+        if (isset($srcs->webp)) { 
+            $src = $srcs->webp;
+        }else{
+            $src = $srcs->url;
+        }
+
         $necessary['id'] = $searchItem->id;
         $necessary['page_url'] = $searchItem->url;
-        $necessary['src'] = $searchItem->images->original->webp;
+        $necessary['src'] = $src;
         $necessary['powered'] = 'GIPHY.com';
         return $necessary;
     }

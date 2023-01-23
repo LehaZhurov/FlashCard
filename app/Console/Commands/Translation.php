@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Translation\Translator;
+use Illuminate\Console\Command;
+
 class Translation extends Command
 {
     /**
