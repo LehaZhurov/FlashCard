@@ -7,13 +7,23 @@ use stdClass;
 class Giphy
 {
     private $token = 'oWdBUpIKGSnNMPKBQSR03Sj1WjTrcII8';
-    private $url = 'https://api.giphy.com/v1/gifs/';
+    private $url = 'https://api.giphy.com/v1/';
 
-    private function search(string $q, int $limit = 50, int $ofset = 0, string $lang = 'en'): array
+    public function generalSearch(string $q, int $limit = 25, int $ofset = 0, string $lang = 'en'): array
+    {
+        $gifs = $this->searchGifs($q, $limit, $ofset, $lang);
+        $stikers = $this->searchStikers($q, $limit, $ofset, $lang);
+        $result = array_merge($gifs, $stikers);
+        shuffle($result);
+        $sliceResult = array_slice($result, 0, $limit);
+        return $sliceResult;
+    }
+
+    public function searchGifs(string $q, int $limit = 25, int $ofset = 0, string $lang = 'en'): array
     {
         $q = str_replace(' ', '+', $q);
         $endpoint = $this->url .
-        'search?api_key=' . $this->token .
+        'gifs/search?api_key=' . $this->token .
             '&q=' . $q .
             '&limit=' . $limit .
             '&ofset=' . $ofset .
@@ -24,27 +34,66 @@ class Giphy
         return $result;
     }
 
-    private function random(string $tag): array
+    public function searchStikers(string $q, int $limit = 50, int $ofset = 0, string $lang = 'en'): array
     {
+        $q = str_replace(' ', '+', $q);
+        $endpoint = $this->url .
+        'stickers/search?api_key=' . $this->token .
+            '&q=' . $q .
+            '&limit=' . $limit .
+            '&ofset=' . $ofset .
+            '&rating=g' .
+            '&lang=' . $lang;
+        $searchResult = file_get_contents($endpoint);
+        $result = $this->highlightRequiredFromSearchResult(json_decode($searchResult));
+        return $result;
+    }
+
+    public function random(string $tag): array
+    {
+        $zeroOrOne = rand(0, 1);
+        if ($zeroOrOne == 1){
+            return $this->randomGif($tag);
+        }
+        if ($zeroOrOne == 0) {
+            return $this->randomStiker($tag);
+        }
+    }
+
+    public function randomGif(string $tag): array
+    {
+
         $tag = str_replace(' ', '+', $tag);
         $endpoint = $this->url .
-        'random?api_key=' . $this->token .
+        'gifs/random?api_key=' . $this->token .
             '&tag=' . $tag .
             '&rating=g';
         $searchResult = file_get_contents($endpoint);
         $searchResult = json_decode($searchResult);
         $result = $this->highlightRequiredFromSearchedItem($searchResult->data);
-        $result['meta'] = (array) $searchResult->meta;
         return $result;
     }
 
-    private function highlightRequiredFromSearchedItem(stdClass $searchItem)
+    public function randomStiker(string $tag): array
+    {
+        $tag = str_replace(' ', '+', $tag);
+        $endpoint = $this->url .
+        'stickers/random?api_key=' . $this->token .
+            '&tag=' . $tag .
+            '&rating=g';
+        $searchResult = file_get_contents($endpoint);
+        $searchResult = json_decode($searchResult);
+        $result = $this->highlightRequiredFromSearchedItem($searchResult->data);
+        return $result;
+    }
+
+    private function highlightRequiredFromSearchedItem(stdClass $searchItem): array
     {
 
         $srcs = $searchItem->images->original;
-        if (isset($srcs->webp)) { 
+        if (isset($srcs->webp)) {
             $src = $srcs->webp;
-        }else{
+        } else {
             $src = $srcs->url;
         }
 
@@ -58,21 +107,14 @@ class Giphy
     private function highlightRequiredFromSearchResult(stdClass $searchResult): array
     {
         foreach ($searchResult->data as $key => $item) {
-            $necessary['data'][] = $this->highlightRequiredFromSearchedItem($item);
+            $necessary[] = $this->highlightRequiredFromSearchedItem($item);
         }
-        // $necessary['pagination'] = (array) $searchResult->pagination;
-        $necessary['meta'] = (array) $searchResult->meta;
         return $necessary;
     }
 
-    public static function searchGif(string $q, int $limit = 25, int $ofset = 0, string $lang = 'en'): array
+    public static function newClient()
     {
-        return (new self)->search($q, $limit, $ofset, $lang);
-    }
-
-    public static function randomGif(string $tag): array
-    {
-        return (new self)->random($tag);
+        return (new self());
     }
 
 }

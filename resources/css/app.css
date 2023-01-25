@@ -586,6 +586,9 @@ input:hover {
     .card{
         height:auto;
     }
+    .card-gif img {
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -593,4 +596,5 @@ input:hover {
         display: grid;
         grid-template-columns: 100%;
     }
+
 }
