@@ -14,7 +14,7 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.e7004059.js",
+    "file": "assets/createCard.9306710d.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
@@ -52,14 +52,14 @@
     "src": "resources/css/modal.css",
     "isEntry": true
   },
-  "resources/css/slider.css": {
-    "file": "assets/slider.263c5004.css",
-    "src": "resources/css/slider.css",
-    "isEntry": true
-  },
   "resources/css/app.css": {
     "file": "assets/app.0496ae50.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/slider.css": {
+    "file": "assets/slider.263c5004.css",
+    "src": "resources/css/slider.css",
     "isEntry": true
   }
 }

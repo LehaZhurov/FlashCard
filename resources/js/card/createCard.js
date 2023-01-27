@@ -3,8 +3,8 @@ import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
 import { startLoad, stopLoad } from "../load";
 import { getCards } from "./getCardCollection";
-import {getBalance} from "../balance/getBalance";
-
+import { getBalance } from "../balance/getBalance";
+import { checkBalance } from "../balance/checkBalance";
 
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
@@ -12,9 +12,19 @@ let stepTooBlock = document.querySelector('#stepTooDisplay');
 let stepThreeBlock = document.querySelector('#stepThreeDisplay');
 let word = document.querySelector('#word');
 let btnStepOne = document.querySelector('#btn-step-one');
-
-btnStepOne.onclick = () => { stepOne(); }
 let i = 5;
+
+
+
+btnStepOne.onclick = () => { 
+    
+    if(!checkBalance()){
+        alert('Не хватае пыли');
+        location = "#close";
+        return false;
+    }
+    stepOne(); 
+}
 
 
 async function stepOne() {
