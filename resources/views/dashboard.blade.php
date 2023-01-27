@@ -206,6 +206,7 @@
         </div>
     </div>
     @include('elements/createcardmodal')
+    @include('elements/confimspraycard')
 @endsection
 @section('scripts')
     @vite(['resources/js/card/createCard.js','resources/js/card/getCardCollection.js'])

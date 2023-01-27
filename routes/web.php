@@ -30,3 +30,4 @@ Route::get('/gif/random/{tag?}', [GifController::class, 'random'])->name('random
 Route::post('/word/create', [WordController::class, 'create'])->name('createWord');
 Route::post('/card/create', [CardController::class, 'create'])->name('createCard');
 Route::get('/card/getCards', [CardController::class, 'getCards'])->name('getCards');
+Route::get('/card/delete/{id}', [CardController::class, 'delete'])->name('deleteCard');

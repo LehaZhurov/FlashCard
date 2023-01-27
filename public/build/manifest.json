@@ -1,11 +1,10 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.6d5bd334.js",
+    "file": "assets/app.d1f900e3.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_getBalance.c8558d1e.js",
-      "_SendRequest.f2a9e872.js"
+      "_getBalance.dd24ae22.js"
     ]
   },
   "resources/js/slider.js": {
@@ -14,43 +13,31 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.9306710d.js",
+    "file": "assets/createCard.38e401bc.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_SendRequest.f2a9e872.js",
-      "_getCardCollection.ec45371b.js",
-      "_getBalance.c8558d1e.js"
+      "_getBalance.dd24ae22.js",
+      "_updateCardCollection.33254aee.js"
     ]
   },
   "resources/js/card/getCardCollection.js": {
-    "file": "assets/getCardCollection.f38b9c63.js",
+    "file": "assets/getCardCollection.bc6141b6.js",
     "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_SendRequest.f2a9e872.js",
-      "_getCardCollection.ec45371b.js"
+      "_getBalance.dd24ae22.js",
+      "_updateCardCollection.33254aee.js"
     ]
   },
-  "_getBalance.c8558d1e.js": {
-    "file": "assets/getBalance.c8558d1e.js",
+  "_getBalance.dd24ae22.js": {
+    "file": "assets/getBalance.dd24ae22.js"
+  },
+  "_updateCardCollection.33254aee.js": {
+    "file": "assets/updateCardCollection.33254aee.js",
     "imports": [
-      "_SendRequest.f2a9e872.js"
+      "_getBalance.dd24ae22.js"
     ]
-  },
-  "_SendRequest.f2a9e872.js": {
-    "file": "assets/SendRequest.f2a9e872.js"
-  },
-  "_getCardCollection.ec45371b.js": {
-    "file": "assets/getCardCollection.ec45371b.js",
-    "imports": [
-      "_SendRequest.f2a9e872.js"
-    ]
-  },
-  "resources/css/modal.css": {
-    "file": "assets/modal.e1bca27a.css",
-    "src": "resources/css/modal.css",
-    "isEntry": true
   },
   "resources/css/app.css": {
     "file": "assets/app.0496ae50.css",
@@ -60,6 +47,11 @@
   "resources/css/slider.css": {
     "file": "assets/slider.263c5004.css",
     "src": "resources/css/slider.css",
+    "isEntry": true
+  },
+  "resources/css/modal.css": {
+    "file": "assets/modal.e1bca27a.css",
+    "src": "resources/css/modal.css",
     "isEntry": true
   }
 }

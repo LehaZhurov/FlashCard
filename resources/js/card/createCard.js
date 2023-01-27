@@ -2,10 +2,9 @@ import { SendRequest } from "../SendRequest";
 import { slideShow } from "../slider";
 import { createWord } from '../word/createWord';
 import { startLoad, stopLoad } from "../load";
-import { getCards } from "./getCardCollection";
 import { getBalance } from "../balance/getBalance";
 import { checkBalance } from "../balance/checkBalance";
-
+import { updateCollectionPage } from "./updateCardCollection";
 let card = [];
 let stepOneBlock = document.querySelector('#stepOneDisplay');
 let stepTooBlock = document.querySelector('#stepTooDisplay');
@@ -16,14 +15,14 @@ let i = 5;
 
 
 
-btnStepOne.onclick = () => { 
-    
-    if(!checkBalance()){
+btnStepOne.onclick = () => {
+
+    if (!checkBalance()) {
         alert('Не хватае пыли');
         location = "#close";
         return false;
     }
-    stepOne(); 
+    stepOne();
 }
 
 
@@ -214,8 +213,3 @@ function saveNewCard() {
         })
 }
 
-function updateCollectionPage() {
-    if (window.currentPage < 2) {
-        getCards(1);
-    }
-}

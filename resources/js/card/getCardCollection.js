@@ -7,6 +7,10 @@ import { cardPagination } from "./cardPagination";
 import { echoCardsCounts } from "./echoCardCounts";
 
 let cardDeck = document.querySelector('#deck-card');
+/*
+    Уровень зависит от количества повторений.Также в зависимости от уровня 
+    зависит и цвет.Классы которые задают цевт указаны ниже.
+*/
 let levels = ['', 'common', 'rare', 'epic', 'legend'];
 
 

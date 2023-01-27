@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Action\Card\CreateCardAction;
+use App\Action\Card\sprayCardAction;
 use App\Action\User\CanBeWrittenOffFromTheBalanceAction;
-use App\Action\User\takeAwayFromTheBalanceUserAction;
+use App\Action\User\takeAwayFromTheBalanceAction;
 use App\Http\Requests\Card\CreateCardRequest;
+use App\Http\Resources\EmptyResource;
 use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
 use App\Queries\Card\getCardsUserQuery;
@@ -24,7 +26,7 @@ class CardController extends Controller
         }
         $request = $request->all();
         $card = CreateCardAction::execute($request['word'], $request['gif'], $userId);
-        takeAwayFromTheBalanceUserAction::execute($userId, $this->cardPrice);
+        takeAwayFromTheBalanceAction::execute($userId, $this->cardPrice);
         return new CardResource($card);
     }
 
@@ -32,5 +34,11 @@ class CardController extends Controller
     {
         $cards = getCardsUserQuery::find(25);
         return new CardPaginationResource($cards);
+    }
+
+    public function delete(int $id)
+    {
+        sprayCardAction::execute($id);
+        return new EmptyResource();
     }
 }
