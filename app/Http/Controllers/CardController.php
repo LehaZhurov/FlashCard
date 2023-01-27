@@ -30,7 +30,7 @@ class CardController extends Controller
 
     public function getCards(): CardPaginationResource
     {
-        $cards = getCardsUserQuery::find();
+        $cards = getCardsUserQuery::find(25);
         return new CardPaginationResource($cards);
     }
 }

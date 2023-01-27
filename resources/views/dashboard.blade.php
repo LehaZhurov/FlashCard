@@ -27,7 +27,7 @@
         </label>
         <div id="tab-content-1" class="tab-content">
             <div>
-                <h1>Карты 5/5</h1>
+                <h1>Карты <span id="count_card_current_page">0</span>/<span id="count_cards">0</span></h1>
             </div>
             <div class="center-deck">
                 <div id="deck-card" class='deck'>

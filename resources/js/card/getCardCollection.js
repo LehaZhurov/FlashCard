@@ -4,7 +4,7 @@ import { getCardHeader } from "./getCardHeader";
 import { getCardBody } from "./getCardBody";
 import { getFooterCardFromCollection } from "./getFooterCardFromCollection";
 import { cardPagination } from "./cardPagination";
-
+import { echoCardsCounts } from "./echoCardCounts";
 
 let cardDeck = document.querySelector('#deck-card');
 let levels = ['', 'common', 'rare', 'epic', 'legend'];
@@ -17,6 +17,7 @@ export function getCards(page) {
             clearPageCollection();
             appendCardToPageCollection(responce['data']);
             cardPagination(responce['pagination']);
+            echoCardsCounts(responce['pagination']);
             stopLoad();
         }).catch(err => {
             console.log(err);

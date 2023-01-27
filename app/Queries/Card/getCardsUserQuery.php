@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class getCardsUserQuery
 {
 
-    public static function find(): Collection
+    public static function find(int $limit = 25): Collection
     {
         $userId = Auth::id();
         $cardsUserQuery =
@@ -22,7 +22,7 @@ class getCardsUserQuery
                 'words.value', 'words.data'
             )
             ->orderBy('cards.id', 'DESC');
-        $cardsUser = Paginator::build($cardsUserQuery, 3);
+        $cardsUser = Paginator::build($cardsUserQuery, $limit);
         return $cardsUser;
     }
 
