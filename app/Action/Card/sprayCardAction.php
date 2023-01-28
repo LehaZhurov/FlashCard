@@ -32,9 +32,9 @@ class sprayCardAction
     {
         $card = Card::query()->findOrFail($cardId);
         $amountОfDustPerCard = [0,200,400,500,1000];
+        $card->delete();
         $amount = $amountОfDustPerCard[$card->level];
         addToTheBalanceAction::execute($card->user_id,$amount);
-        $card->delete();
     }
 
 }

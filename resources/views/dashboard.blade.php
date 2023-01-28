@@ -5,7 +5,8 @@
 @section('header')
     </div>
     <div id='menu'>
-        <span title='Буквопыль использутся для создания новых карт'><span id="balance">30000</span><i class='bx bxs-vial'></i></span>
+        <span title='Буквопыль использутся для создания новых карт'><span id="balance">30000</span><i
+                class='bx bxs-vial'></i></span>
         {{-- <button>Играть</button> --}}
         <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -26,188 +27,16 @@
             <p>Колоды</p>
         </label>
         <div id="tab-content-1" class="tab-content">
-            <div>
-                <h1>Карты <span id="count_card_current_page">0</span>/<span id="count_cards">0</span></h1>
-            </div>
-            <div class="center-deck">
-                <div id="deck-card" class='deck'>
-                    <div class="card legend">
-                        <div class="card-gif">
-                            <img src="https://media4.giphy.com/media/8IyJweC7qiNu2716vT/giphy.gif?cid=ecf05e478nacvxrqo86h9cfkha7c2d2bcccdfioflaye3lr2&rid=giphy.gif&ct=s"
-                                alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>Create a new flashcard</p>
-                            <p>Создать новую карточку</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button><a href="#createCard">Создать</a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card rare">
-                        <div class="card-gif">
-                            <img src="https://media4.giphy.com/media/uFEL9XqI2kXKyeHmAy/giphy.gif?cid=ecf05e477h8qxqcs41x35a1irvuqp5x9ovsmix0cpzgacwrw&rid=giphy.gif&ct=s"
-                                alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>add</p>
-                            <p>добавить</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button class='danger'>Распылить</button>
-                                <button>В колоду</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card epic">
-                        <div class="card-gif">
-
-                            <img src="https://neversaynever0304.files.wordpress.com/2015/04/cleaning.gif" alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>busy</p>
-                            <p>занят</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button class='danger'>Распылить</button>
-                                <button>В колоду</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card legend">
-                        <div class="card-gif">
-                            <img src="https://i.giphy.com/media/e7QhlWUjllr7m3VRSi/giphy.webp" alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>clear</p>
-                            <p>чисто</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button class='danger'>Распылить</button>
-                                <button>В колоду</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card common">
-                        <div class="card-gif">
-                            <img src="https://i.giphy.com/media/XOrFcrJVjhUkwLr4PH/giphy.webp" alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>Will you buy me a new car for Christmas?</p>
-                            <p>Ты купишь мне новую машину на Рождество?</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button class='danger'>Распылить</button>
-                                <button>В колоду</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card common">
-                        <div class="card-gif">
-                            <img src="https://i.giphy.com/media/3o7bug8jhF3LvXDxvy/giphy.webp" alt="">
-                        </div>
-                        <div class="card-text">
-                            <p>To have a good time</p>
-                            <p>Хорошо проводить время, чаще используется, как пожелание</p>
-                        </div>
-                        <div class="card-option">
-                            <div class="button-group-column">
-                                <button class='danger'>Распылить</button>
-                                <button>В колоду</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="deck-paginate" id = 'collection-pagination'>
-                <a href="#" class="deck-paginte-item active-paginate-item">1</a>
-                <a href="#" class="deck-paginte-item">2</a>
-                <a href="#" class="deck-paginte-item">3</a>
-            </div>
+            @include('components/cardcollection')
         </div>
         <div id="tab-content-2" class="tab-content">
-            <div>
-                <div>
-                    <h1>Колоды 1/15</h1>
-                </div>
-                <div id="deck-card" class='deck'>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'><i class='bx bxs-trash'></i></button>
-                                <button><i class='bx bxs-edit'></i></button>
-                                <button><i class='bx bx-play'></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deck-card">
-                        <h1>Животные</h1>
-                        <div class="deck-card-option">
-                            <div class="button-group-row">
-                                <button class='danger'>Удалить</button>
-                                <button>Изменить</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('components/carddecks')
         </div>
     </div>
     @include('elements/createcardmodal')
     @include('elements/confimspraycard')
+    @include('elements/creatеdeck')
 @endsection
 @section('scripts')
-    @vite(['resources/js/card/createCard.js','resources/js/card/getCardCollection.js'])
+    @vite(['resources/js/card/createCard.js', 'resources/js/card/getCardCollection.js'])
 @endsection

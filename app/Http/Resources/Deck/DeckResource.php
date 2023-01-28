@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\Deck;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserBalanceResource extends JsonResource
+class DeckResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,9 +15,9 @@ class UserBalanceResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->name.' '.$this->secondname,
             'id' => $this->id,
-            'balance' => $this->balance
+            'name' => $this->name,
+            'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at))
         ];
     }
 }

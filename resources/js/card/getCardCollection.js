@@ -4,7 +4,7 @@ import { getCardHeader } from "./getCardHeader";
 import { getCardBody } from "./getCardBody";
 import { getFooterCardFromCollection } from "./getFooterCardFromCollection";
 import { cardPagination } from "./cardPagination";
-import { echoCardsCounts } from "./echoCardCounts";
+import { echoCardsCounts } from "./echoCardsCountsFromCollection";
 
 let cardDeck = document.querySelector('#deck-card');
 /*

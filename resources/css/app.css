@@ -456,6 +456,12 @@ input:hover {
     flex-direction: row;
     align-items: center;
 }
+.center{
+    justify-content: center;
+}
+.space-between{
+    justify-content: space-between;
+}
 .danger:hover {
     background-color: var(--red);
 }
