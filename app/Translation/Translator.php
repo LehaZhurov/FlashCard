@@ -8,10 +8,10 @@ use HeadlessChromium\Page;
 
 class Translator
 {
-
     private $tranurl = 'https://www.deepl.com/translator#';
-    private $translate = ['dictionary' => [], 'translate' => [],'powered' => 'deepl.com'];
+    private $translate = ['dictionary' => [], 'translate' => [], 'powered' => 'deepl.com'];
     private $devtoolsUrl = "ws://chrome:3000/";
+
     public function __construct()
     {
         require_once 'SHD.php';

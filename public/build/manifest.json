@@ -1,10 +1,10 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.d1f900e3.js",
+    "file": "assets/app.1e62a31c.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_getBalance.dd24ae22.js"
+      "_getBalance.b81c05ca.js"
     ]
   },
   "resources/js/slider.js": {
@@ -13,30 +13,30 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.079a1380.js",
+    "file": "assets/createCard.391e841b.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_getBalance.dd24ae22.js",
-      "_updateCardCollection.ee2ea3ab.js"
+      "_getBalance.b81c05ca.js",
+      "_updateCardCollection.9f95aa79.js"
     ]
   },
   "resources/js/card/getCardCollection.js": {
-    "file": "assets/getCardCollection.7738a538.js",
+    "file": "assets/getCardCollection.27cdd9d7.js",
     "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_getBalance.dd24ae22.js",
-      "_updateCardCollection.ee2ea3ab.js"
+      "_getBalance.b81c05ca.js",
+      "_updateCardCollection.9f95aa79.js"
     ]
   },
-  "_getBalance.dd24ae22.js": {
-    "file": "assets/getBalance.dd24ae22.js"
+  "_getBalance.b81c05ca.js": {
+    "file": "assets/getBalance.b81c05ca.js"
   },
-  "_updateCardCollection.ee2ea3ab.js": {
-    "file": "assets/updateCardCollection.ee2ea3ab.js",
+  "_updateCardCollection.9f95aa79.js": {
+    "file": "assets/updateCardCollection.9f95aa79.js",
     "imports": [
-      "_getBalance.dd24ae22.js"
+      "_getBalance.b81c05ca.js"
     ]
   },
   "resources/css/slider.css": {

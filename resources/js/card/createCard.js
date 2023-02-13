@@ -67,9 +67,9 @@ function awaitTranslateIndicator() {
 
 async function getTranslation(word) {
     awaitTranslateIndicator();
-    await SendRequest("GET", '/translation/' + word)
+    card['data'] = await SendRequest("GET", '/translation/' + word)
         .then(responce => {
-            card['data'] = responce;
+            return responce;
         }).catch(err => {
             console.log(err);
         })

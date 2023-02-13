@@ -1,7 +1,7 @@
 
 
 //Отправка Ajax запросов к серверу
-export function SendRequest(method, url, body = null, debug = true) {
+export async function SendRequest(method, url, body = null, debug = true) {
 	return new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 		xhr.open(method, url, true)
