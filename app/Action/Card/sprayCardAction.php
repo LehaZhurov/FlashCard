@@ -3,8 +3,8 @@ namespace App\Action\Card;
 
 use App\Action\User\addToTheBalanceAction;
 use App\Models\Card;
-
-class sprayCardAction
+use App\Queries\Card\thisCardBelongsToTheUserQuery;
+class SprayCardAction
 {
 
 /*
@@ -28,8 +28,11 @@ class sprayCardAction
 'стоимость при распыление' => 1000,
  */
 
-    public static function execute(int $cardId): void
+    public static function execute(int $userId,int $cardId): void
     {
+        if(!thisCardBelongsToTheUserQuery::check($userId,$cardId)){
+            throw new Exception('Данная карта(id:'.$cardId.') не пренадлежит переданному пользователю(id:'.$userId.')');
+        }
         $card = Card::query()->findOrFail($cardId);
         $amountОfDustPerCard = [0,200,400,500,1000];
         $card->delete();

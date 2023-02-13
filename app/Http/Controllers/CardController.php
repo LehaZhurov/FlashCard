@@ -32,13 +32,15 @@ class CardController extends Controller
 
     public function getCards(): CardPaginationResource
     {
-        $cards = getCardsUserQuery::find(25);
+        $userId = Auth::id();
+        $cards = getCardsUserQuery::find($userId,25);
         return new CardPaginationResource($cards);
     }
 
-    public function delete(int $id)
+    public function delete(int $cardId)
     {
-        sprayCardAction::execute($id);
+        $userId = Auth::id();
+        sprayCardAction::execute($userId,$cardId);
         return new EmptyResource();
     }
 }

@@ -2,7 +2,7 @@
     <div>
         <h1>Колоды 1/15</h1>
     </div>
-    <div id="deck-card" class='deck'>
+    <div id="deck-card-deck" class='deck'>
         <div class="deck-card legend">
             <h1>Новая колода</h1>
             <div class="deck-card-option">

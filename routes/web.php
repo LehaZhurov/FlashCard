@@ -20,20 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/profile/balance', [ProfileController::class, 'getBalance'])->name('profile.balance');
 });
 
 require __DIR__ . '/auth.php';
 
-Route::get('/translation/{word}', [TranslatorController::class, 'translate'])->name('translator');
 
-Route::get('/gif/search/{word}/{limit?}/{offset?}/{lang?}', [GifController::class, 'search'])->name('searchGif');
-Route::get('/gif/random/{tag?}', [GifController::class, 'random'])->name('randomGif');
-
-Route::post('/word/create', [WordController::class, 'create'])->name('createWord');
-
-Route::post('/card/create', [CardController::class, 'create'])->name('createCard');
-Route::get('/card/getCards', [CardController::class, 'getCards'])->name('getCards');
-Route::get('/card/delete/{id}', [CardController::class, 'delete'])->name('deleteCard');
-
-Route::post('deck/create', [DeckController::class, 'create'])->name('createDeck');

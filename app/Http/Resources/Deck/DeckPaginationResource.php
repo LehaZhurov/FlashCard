@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources\Deck;
 
+use App\Http\Resources\Deck\DeckResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DeckResource extends JsonResource
+class DeckPaginationResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +16,9 @@ class DeckResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'user_id' => $this->user_id,
-            'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at))
+
+            'data' => DeckResource::collection($this['data']),
+            'pagination' => $this['pagination'],
         ];
     }
 }

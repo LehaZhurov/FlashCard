@@ -27,7 +27,6 @@ export function getCards(page) {
             console.log(err);
         })
 }
-getCards(1);
 
 function appendCardToPageCollection(data){
     for(let i = 0; i < data.length; i++){

@@ -9,9 +9,8 @@ use Illuminate\Support\Collection;
 class getCardsUserQuery
 {
 
-    public static function find(int $limit = 25): Collection
+    public static function find(int $userId,int $limit = 25): Collection
     {
-        $userId = Auth::id();
         $cardsUserQuery =
         Card::query()
             ->where('user_id', $userId)

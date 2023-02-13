@@ -6,9 +6,9 @@ use App\Models\User;
 class getUser
 {
 
-    public static function find($id): User
+    public static function find(int $id): User
     {
-        return User::find($id)->first();
+        return User::findOrFail($id)->first();
     }
 
 }
