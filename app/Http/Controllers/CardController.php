@@ -11,9 +11,10 @@ use App\Http\Resources\EmptyResource;
 use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
 use App\Queries\Card\getCardsUserQuery;
+use App\Http\Requests\Card\AddCardToDeckRequest;
 use Auth;
 use Illuminate\Http\Response;
-
+use App\Action\Card\AddCardToDeckAction;
 class CardController extends Controller
 {
     private $cardPrice = 1000;
@@ -42,5 +43,11 @@ class CardController extends Controller
         $userId = Auth::id();
         sprayCardAction::execute($userId,$cardId);
         return new EmptyResource();
+    }
+
+    public function addCardToDeck(AddCardToDeckRequest $request){
+        $request = $request->all();
+        $CardsDeck = AddCardToDeckAction::execute($request['card_id'],$request['deck_id']);
+        return CardResource::collection($CardsDeck);
     }
 }

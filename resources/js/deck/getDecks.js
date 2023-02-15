@@ -1,7 +1,7 @@
 import { startLoad, stopLoad } from "../load";
 import { SendRequest } from "../SendRequest";
 import { deleteDeck } from "./deleteDeck";
-
+import { fillDeckSelectFromId } from './fillDeckSelect';
 
 let decks = document.querySelector('#deck-card-deck');
 
@@ -11,6 +11,7 @@ export function getDecks(page = 1) {
         .then(responce => {
             clearDeckPage();
             appendDeckToPage(responce['data']);
+            fillDeckSelectFromId('select_deck_from_add_card',responce['data']);
             stopLoad();
         }).catch(err => {
             console.log(err);

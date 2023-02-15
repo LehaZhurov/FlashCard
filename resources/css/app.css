@@ -224,7 +224,8 @@ label:hover {
 
 form>input,
 form>textarea,
-form>button {
+form>button,
+form>select {
     margin: 20px;
     width: 100%;
 }
@@ -249,6 +250,21 @@ input {
 input:active,
 input:focus,
 input:hover {
+    border: 2px solid var(--secondary-dark);
+    width: 90%;
+}
+select {
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 2px solid var(--secondary);
+}
+
+select:active,
+select:focus,
+select:hover {
     border: 2px solid var(--secondary-dark);
     width: 90%;
 }

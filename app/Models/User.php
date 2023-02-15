@@ -38,6 +38,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSecondname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $balance
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereBalance($value)
  */
 class User extends Authenticatable
 {

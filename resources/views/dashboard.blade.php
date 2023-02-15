@@ -33,10 +33,11 @@
             @include('components/carddecks')
         </div>
     </div>
-    @include('elements/createcardmodal')
-    @include('elements/confimspraycard')
-    @include('elements/confimdeletedeck')
-    @include('elements/creatеdeck')
+    @include('elements/createCardModal')
+    @include('elements/confimSprayCard')
+    @include('elements/confimDeleteDeck')
+    @include('elements/creatеDeck')
+    @include('elements/addCardToDeck')
 @endsection
 @section('scripts')
     @vite(['resources/js/card/createCard.js', 'resources/js/card/getCardCollection.js','resources/js/deck/createDeck.js'])
