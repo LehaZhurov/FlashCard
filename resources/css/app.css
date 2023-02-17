@@ -560,10 +560,22 @@ select:hover {
 .deck-card-option{
     margin:15px;
 }
-
 .nonescroll{
     overflow-y: hidden;
 }
+.row-between{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.column-between{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 
 @media (max-width: 1300px) {

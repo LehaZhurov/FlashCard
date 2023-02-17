@@ -1,4 +1,4 @@
-<div>
+<div id = "decks-view">
     <div>
         <h1>Колоды 1/15</h1>
     </div>

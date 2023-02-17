@@ -27,10 +27,11 @@
             <p>Колоды</p>
         </label>
         <div id="tab-content-1" class="tab-content">
-            @include('components/cardcollection')
+            @include('components/cardCollection')
         </div>
         <div id="tab-content-2" class="tab-content">
-            @include('components/carddecks')
+            @include('components/cardDecks')
+            @include('components/cardsInDeck')
         </div>
     </div>
     @include('elements/createCardModal')

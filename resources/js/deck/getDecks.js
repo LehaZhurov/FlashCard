@@ -1,6 +1,7 @@
 import { startLoad, stopLoad } from "../load";
 import { SendRequest } from "../SendRequest";
 import { deleteDeck } from "./deleteDeck";
+import { editDeck } from "./editDeck";
 import { fillDeckSelectFromId } from './fillDeckSelect';
 
 let decks = document.querySelector('#deck-card-deck');
@@ -56,6 +57,9 @@ function getDeckLayout(data) {
     let editButtonIcon = document.createElement('i')
     editButtonIcon.setAttribute('class', 'bx bxs-edit')
     editButton.appendChild(editButtonIcon);
+    editButton.onclick = () => {
+        editDeck(data.id);
+    }
     buttonGroup.appendChild(editButton);
 
     let playButton = document.createElement('button');

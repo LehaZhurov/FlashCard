@@ -6,9 +6,9 @@ use App\Models\Deck;
 class thisDeckBelongsToTheUserQuery
 {
 
-    public static function check(int $userId, int $deck): bool
+    public static function check(int $userId, int $deckId): bool
     {
-        $card = Deck::findOrFail($deck)->first();
+        $card = Deck::findOrFail($deckId)->first();
         if ($card->user_id == $userId) {
             return true;
         }

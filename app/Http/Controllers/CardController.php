@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Action\Card\AddCardToDeckAction;
 use App\Action\Card\CreateCardAction;
 use App\Action\Card\sprayCardAction;
 use App\Action\User\CanBeWrittenOffFromTheBalanceAction;
 use App\Action\User\takeAwayFromTheBalanceAction;
+use App\Http\Requests\Card\AddCardToDeckRequest;
 use App\Http\Requests\Card\CreateCardRequest;
-use App\Http\Resources\EmptyResource;
 use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
+use App\Http\Resources\EmptyResource;
 use App\Queries\Card\getCardsUserQuery;
-use App\Http\Requests\Card\AddCardToDeckRequest;
 use Auth;
 use Illuminate\Http\Response;
-use App\Action\Card\AddCardToDeckAction;
+
 class CardController extends Controller
 {
     private $cardPrice = 1000;
@@ -23,7 +24,7 @@ class CardController extends Controller
     {
         $userId = Auth::id();
         if (!CanBeWrittenOffFromTheBalanceAction::execute($userId, $this->cardPrice)) {
-            return response(['error' => 'Не достаточно пыли'], 401);
+            throw new Exception('Не достаточно пыли');
         }
         $request = $request->all();
         $card = CreateCardAction::execute($request['word'], $request['gif'], $userId);
@@ -34,20 +35,22 @@ class CardController extends Controller
     public function getCards(): CardPaginationResource
     {
         $userId = Auth::id();
-        $cards = getCardsUserQuery::find($userId,25);
+        $cards = getCardsUserQuery::find($userId, 25);
         return new CardPaginationResource($cards);
     }
 
     public function delete(int $cardId)
     {
         $userId = Auth::id();
-        sprayCardAction::execute($userId,$cardId);
+        sprayCardAction::execute($userId, $cardId);
         return new EmptyResource();
     }
 
-    public function addCardToDeck(AddCardToDeckRequest $request){
+    public function addCardToDeck(AddCardToDeckRequest $request)
+    {
         $request = $request->all();
-        $CardsDeck = AddCardToDeckAction::execute($request['card_id'],$request['deck_id']);
-        return CardResource::collection($CardsDeck);
+        $userId = Auth::id();
+        $cardsDeck = AddCardToDeckAction::execute($request['card_id'], $request['deck_id'],$userId);
+        return CardResource::collection($cardsDeck);
     }
 }

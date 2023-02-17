@@ -13,6 +13,7 @@ function saveNewDeck(data){
     SendRequest("POST", '/deck/create',data)
         .then(responce => {
             getDecks(1);
+            location.href = '#close';
         }).catch(err => {
             console.log(err);
         })

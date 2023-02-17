@@ -23,5 +23,6 @@ Route::post('/card/addToDeck', [CardController::class, 'addCardToDeck'])->name('
 Route::post('deck/create', [DeckController::class, 'create'])->name('createDeck');
 Route::get('/deck/getDecks', [DeckController::class, 'getDecks'])->name('getDecks');
 Route::get('/deck/delete/{id}', [DeckController::class, 'delete'])->name('deleteDeck');
+Route::get('/deck/{id}/cards', [DeckController::class, 'getCards'])->name('getCardsInDeck');
 
 Route::get('/profile/balance', [ProfileController::class, 'getBalance'])->name('profile.balance');
