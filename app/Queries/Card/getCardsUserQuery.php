@@ -13,7 +13,13 @@ class getCardsUserQuery
         $cardsUserQuery =
         Card::query()
             ->where('user_id', $userId)
-            ->join('words', 'words.id', '=', 'cards.word_id');
+            ->RightJoin('words', 'words.id', '=', 'cards.word_id')
+            ->select(
+                'cards.id', 'cards.level', 'cards.url',
+                'cards.user_id', 'cards.created_at', 'cards.repeats',
+                'words.value', 'words.data'
+            )
+            ->orderBy('cards.id', 'DESC');
         $cardsUser = Paginator::build($cardsUserQuery, $limit);
         return $cardsUser;
     }

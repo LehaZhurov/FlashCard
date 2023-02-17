@@ -1,8 +1,6 @@
 import { deleteCard } from "./deleteCard";
 import { addToDeck } from "./addToDeck";
 
-
-
 export function getFooterCardFromCollection(data){
     let cardOption = document.createElement('div');
     cardOption.setAttribute('class', 'card-option');

@@ -1,7 +1,4 @@
 
-
-
-
 export function getCardHeader(data){
     let cardGif = document.createElement('div')
     cardGif.setAttribute('class', 'card-gif');

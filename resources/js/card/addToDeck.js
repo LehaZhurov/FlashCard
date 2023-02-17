@@ -1,7 +1,7 @@
 import { SendRequest } from "../SendRequest"
+import { startLoad, stopLoad } from "../load";
 
-
-export function addToDeck(id){
+export function addToDeck(id) {
     location = "#addCardToDeck";
     let confimAddCardToDeckButton = document.querySelector('#comfim_add_to_deck');
     let aboardAddCardToDeckButton = document.querySelector('#aboard_add_to_deck');
@@ -16,13 +16,11 @@ export function addToDeck(id){
     input.value = id;
 }
 
-function addCardToDeckRequest(){
+async function addCardToDeckRequest() {
     let form = document.querySelector('#add_card_to_deck_form');
     let body = new FormData(form);
-    SendRequest("POST", '/card/addToDeck',body)
-        .then(responce => {
-            location = "#close";
-        }).catch(err => {
-            console.log(err);
-        })
+    startLoad('body', 'Добовляю в колоду')
+    await SendRequest("POST", '/card/addToDeck', body)
+    stopLoad();
+    location = "#close";
 }

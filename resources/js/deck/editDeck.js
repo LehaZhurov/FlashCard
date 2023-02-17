@@ -3,6 +3,7 @@ import { getCardHeader } from "../card/getCardHeader";
 import { getCardBody } from "../card/getCardBody";
 import { getFooterCardFromDeck } from '../card/getFooterCardFromDeck';
 import { getCardsDeck } from '../card/getCardsDeck';
+import { echoCountCardsFormDeck } from './echoCountCardsFromDeck';
 
 let deckBlock = document.querySelector('#decks-view');
 let cardsFromDeck = document.querySelector('#cards-deck-view');
@@ -20,7 +21,7 @@ export async function editDeck(id) {
     let responce = await getCardsDeck(id);
     clearPageDeckCollection();
     appendCardToDeckPageCollection(responce['data']);
-    // echoCardsCounts(responce['pagination']);
+    echoCountCardsFormDeck(responce['data']);
     stopLoad();
 }
 

@@ -1,6 +1,6 @@
 <div id = "decks-view">
     <div>
-        <h1>Колоды 1/15</h1>
+        <h1>Колоды <span id = 'count-deck'></span>/15</h1>
     </div>
     <div id="deck-card-deck" class='deck'>
         <div class="deck-card legend">

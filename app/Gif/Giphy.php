@@ -96,7 +96,7 @@ class Giphy
         } else {
             $src = $srcs->url;
         }
-
+        $necessary = [];
         $necessary['id'] = $searchItem->id;
         $necessary['page_url'] = $searchItem->url;
         $necessary['src'] = $src;
@@ -106,6 +106,7 @@ class Giphy
 
     private function highlightRequiredFromSearchResult(stdClass $searchResult): array
     {
+        $necessary = [];
         foreach ($searchResult->data as $key => $item) {
             $necessary[] = $this->highlightRequiredFromSearchedItem($item);
         }

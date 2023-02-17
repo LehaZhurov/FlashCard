@@ -1,6 +1,7 @@
 import { startLoad, stopLoad } from "../load";
 import { SendRequest } from "../SendRequest";
 import { deleteDeck } from "./deleteDeck";
+import { echoCountDeck } from "./echoCountDecks";
 import { editDeck } from "./editDeck";
 import { fillDeckSelectFromId } from './fillDeckSelect';
 
@@ -13,6 +14,7 @@ export function getDecks(page = 1) {
             clearDeckPage();
             appendDeckToPage(responce['data']);
             fillDeckSelectFromId('select_deck_from_add_card',responce['data']);
+            echoCountDeck(responce['data']);
             stopLoad();
         }).catch(err => {
             console.log(err);

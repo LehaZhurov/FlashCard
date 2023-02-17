@@ -1,5 +1,4 @@
 
-
 export function getCardBody(data){
     let cardText = document.createElement('div');
     cardText.setAttribute('class', 'card-text');

@@ -1,10 +1,10 @@
-<div id='cards-deck-view' style = 'display:none;'>
-    <div class = 'row-between'>
-        <h1 id = 'back-to-decks'><i class='bx bx-left-arrow-alt'></i></h1>
+<div id='cards-deck-view' style='display:none;'>
+    <div class='row-between'>
+        <h1 id='back-to-decks'><i class='bx bx-left-arrow-alt'></i></h1>
         <h1>Карты <span id="count_card_current_deck">0</span>/<span id="count_cards">30</span></h1>
     </div>
-    <div class="center-deck" id = 'cards-deck'>
-        <div class='deck'>
+    <div class="center-deck" >
+        <div class='deck' id='cards-deck'>
             <div class="card legend">
                 <div class="card-gif">
                     <img src="https://media4.giphy.com/media/8IyJweC7qiNu2716vT/giphy.gif?cid=ecf05e478nacvxrqo86h9cfkha7c2d2bcccdfioflaye3lr2&rid=giphy.gif&ct=s"
@@ -99,5 +99,5 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>

@@ -4,7 +4,6 @@ import { updateCollectionPage } from "./updateCardCollection";
 import { getBalance } from "../balance/getBalance";
 import { startLoad, stopLoad } from "../load";
 
-
 export function removeCard(id) {
     console.log(id);
     // let confimCardButton = document.querySelector('#comfim_delete_card');
