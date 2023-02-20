@@ -11,7 +11,9 @@ class DeleteDeckAction
         if(!thisDeckBelongsToTheUserQuery::check($userId, $deckId)){
             throw new Exception('Колода не пренадлежит пользователю');
         }
-        Deck::findOrFail($deckId)->delete();
+        $deck = Deck::findOrFail($deckId);
+        $deck->cards()->detach();
+        $deck->delete();
     }
 
 }

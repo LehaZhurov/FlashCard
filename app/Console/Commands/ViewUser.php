@@ -19,7 +19,7 @@ class ViewUser extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Выводит пользователей';
 
     /**
      * Execute the console command.

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 class AddCardToDeckAction
 {
 
-    public static function execute(int $cardId, int $deckId,int $userId): Collection
+    public static function execute(int $cardId, int $deckId, int $userId): Collection
     {
         $card = Card::findOrFail($cardId);
         $deck = Deck::findOrFail($deckId);

@@ -17,7 +17,8 @@ class DeckFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->word(),
+            'user_id' => User::factory()->create()->id,
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Deck;
 /**
  * App\Models\Card
  *
@@ -33,4 +33,9 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
     use HasFactory;
+
+    public function decks()
+    {
+        return $this->belongsToMany(Deck::class);
+    }
 }

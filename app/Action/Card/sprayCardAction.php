@@ -31,9 +31,10 @@ class SprayCardAction
     public static function execute(int $userId,int $cardId): void
     {
         if(!thisCardBelongsToTheUserQuery::check($userId,$cardId)){
-            throw new Exception('Данная карта(id:'.$cardId.') не пренадлежит переданному пользователю(id:'.$userId.')');
+            throw new Exception('Данная карта(id:'.$cardId.') не пренадлежит пользователю(id:'.$userId.')');
         }
         $card = Card::query()->findOrFail($cardId);
+        $card->decks()->detach();
         $amountОfDustPerCard = [0,200,400,500,1000];
         $card->delete();
         $amount = $amountОfDustPerCard[$card->level];

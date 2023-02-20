@@ -4,12 +4,11 @@ namespace App\Action\Card;
 use App\Action\Word\SearchWordAction;
 use App\Models\Card;
 use App\Queries\Card\getCardFromIdQuery;
-use Auth;
 
 class CreateCardAction
 {
 
-    public static function execute(string $word, string $gif,int $userId): Card
+    public static function execute(string $word, string $gif, int $userId): Card
     {
         $wordId = SearchWordAction::execute($word)->id;
         $card = new Card;

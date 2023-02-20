@@ -19,7 +19,7 @@ class addToTheBalance extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Пополнение баланса пользователя';
 
     /**
      * Execute the console command.

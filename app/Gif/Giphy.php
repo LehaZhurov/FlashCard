@@ -87,7 +87,7 @@ class Giphy
         return $result;
     }
 
-    private function highlightRequiredFromSearchedItem(stdClass $searchItem): array
+    private function highlightRequiredFromSearchedItem(stdClass $searchItem = new stdClass()): array
     {
 
         $srcs = $searchItem->images->original;
