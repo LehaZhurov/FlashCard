@@ -1,0 +1,1 @@
+import{S as t}from"./getCardCollection.3a48e209.js";import{g as o}from"./getDecks.76117365.js";let r=document.querySelector("#create_deck_btn");r.onclick=()=>{let e=document.querySelector("#create_deck_form");e=new FormData(e),a(e)};function a(e){t("POST","/deck/create",e).then(c=>{o(1),location.href="#close"}).catch(c=>{console.log(c)})}
