@@ -15,7 +15,7 @@ use App\Http\Resources\EmptyResource;
 use App\Queries\Card\getCardsUserQuery;
 use Auth;
 use Illuminate\Http\Response;
-
+use Exception;
 class CardController extends Controller
 {
     private $cardPrice = 1000;
@@ -39,14 +39,14 @@ class CardController extends Controller
         return new CardPaginationResource($cards);
     }
 
-    public function delete(int $cardId)
+    public function delete(int $cardId) : EmptyResource
     {
         $userId = Auth::id();
         sprayCardAction::execute($userId, $cardId);
         return new EmptyResource();
     }
 
-    public function addCardToDeck(AddCardToDeckRequest $request)
+    public function addCardToDeck(AddCardToDeckRequest $request) : CardResource
     {
         $request = $request->all();
         $userId = Auth::id();
