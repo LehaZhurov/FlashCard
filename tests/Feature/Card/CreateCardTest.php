@@ -60,7 +60,7 @@ class CreateCardTest extends TestCase
 
     }
 
-    public function test_if_user_balance_less_than_a_10000()
+    public function test_if_user_balance_less_than_a_1000()
     {
         $user = User::factory()->state([
             'balance' => 10,

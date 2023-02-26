@@ -4,11 +4,13 @@ RUN apt-get update --fix-missing \
     && apt-get install -y curl wget zip unzip git \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y \
-		libfreetype6-dev \
-		libjpeg62-turbo-dev \
-		libpng-dev \
-	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-	&& docker-php-ext-install -j$(nproc) gd 
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd 
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
 #PDO
 # Install Postgres PDO
 RUN apt-get install -y libpq-dev \
@@ -17,9 +19,9 @@ RUN apt-get install -y libpq-dev \
 #Zip
 #Install Zip
 RUN apt-get update && \
-     apt-get install -y \
-         libzip-dev \
-         && docker-php-ext-install zip
+    apt-get install -y \
+    libzip-dev \
+    && docker-php-ext-install zip
 # DEPENDENCIES
 RUN apt-get update --fix-missing \
     && apt-get install -y  python \

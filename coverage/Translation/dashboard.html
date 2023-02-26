@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /usr/share/nginx/www/app/Translation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/usr/share/nginx/www/app</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Translation</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SHD.php.html#126">simple_html_dom_node</a></td><td class="text-right">32%</td></tr>
+       <tr><td><a href="SHD.php.html#1388">simple_html_dom</a></td><td class="text-right">51%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SHD.php.html#126">simple_html_dom_node</a></td><td class="text-right">28427</td></tr>
+       <tr><td><a href="SHD.php.html#1388">simple_html_dom</a></td><td class="text-right">3560</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SHD.php.html#149"><abbr title="simple_html_dom_node::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#162"><abbr title="simple_html_dom_node::dump">dump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#183"><abbr title="simple_html_dom_node::dump_node">dump_node</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#236"><abbr title="simple_html_dom_node::parent">parent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#250"><abbr title="simple_html_dom_node::has_child">has_child</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#255"><abbr title="simple_html_dom_node::children">children</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#268"><abbr title="simple_html_dom_node::first_child">first_child</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#276"><abbr title="simple_html_dom_node::last_child">last_child</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#284"><abbr title="simple_html_dom_node::next_sibling">next_sibling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#299"><abbr title="simple_html_dom_node::prev_sibling">prev_sibling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#314"><abbr title="simple_html_dom_node::find_ancestor_tag">find_ancestor_tag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#340"><abbr title="simple_html_dom_node::innertext">innertext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#359"><abbr title="simple_html_dom_node::outertext">outertext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#458"><abbr title="simple_html_dom_node::xmltext">xmltext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#466"><abbr title="simple_html_dom_node::makeup">makeup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#981"><abbr title="simple_html_dom_node::__set">__set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1003"><abbr title="simple_html_dom_node::__isset">__isset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1014"><abbr title="simple_html_dom_node::__unset">__unset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1069"><abbr title="simple_html_dom_node::is_utf8">is_utf8</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1096"><abbr title="simple_html_dom_node::get_display_size">get_display_size</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1181"><abbr title="simple_html_dom_node::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1192"><abbr title="simple_html_dom_node::addClass">addClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1217"><abbr title="simple_html_dom_node::hasClass">hasClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1232"><abbr title="simple_html_dom_node::removeClass">removeClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1257"><abbr title="simple_html_dom_node::getAllAttributes">getAllAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1262"><abbr title="simple_html_dom_node::getAttribute">getAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1267"><abbr title="simple_html_dom_node::setAttribute">setAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1272"><abbr title="simple_html_dom_node::hasAttribute">hasAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1277"><abbr title="simple_html_dom_node::removeAttribute">removeAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1282"><abbr title="simple_html_dom_node::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1289"><abbr title="simple_html_dom_node::removeChild">removeChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1320"><abbr title="simple_html_dom_node::getElementById">getElementById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1325"><abbr title="simple_html_dom_node::getElementsById">getElementsById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1330"><abbr title="simple_html_dom_node::getElementByTagName">getElementByTagName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1335"><abbr title="simple_html_dom_node::getElementsByTagName">getElementsByTagName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1340"><abbr title="simple_html_dom_node::parentNode">parentNode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1345"><abbr title="simple_html_dom_node::childNodes">childNodes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1350"><abbr title="simple_html_dom_node::firstChild">firstChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1355"><abbr title="simple_html_dom_node::lastChild">lastChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1360"><abbr title="simple_html_dom_node::nextSibling">nextSibling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1365"><abbr title="simple_html_dom_node::previousSibling">previousSibling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1370"><abbr title="simple_html_dom_node::hasChildNodes">hasChildNodes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1375"><abbr title="simple_html_dom_node::nodeName">nodeName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1380"><abbr title="simple_html_dom_node::appendChild">appendChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1552"><abbr title="simple_html_dom::load_file">load_file</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1563"><abbr title="simple_html_dom::set_callback">set_callback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1568"><abbr title="simple_html_dom::remove_callback">remove_callback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1573"><abbr title="simple_html_dom::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#1618"><abbr title="simple_html_dom::dump">dump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2138"><abbr title="simple_html_dom::as_text_node">as_text_node</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2270"><abbr title="simple_html_dom::search_noise">search_noise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2282"><abbr title="simple_html_dom::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2287"><abbr title="simple_html_dom::__get">__get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2303"><abbr title="simple_html_dom::childNodes">childNodes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2308"><abbr title="simple_html_dom::firstChild">firstChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2313"><abbr title="simple_html_dom::lastChild">lastChild</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2318"><abbr title="simple_html_dom::createElement">createElement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2323"><abbr title="simple_html_dom::createTextNode">createTextNode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2328"><abbr title="simple_html_dom::getElementById">getElementById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2333"><abbr title="simple_html_dom::getElementsById">getElementsById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2338"><abbr title="simple_html_dom::getElementByTagName">getElementByTagName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2343"><abbr title="simple_html_dom::getElementsByTagName">getElementsByTagName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2348"><abbr title="simple_html_dom::loadFile">loadFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SHD.php.html#2224"><abbr title="simple_html_dom::restore_noise">restore_noise</abbr></a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="SHD.php.html#1460"><abbr title="simple_html_dom::__construct">__construct</abbr></a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="SHD.php.html#783"><abbr title="simple_html_dom_node::match">match</abbr></a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="SHD.php.html#1669"><abbr title="simple_html_dom::parse_charset">parse_charset</abbr></a></td><td class="text-right">35%</td></tr>
+       <tr><td><a href="SHD.php.html#1807"><abbr title="simple_html_dom::read_tag">read_tag</abbr></a></td><td class="text-right">49%</td></tr>
+       <tr><td><a href="SHD.php.html#561"><abbr title="simple_html_dom_node::seek">seek</abbr></a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="SHD.php.html#1019"><abbr title="simple_html_dom_node::convert_text">convert_text</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="SHD.php.html#2173"><abbr title="simple_html_dom::copy_until_char">copy_until_char</abbr></a></td><td class="text-right">63%</td></tr>
+       <tr><td><a href="SHD.php.html#2085"><abbr title="simple_html_dom::parse_attr">parse_attr</abbr></a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="SHD.php.html#967"><abbr title="simple_html_dom_node::__get">__get</abbr></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="SHD.php.html#1585"><abbr title="simple_html_dom::clear">clear</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="SHD.php.html#416"><abbr title="simple_html_dom_node::text">text</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="SHD.php.html#561"><abbr title="simple_html_dom_node::seek">seek</abbr></a></td><td class="text-right">499</td></tr>
+       <tr><td><a href="SHD.php.html#1807"><abbr title="simple_html_dom::read_tag">read_tag</abbr></a></td><td class="text-right">480</td></tr>
+       <tr><td><a href="SHD.php.html#359"><abbr title="simple_html_dom_node::outertext">outertext</abbr></a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="SHD.php.html#1669"><abbr title="simple_html_dom::parse_charset">parse_charset</abbr></a></td><td class="text-right">219</td></tr>
+       <tr><td><a href="SHD.php.html#1096"><abbr title="simple_html_dom_node::get_display_size">get_display_size</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="SHD.php.html#1069"><abbr title="simple_html_dom_node::is_utf8">is_utf8</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="SHD.php.html#183"><abbr title="simple_html_dom_node::dump_node">dump_node</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="SHD.php.html#466"><abbr title="simple_html_dom_node::makeup">makeup</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="SHD.php.html#1289"><abbr title="simple_html_dom_node::removeChild">removeChild</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="SHD.php.html#1192"><abbr title="simple_html_dom_node::addClass">addClass</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="SHD.php.html#783"><abbr title="simple_html_dom_node::match">match</abbr></a></td><td class="text-right">52</td></tr>
+       <tr><td><a href="SHD.php.html#162"><abbr title="simple_html_dom_node::dump">dump</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SHD.php.html#314"><abbr title="simple_html_dom_node::find_ancestor_tag">find_ancestor_tag</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SHD.php.html#981"><abbr title="simple_html_dom_node::__set">__set</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SHD.php.html#1232"><abbr title="simple_html_dom_node::removeClass">removeClass</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SHD.php.html#2287"><abbr title="simple_html_dom::__get">__get</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SHD.php.html#1003"><abbr title="simple_html_dom_node::__isset">__isset</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="SHD.php.html#2224"><abbr title="simple_html_dom::restore_noise">restore_noise</abbr></a></td><td class="text-right">26</td></tr>
+       <tr><td><a href="SHD.php.html#1019"><abbr title="simple_html_dom_node::convert_text">convert_text</abbr></a></td><td class="text-right">23</td></tr>
+       <tr><td><a href="SHD.php.html#284"><abbr title="simple_html_dom_node::next_sibling">next_sibling</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="SHD.php.html#299"><abbr title="simple_html_dom_node::prev_sibling">prev_sibling</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="SHD.php.html#340"><abbr title="simple_html_dom_node::innertext">innertext</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="SHD.php.html#1217"><abbr title="simple_html_dom_node::hasClass">hasClass</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="SHD.php.html#2270"><abbr title="simple_html_dom::search_noise">search_noise</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="SHD.php.html#1460"><abbr title="simple_html_dom::__construct">__construct</abbr></a></td><td class="text-right">17</td></tr>
+       <tr><td><a href="SHD.php.html#2085"><abbr title="simple_html_dom::parse_attr">parse_attr</abbr></a></td><td class="text-right">14</td></tr>
+       <tr><td><a href="SHD.php.html#255"><abbr title="simple_html_dom_node::children">children</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="SHD.php.html#416"><abbr title="simple_html_dom_node::text">text</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="SHD.php.html#967"><abbr title="simple_html_dom_node::__get">__get</abbr></a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="SHD.php.html#1585"><abbr title="simple_html_dom::clear">clear</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="SHD.php.html#236"><abbr title="simple_html_dom_node::parent">parent</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#268"><abbr title="simple_html_dom_node::first_child">first_child</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#276"><abbr title="simple_html_dom_node::last_child">last_child</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#1014"><abbr title="simple_html_dom_node::__unset">__unset</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#1181"><abbr title="simple_html_dom_node::save">save</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#1282"><abbr title="simple_html_dom_node::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#1552"><abbr title="simple_html_dom::load_file">load_file</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#1573"><abbr title="simple_html_dom::save">save</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#2138"><abbr title="simple_html_dom::as_text_node">as_text_node</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SHD.php.html#2173"><abbr title="simple_html_dom::copy_until_char">copy_until_char</abbr></a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.23</a> using <a href="https://secure.php.net/" target="_top">PHP 8.1.16</a> and <a href="https://phpunit.de/">PHPUnit 9.5.27</a> at Sun Feb 26 14:03:13 UTC 2023.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js" type="text/javascript"></script>
+  <script src="../_js/d3.min.js" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,0,1,0,1,0,0,0,1,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([63,0,1,2,1,1,2,2,1,2,4,17], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[32.73703041144901,304,"<a href=\"SHD.php.html#126\">simple_html_dom_node<\/a>"],[51.627906976744185,173,"<a href=\"SHD.php.html#1388\">simple_html_dom<\/a>"],[97.87234042553192,15,"<a href=\"Translator.php.html#9\">App\\Translation\\Translator<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"SHD.php.html#138\">simple_html_dom_node::__construct<\/a>"],[100,1,"<a href=\"SHD.php.html#144\">simple_html_dom_node::__destruct<\/a>"],[0,1,"<a href=\"SHD.php.html#149\">simple_html_dom_node::__toString<\/a>"],[100,1,"<a href=\"SHD.php.html#154\">simple_html_dom_node::clear<\/a>"],[0,6,"<a href=\"SHD.php.html#162\">simple_html_dom_node::dump<\/a>"],[0,10,"<a href=\"SHD.php.html#183\">simple_html_dom_node::dump_node<\/a>"],[0,2,"<a href=\"SHD.php.html#236\">simple_html_dom_node::parent<\/a>"],[0,1,"<a href=\"SHD.php.html#250\">simple_html_dom_node::has_child<\/a>"],[0,3,"<a href=\"SHD.php.html#255\">simple_html_dom_node::children<\/a>"],[0,2,"<a href=\"SHD.php.html#268\">simple_html_dom_node::first_child<\/a>"],[0,2,"<a href=\"SHD.php.html#276\">simple_html_dom_node::last_child<\/a>"],[0,4,"<a href=\"SHD.php.html#284\">simple_html_dom_node::next_sibling<\/a>"],[0,4,"<a href=\"SHD.php.html#299\">simple_html_dom_node::prev_sibling<\/a>"],[0,6,"<a href=\"SHD.php.html#314\">simple_html_dom_node::find_ancestor_tag<\/a>"],[0,4,"<a href=\"SHD.php.html#340\">simple_html_dom_node::innertext<\/a>"],[0,17,"<a href=\"SHD.php.html#359\">simple_html_dom_node::outertext<\/a>"],[88.23529411764706,11,"<a href=\"SHD.php.html#416\">simple_html_dom_node::text<\/a>"],[0,1,"<a href=\"SHD.php.html#458\">simple_html_dom_node::xmltext<\/a>"],[0,9,"<a href=\"SHD.php.html#466\">simple_html_dom_node::makeup<\/a>"],[100,14,"<a href=\"SHD.php.html#509\">simple_html_dom_node::find<\/a>"],[53.65853658536586,66,"<a href=\"SHD.php.html#561\">simple_html_dom_node::seek<\/a>"],[25,10,"<a href=\"SHD.php.html#783\">simple_html_dom_node::match<\/a>"],[91.66666666666666,22,"<a href=\"SHD.php.html#828\">simple_html_dom_node::parse_selector<\/a>"],[71.42857142857143,7,"<a href=\"SHD.php.html#967\">simple_html_dom_node::__get<\/a>"],[0,6,"<a href=\"SHD.php.html#981\">simple_html_dom_node::__set<\/a>"],[0,5,"<a href=\"SHD.php.html#1003\">simple_html_dom_node::__isset<\/a>"],[0,2,"<a href=\"SHD.php.html#1014\">simple_html_dom_node::__unset<\/a>"],[57.14285714285714,12,"<a href=\"SHD.php.html#1019\">simple_html_dom_node::convert_text<\/a>"],[0,13,"<a href=\"SHD.php.html#1069\">simple_html_dom_node::is_utf8<\/a>"],[0,14,"<a href=\"SHD.php.html#1096\">simple_html_dom_node::get_display_size<\/a>"],[0,2,"<a href=\"SHD.php.html#1181\">simple_html_dom_node::save<\/a>"],[0,7,"<a href=\"SHD.php.html#1192\">simple_html_dom_node::addClass<\/a>"],[0,4,"<a href=\"SHD.php.html#1217\">simple_html_dom_node::hasClass<\/a>"],[0,6,"<a href=\"SHD.php.html#1232\">simple_html_dom_node::removeClass<\/a>"],[0,1,"<a href=\"SHD.php.html#1257\">simple_html_dom_node::getAllAttributes<\/a>"],[0,1,"<a href=\"SHD.php.html#1262\">simple_html_dom_node::getAttribute<\/a>"],[0,1,"<a href=\"SHD.php.html#1267\">simple_html_dom_node::setAttribute<\/a>"],[0,1,"<a href=\"SHD.php.html#1272\">simple_html_dom_node::hasAttribute<\/a>"],[0,1,"<a href=\"SHD.php.html#1277\">simple_html_dom_node::removeAttribute<\/a>"],[0,2,"<a href=\"SHD.php.html#1282\">simple_html_dom_node::remove<\/a>"],[0,8,"<a href=\"SHD.php.html#1289\">simple_html_dom_node::removeChild<\/a>"],[0,1,"<a href=\"SHD.php.html#1320\">simple_html_dom_node::getElementById<\/a>"],[0,1,"<a href=\"SHD.php.html#1325\">simple_html_dom_node::getElementsById<\/a>"],[0,1,"<a href=\"SHD.php.html#1330\">simple_html_dom_node::getElementByTagName<\/a>"],[0,1,"<a href=\"SHD.php.html#1335\">simple_html_dom_node::getElementsByTagName<\/a>"],[0,1,"<a href=\"SHD.php.html#1340\">simple_html_dom_node::parentNode<\/a>"],[0,1,"<a href=\"SHD.php.html#1345\">simple_html_dom_node::childNodes<\/a>"],[0,1,"<a href=\"SHD.php.html#1350\">simple_html_dom_node::firstChild<\/a>"],[0,1,"<a href=\"SHD.php.html#1355\">simple_html_dom_node::lastChild<\/a>"],[0,1,"<a href=\"SHD.php.html#1360\">simple_html_dom_node::nextSibling<\/a>"],[0,1,"<a href=\"SHD.php.html#1365\">simple_html_dom_node::previousSibling<\/a>"],[0,1,"<a href=\"SHD.php.html#1370\">simple_html_dom_node::hasChildNodes<\/a>"],[0,1,"<a href=\"SHD.php.html#1375\">simple_html_dom_node::nodeName<\/a>"],[0,1,"<a href=\"SHD.php.html#1380\">simple_html_dom_node::appendChild<\/a>"],[21.428571428571427,5,"<a href=\"SHD.php.html#1460\">simple_html_dom::__construct<\/a>"],[100,1,"<a href=\"SHD.php.html#1493\">simple_html_dom::__destruct<\/a>"],[95,3,"<a href=\"SHD.php.html#1498\">simple_html_dom::load<\/a>"],[0,2,"<a href=\"SHD.php.html#1552\">simple_html_dom::load_file<\/a>"],[0,1,"<a href=\"SHD.php.html#1563\">simple_html_dom::set_callback<\/a>"],[0,1,"<a href=\"SHD.php.html#1568\">simple_html_dom::remove_callback<\/a>"],[0,2,"<a href=\"SHD.php.html#1573\">simple_html_dom::save<\/a>"],[100,1,"<a href=\"SHD.php.html#1580\">simple_html_dom::find<\/a>"],[81.25,7,"<a href=\"SHD.php.html#1585\">simple_html_dom::clear<\/a>"],[0,1,"<a href=\"SHD.php.html#1618\">simple_html_dom::dump<\/a>"],[100,2,"<a href=\"SHD.php.html#1623\">simple_html_dom::prepare<\/a>"],[100,4,"<a href=\"SHD.php.html#1648\">simple_html_dom::parse<\/a>"],[35.82089552238806,27,"<a href=\"SHD.php.html#1669\">simple_html_dom::parse_charset<\/a>"],[49.31506849315068,57,"<a href=\"SHD.php.html#1807\">simple_html_dom::read_tag<\/a>"],[69.23076923076923,11,"<a href=\"SHD.php.html#2085\">simple_html_dom::parse_attr<\/a>"],[100,2,"<a href=\"SHD.php.html#2129\">simple_html_dom::link_nodes<\/a>"],[0,2,"<a href=\"SHD.php.html#2138\">simple_html_dom::as_text_node<\/a>"],[100,2,"<a href=\"SHD.php.html#2148\">simple_html_dom::skip<\/a>"],[100,3,"<a href=\"SHD.php.html#2154\">simple_html_dom::copy_skip<\/a>"],[100,2,"<a href=\"SHD.php.html#2164\">simple_html_dom::copy_until<\/a>"],[63.63636363636363,4,"<a href=\"SHD.php.html#2173\">simple_html_dom::copy_until_char<\/a>"],[94.44444444444444,6,"<a href=\"SHD.php.html#2192\">simple_html_dom::remove_noise<\/a>"],[16.666666666666664,6,"<a href=\"SHD.php.html#2224\">simple_html_dom::restore_noise<\/a>"],[0,4,"<a href=\"SHD.php.html#2270\">simple_html_dom::search_noise<\/a>"],[0,1,"<a href=\"SHD.php.html#2282\">simple_html_dom::__toString<\/a>"],[0,6,"<a href=\"SHD.php.html#2287\">simple_html_dom::__get<\/a>"],[0,1,"<a href=\"SHD.php.html#2303\">simple_html_dom::childNodes<\/a>"],[0,1,"<a href=\"SHD.php.html#2308\">simple_html_dom::firstChild<\/a>"],[0,1,"<a href=\"SHD.php.html#2313\">simple_html_dom::lastChild<\/a>"],[0,1,"<a href=\"SHD.php.html#2318\">simple_html_dom::createElement<\/a>"],[0,1,"<a href=\"SHD.php.html#2323\">simple_html_dom::createTextNode<\/a>"],[0,1,"<a href=\"SHD.php.html#2328\">simple_html_dom::getElementById<\/a>"],[0,1,"<a href=\"SHD.php.html#2333\">simple_html_dom::getElementsById<\/a>"],[0,1,"<a href=\"SHD.php.html#2338\">simple_html_dom::getElementByTagName<\/a>"],[0,1,"<a href=\"SHD.php.html#2343\">simple_html_dom::getElementsByTagName<\/a>"],[0,1,"<a href=\"SHD.php.html#2348\">simple_html_dom::loadFile<\/a>"],[100,1,"<a href=\"Translator.php.html#15\">App\\Translation\\Translator::__construct<\/a>"],[100,1,"<a href=\"Translator.php.html#20\">App\\Translation\\Translator::getPage<\/a>"],[100,1,"<a href=\"Translator.php.html#31\">App\\Translation\\Translator::getTranslationHTMLPage<\/a>"],[96.66666666666667,10,"<a href=\"Translator.php.html#40\">App\\Translation\\Translator::pars<\/a>"],[100,1,"<a href=\"Translator.php.html#84\">App\\Translation\\Translator::startTranslate<\/a>"],[100,1,"<a href=\"Translator.php.html#91\">App\\Translation\\Translator::translate<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
