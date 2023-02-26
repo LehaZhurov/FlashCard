@@ -31,6 +31,6 @@ class addToTheBalance extends Command
         $userId = readline('user_id:');
         $dust = readline('dustCount:');
         addToTheBalanceAction::execute((int) $userId, (int) $dust);
-        echo "Баланс пользователя(".$userId.") на".$userId.PHP_EOL;
+        echo "Баланс пользователя(".$userId.") на ".$dust." увеличен".PHP_EOL;
     }
 }
