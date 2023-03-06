@@ -49,8 +49,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "test": [
+        "test_report": [
             "./vendor/bin/phpunit --coverage-html coverage"
+        ],
+        "unit" : [
+            "@php artisan test --testsuite=Feature"
         ]
     },
     "extra": {

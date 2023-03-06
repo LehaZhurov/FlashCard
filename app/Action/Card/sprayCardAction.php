@@ -4,6 +4,8 @@ namespace App\Action\Card;
 use App\Action\User\addToTheBalanceAction;
 use App\Models\Card;
 use App\Queries\Card\thisCardBelongsToTheUserQuery;
+use Exception;  
+
 class SprayCardAction
 {
 
@@ -28,17 +30,17 @@ class SprayCardAction
 'стоимость при распыление' => 1000,
  */
 
-    public static function execute(int $userId,int $cardId): void
+    public static function execute(int $userId = 0, int $cardId): void
     {
-        if(!thisCardBelongsToTheUserQuery::check($userId,$cardId)){
-            throw new Exception('Данная карта(id:'.$cardId.') не пренадлежит пользователю(id:'.$userId.')');
+        if (!thisCardBelongsToTheUserQuery::check($userId, $cardId)) {
+            throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');
         }
         $card = Card::query()->findOrFail($cardId);
         $card->decks()->detach();
-        $amountОfDustPerCard = [0,200,400,500,1000];
+        $amountОfDustPerCard = [0, 200, 400, 500, 1000];
         $card->delete();
         $amount = $amountОfDustPerCard[$card->level];
-        addToTheBalanceAction::execute($card->user_id,$amount);
+        addToTheBalanceAction::execute($card->user_id, $amount);
     }
 
 }

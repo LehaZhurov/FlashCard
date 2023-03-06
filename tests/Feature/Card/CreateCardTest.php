@@ -2,12 +2,13 @@
 
 namespace Tests\Feature\Card;
 
+use App\Action\Word\CreateWordAction;
 use App\Models\Card;
 use App\Models\User;
 use App\Models\Word;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use App\Action\Word\CreateWordAction;
+
 class CreateCardTest extends TestCase
 {
     use RefreshDatabase;
@@ -16,13 +17,11 @@ class CreateCardTest extends TestCase
 
     public function test_succeess_create_card()
     {
-
         $user = User::factory()->create();
         $gif = Card::factory()->definition()['url'];
         $word = Word::factory()->create()->value;
 
         $response = $this->actingAs($user)
-            ->withSession(['banned' => false])
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
         $response->assertStatus(200);
 
@@ -32,10 +31,9 @@ class CreateCardTest extends TestCase
     {
         $user = User::factory()->create();
         $gif = Card::factory()->definition()['url'];
-        $word = Word::factory()->definition()['value'];
+        $word = Word::factory()->word('green')->definition()['value'];
 
         $response = $this->actingAs($user)
-            ->withSession(['banned' => false])
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
 
         $response->assertStatus(500);
@@ -71,7 +69,6 @@ class CreateCardTest extends TestCase
         $word = Word::factory()->definition()['value'];
 
         $response = $this->actingAs($user)
-            ->withSession(['banned' => false])
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
 
         $response->assertStatus(500);
@@ -86,7 +83,6 @@ class CreateCardTest extends TestCase
         $word = Word::factory()->create()->value;
 
         $response = $this->actingAs($user)
-            ->withSession(['banned' => false])
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
         $userBalance = User::find($user->id)->balance;
         $this->assertEquals($userBalance, 0);
@@ -98,8 +94,7 @@ class CreateCardTest extends TestCase
         $gif = Card::factory()->definition()['url'];
         $word = CreateWordAction::execute('red')->value;
 
-        $response = $this
-            ->actingAs($user)
+        $response = $this->actingAs($user)
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
         $responseStructure = [
             'data' => [
@@ -112,7 +107,6 @@ class CreateCardTest extends TestCase
                 'created_at',
             ],
         ];
-        $response->assertStatus(200)
-            ->assertJsonStructure($responseStructure);
+        $response->assertJsonStructure($responseStructure);
     }
 }

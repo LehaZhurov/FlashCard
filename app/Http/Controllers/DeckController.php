@@ -18,7 +18,8 @@ class DeckController extends Controller
     public function create(DeckRequest $request)
     {
         $name = $request->get('name');
-        $deck = CreateDeckAction::execute($name, Auth::id());
+        $userId = Auth::id();
+        $deck = CreateDeckAction::execute($name, $userId);
         return new DeckResource($deck);
     }
 

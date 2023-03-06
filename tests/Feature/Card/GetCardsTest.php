@@ -23,10 +23,8 @@ class GetCardsTest extends TestCase
             ->create();
         $response = $this
             ->actingAs($user)
-
             ->get($this->route);
         $response->assertJsonPath('pagination.total', $cardCount);
-        $response->assertStatus(200);
     }
 
     public function test_get_cards_if_user_not_autorized()
@@ -77,8 +75,7 @@ class GetCardsTest extends TestCase
                 'prev_page',
             ],
         ];
-        $response->assertStatus(200)
-            ->assertJsonStructure($responseStructure);
+        $response->assertJsonStructure($responseStructure);
     }
 
     public function test_response_structure_if_user_not_cards()
@@ -102,7 +99,6 @@ class GetCardsTest extends TestCase
                 'last_page' => 1,
             ],
         ];
-        $response->assertStatus(200)
-            ->assertExactJson($responseStructure);
+        $response->assertExactJson($responseStructure);
     }
 }

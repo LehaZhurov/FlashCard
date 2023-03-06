@@ -10,6 +10,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class WordFactory extends Factory
 {
+
+    public $word = 'test';
+    public function word(string $word){
+        $this->word = $word;
+        return $this;
+    }
     /**
      * Define the model's default state.
      *
@@ -17,10 +23,9 @@ class WordFactory extends Factory
      */
     public function definition()
     {
-        $word = fake()->word();
-        $translate = Translator::translate($word);
+        $translate = Translator::translate($this->word);
         return [
-            'value' => $word,
+            'value' => $this->word,
             'data' => json_encode($translate, true),
         ];
     }
