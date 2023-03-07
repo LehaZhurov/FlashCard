@@ -12,6 +12,7 @@ use App\Http\Resources\Card\CardResource;
 use App\Http\Resources\EmptyResource;
 use App\Queries\Card\getCardsUserQuery;
 use Auth;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
 class CardController extends Controller
@@ -33,11 +34,11 @@ class CardController extends Controller
 
     public function delete(int $cardId): EmptyResource
     {
-        sprayCardAction::execute(Auth::id(), $сardId);
+        sprayCardAction::execute(Auth::id(), $cardId);
         return new EmptyResource();
     }
 
-    public function addCardToDeck(AddCardToDeckRequest $request): CardResource
+    public function addCardToDeck(AddCardToDeckRequest $request): AnonymousResourceCollection
     {
         $requestCollection = $request->collect();
         $requestCollection->put('user_id', Auth::id());

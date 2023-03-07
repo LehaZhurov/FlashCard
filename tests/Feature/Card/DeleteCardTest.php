@@ -68,4 +68,16 @@ class DeleteCardTest extends TestCase
         $response->assertStatus(500);
     }
 
+    public function test_response_structure()
+    {
+        $user = User::factory()->create();
+        $card = Card::factory()->state([
+            'user_id' => $user->id,
+        ])->create();
+        $response = $this->actingAs($user)->get($this->route . '/' . $card->id);
+        $responseStructure = [
+            'data'
+        ];
+        $response->assertJsonStructure($responseStructure);
+    }
 }

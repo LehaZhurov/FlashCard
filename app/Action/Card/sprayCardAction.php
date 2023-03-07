@@ -30,7 +30,7 @@ class SprayCardAction
 'стоимость при распыление' => 1000,
  */
 
-    public static function execute(int $userId = 0, int $cardId): void
+    public static function execute(int $userId, int $cardId): void
     {
         if (!thisCardBelongsToTheUserQuery::check($userId, $cardId)) {
             throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');

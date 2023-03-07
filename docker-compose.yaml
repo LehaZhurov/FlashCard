@@ -27,11 +27,23 @@ services:
     ports:
           - 5432:5432
     environment:
-      POSTGRES_DB: ejournal
+      POSTGRES_DB: encard
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
+  postgres_tests:
+    image: postgres:10.1
+    container_name: encard_db_test
+    restart: always
+    ports:
+          - 5433:5433
+    environment:
+      POSTGRES_DB: encard_test
+      POSTGRES_USER: tester
+      POSTGRES_PASSWORD: tester
+    volumes:
+      - ./postgres_test/data:/var/lib/postgresql/data
   adminer:
     container_name: postgres-adminer
     image: adminer

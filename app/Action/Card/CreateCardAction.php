@@ -2,11 +2,12 @@
 namespace App\Action\Card;
 
 use App\Action\User\CanBeWrittenOffFromTheBalanceAction;
+use App\Action\User\takeAwayFromTheBalanceAction;
 use App\Action\Word\SearchWordAction;
 use App\Models\Card;
 use App\Queries\Card\getCardFromIdQuery;
 use Illuminate\Support\Collection;
-use App\Action\User\takeAwayFromTheBalanceAction;
+
 class CreateCardAction
 {
 

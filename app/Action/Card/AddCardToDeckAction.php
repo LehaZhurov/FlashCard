@@ -4,6 +4,7 @@ namespace App\Action\Card;
 use App\Models\Card;
 use App\Models\Deck;
 use App\Queries\Card\getCardsFromDeckQuery;
+use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as SupportCollection;
 
