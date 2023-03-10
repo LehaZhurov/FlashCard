@@ -96,4 +96,14 @@ class ProfileTest extends TestCase
 
         $this->assertNotNull($user->fresh());
     }
+
+    public function test_get_balance()
+    {
+        $user = User::factory()->create();
+
+        $response = $this
+            ->actingAs($user)
+            ->get('/profile/balance');
+        $this->assertEquals($response['data']['balance'], $user->balance);
+    }
 }

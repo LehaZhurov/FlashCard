@@ -6,7 +6,7 @@ use App\Models\Deck;
 class CreateDeckAction
 {
 
-    public static function execute(string $name,int $userId): Deck
+    public static function execute(string $name, int $userId): Deck
     {
         $deck = new Deck();
         $deck->name = $name;

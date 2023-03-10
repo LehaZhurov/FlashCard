@@ -4,7 +4,7 @@ namespace App\Action\Card;
 use App\Action\User\addToTheBalanceAction;
 use App\Models\Card;
 use App\Queries\Card\thisCardBelongsToTheUserQuery;
-use Exception;  
+use Exception;
 
 class SprayCardAction
 {
