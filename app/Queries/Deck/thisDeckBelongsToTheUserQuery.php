@@ -8,8 +8,8 @@ class thisDeckBelongsToTheUserQuery
 
     public static function check(int $userId, int $deckId): bool
     {
-        $card = Deck::findOrFail($deckId)->first();
-        if ($card->user_id == $userId) {
+        $deck = Deck::findOrFail($deckId)->first();
+        if ($deck->user_id == $userId) {
             return true;
         }
         return false;

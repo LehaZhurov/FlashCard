@@ -70,7 +70,7 @@ class GiphyTest extends TestCase
 
     public function test_random_gif()
     {
-        $result = Giphy::newClient()->randomStiker('add');
+        $result = Giphy::newClient()->randomGif('add');
         $this->assertIsArray($result);
         $this->assertIsString($result['id']);
         $this->assertIsString($result['page_url']);

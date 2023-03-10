@@ -12,6 +12,7 @@ use App\Http\Resources\EmptyResource;
 use App\Queries\Card\getCardsFromDeckQuery;
 use App\Queries\Deck\getDecksUserQuery;
 use Auth;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class DeckController extends Controller
 {
@@ -37,7 +38,7 @@ class DeckController extends Controller
         return new EmptyResource();
     }
 
-    public function getCards($deckId)
+    public function getCards($deckId): AnonymousResourceCollection
     {
         $userId = Auth::id();
         $cards = getCardsFromDeckQuery::find($userId, $deckId);

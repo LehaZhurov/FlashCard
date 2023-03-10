@@ -2,8 +2,9 @@
 namespace App\Queries\Card;
 
 use App\Models\Deck;
-use Illuminate\Support\Collection;
 use App\Queries\Deck\thisDeckBelongsToTheUserQuery;
+use Illuminate\Support\Collection;
+
 class getCardsFromDeckQuery
 {
 
@@ -21,7 +22,7 @@ class getCardsFromDeckQuery
                 'cards.user_id', 'cards.created_at', 'cards.repeats',
                 'words.value', 'words.data'
             )
-            ->orderBy('cards.id', 'DESC');;
+            ->orderBy('cards.id', 'DESC');
         return $deck->get();
     }
 
