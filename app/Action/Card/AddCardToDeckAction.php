@@ -13,13 +13,17 @@ class AddCardToDeckAction
 
     public static function execute(SupportCollection $collection): Collection
     {
-        $card = Card::findOrFail($collection->get('card_id'));
-        $deck = Deck::findOrFail($collection->get('deck_id'));
-        if ($deck->user_id != $collection->get('user_id')) {
+        $userId = $collection->get('user_id');
+        $deckId = $collection->get('deck_id');
+        $cardId = $collection->get('card_id');
+
+        $card = Card::findOrFail($cardId);
+        $deck = Deck::findOrFail($deckId);
+        if ($deck->user_id != $userId) {
             throw new Exception('Колода не принадлежит пользователю');
         }
         $deck->cards()->attach($card);
-        return getCardsFromDeckQuery::find($collection->get('user_id'), $collection->get('deck_id'));
+        return getCardsFromDeckQuery::find($userId, $deckId);
     }
 
 }

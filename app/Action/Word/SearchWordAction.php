@@ -10,7 +10,6 @@ class SearchWordAction
     {
         $word = preg_replace('/\s+/', '_', $word);
         return Word::where('value', '=', $word)->get()->first();
-
     }
 
 }

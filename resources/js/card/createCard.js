@@ -79,7 +79,7 @@ function awaitTranslateIndicator() {
 
 
 async function getGif(word) {
-    await SendRequest("GET", '/gif/search/' + word)
+    await SendRequest("GET", 'api/gif/search/' + word)
         .then(responce => {
             appendGif(responce['data']);
             card['gifs'] = responce['data'];

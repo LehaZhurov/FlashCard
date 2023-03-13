@@ -4,7 +4,7 @@ namespace App\Http\Resources\Gif;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class GIfResource extends JsonResource
+class GIFResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

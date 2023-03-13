@@ -20,7 +20,7 @@ class DeckController extends Controller
     {
         $name = $request->get('name');
         $userId = Auth::id();
-        $deck = CreateDeckAction::execute($name, $userId);
+        $deck = CreateDeckAction::execute($userId, $name);
         return new DeckResource($deck);
     }
 

@@ -13,19 +13,23 @@ class CreateCardAction
 
     public static function execute(Collection $collection): Card
     {
+        $userId = $collection->get('user_id');
+        $word = $collection->get('word');
+        $gif = $collection->get('gif');
         $cardPrice = 1000;
-        if (!CanBeWrittenOffFromTheBalanceAction::execute($collection->get('user_id'), $cardPrice)) {
+        $wordId = SearchWordAction::execute($word)->id;
+
+        if (!CanBeWrittenOffFromTheBalanceAction::execute($userId, $cardPrice)) {
             throw new Exception('Не достаточно пыли');
         }
 
-        $wordId = SearchWordAction::execute($collection->get('word'))->id;
         $card = new Card;
-        $card->url = $collection->get('gif');
-        $card->user_id = $collection->get('user_id');
+        $card->url = $gif;
+        $card->user_id = $userId;
         $card->word_id = $wordId;
         $card->save();
 
-        takeAwayFromTheBalanceAction::execute($collection->get('user_id'), $cardPrice);
+        takeAwayFromTheBalanceAction::execute($userId, $cardPrice);
 
         return getCardFromIdQuery::find($card->id);
     }

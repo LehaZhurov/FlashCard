@@ -12,7 +12,7 @@ class Translator
     private $translate = ['dictionary' => [], 'translate' => [], 'powered' => 'deepl.com'];
     private $devtoolsUrl = "ws://chrome:3000/";
 
-    public function __construct()
+    function __construct()
     {
         require_once 'SHD.php';
     }
@@ -37,7 +37,7 @@ class Translator
         return $html;
     }
 
-    public function pars(string $html): void
+    private function pars(string $html): void
     {
         $html = str_get_html($html);
         $i = 0;
@@ -81,7 +81,7 @@ class Translator
         }
     }
 
-    public function startTranslate(string $word, string $sourceLang = 'en', string $targetLang = 'ru'): array
+    private function startTranslate(string $word, string $sourceLang = 'en', string $targetLang = 'ru'): array
     {
         $html = $this->getTranslationHTMLPage($word, $sourceLang, $targetLang);
         $this->pars($html);

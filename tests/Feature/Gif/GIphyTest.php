@@ -16,6 +16,7 @@ class GiphyTest extends TestCase
         $index = rand(0,($count-1));
         $this->assertEquals($count, count($result));
         $this->assertIsArray($result);
+        $this->assertIsArray($result[$index]);
         $this->assertIsString($result[$index]['id']);
         $this->assertIsString($result[$index]['page_url']);
         $this->assertIsString($result[$index]['src']);
@@ -29,6 +30,7 @@ class GiphyTest extends TestCase
         $index = rand(0,($count-1));
         $this->assertEquals($count, count($result));
         $this->assertIsArray($result);
+        $this->assertIsArray($result[$index]);
         $this->assertIsString($result[$index]['id']);
         $this->assertIsString($result[$index]['page_url']);
         $this->assertIsString($result[$index]['src']);
@@ -42,6 +44,7 @@ class GiphyTest extends TestCase
         $index = rand(0,($count-1));
         $this->assertEquals($count, count($result));
         $this->assertIsArray($result);
+        $this->assertIsArray($result[$index]);
         $this->assertIsString($result[$index]['id']);
         $this->assertIsString($result[$index]['page_url']);
         $this->assertIsString($result[$index]['src']);

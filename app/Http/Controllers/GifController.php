@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gif\Giphy;
-use App\Http\Resources\Gif\GifResource;
+use App\Http\Resources\Gif\GIFResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class GifController extends Controller
@@ -12,13 +12,13 @@ class GifController extends Controller
     public function search(string $word, int $limit = 25, int $offset = 0, string $lang = "en"): AnonymousResourceCollection
     {
         $gifs = Giphy::newClient()->generalSearch($word, $limit, $offset, $lang);
-        return GifResource::collection($gifs);
+        return GIFResource::collection($gifs);
     }
 
-    public function random(string $tag = ''): GifResource
+    public function random(string $tag = ''): GIFResource
     {
         $gif = Giphy::newClient()->random($tag);
-        return new GifResource($gif);
+        return new GIFResource($gif);
     }
 
 }
