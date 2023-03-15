@@ -1,9 +1,9 @@
 <?php
 namespace App\Action\Card;
 
-use App\Action\User\addToTheBalanceAction;
+use App\Action\User\AddToTheBalanceAction;
 use App\Models\Card;
-use App\Queries\Card\thisCardBelongsToTheUserQuery;
+use App\Verification\Card\ThisCardBelongsToTheUserQuery;
 use Exception;
 
 class SprayCardAction
@@ -32,15 +32,19 @@ class SprayCardAction
 
     public static function execute(int $userId, int $cardId): void
     {
-        if (!thisCardBelongsToTheUserQuery::check($userId, $cardId)) {
+
+        $card = Card::query()->findOrFail($cardId);
+
+        if (!ThisCardBelongsToTheUserQuery::check($card, $userId)) {
             throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');
         }
-        $card = Card::query()->findOrFail($cardId);
-        $card->decks()->detach();
-        $amountОfDustPerCard = [0, 200, 400, 500, 1000];
+
+        $card->decks()->detach($card);
         $card->delete();
+
+        $amountОfDustPerCard = [0, 200, 400, 500, 1000];
         $amount = $amountОfDustPerCard[$card->level];
-        addToTheBalanceAction::execute($card->user_id, $amount);
+        AddToTheBalanceAction::execute($card->user_id, $amount);
     }
 
 }

@@ -1,12 +1,12 @@
 <?php
-namespace App\Action\User;
+namespace App\Verification\User;
 
 use App\Models\User;
 
-class CanBeWrittenOffFromTheBalanceAction
+class CanBeWrittenOffFromTheBalance
 {
 
-    public static function execute(int $id, int $value): bool
+    public static function check(int $id, int $value): bool
     {
         $user = User::find($id);
         if (($user->balance - $value) < 0) {

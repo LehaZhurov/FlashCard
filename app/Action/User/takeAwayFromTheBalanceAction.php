@@ -3,7 +3,7 @@ namespace App\Action\User;
 
 use App\Models\User;
 
-class takeAwayFromTheBalanceAction
+class TakeAwayFromTheBalanceAction
 {
 
     public static function execute(int $id, int $value): User

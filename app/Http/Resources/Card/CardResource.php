@@ -16,6 +16,7 @@ class CardResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'deck_id' => $this->deck_id,
             'src' => $this->url,
             'word' => str_replace('_',' ',$this->value),
             'info' => json_decode($this->data),

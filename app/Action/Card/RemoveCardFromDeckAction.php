@@ -3,12 +3,14 @@ namespace App\Action\Card;
 
 use App\Models\Card;
 use App\Models\Deck;
-use App\Queries\Card\getCardsFromDeckQuery;
+use App\Queries\Card\GetCardsFromDeckQuery;
+use App\Verification\Deck\ThisCardFromDeck;
+use App\Verification\Deck\ThisDeckBelongsToTheUser;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as SupportCollection;
 
-class DeleteCardInDeckAction
+class RemoveCardFromDeckAction
 {
 
     public static function execute(SupportCollection $collection): Collection
@@ -16,17 +18,19 @@ class DeleteCardInDeckAction
         $userId = $collection->get('user_id');
         $deckId = $collection->get('deck_id');
         $cardId = $collection->get('card_id');
-
         $card = Card::findOrFail($cardId);
         $deck = Deck::findOrFail($deckId);
-        if ($deck->user_id != $userId) {
+
+        if (!ThisDeckBelongsToTheUser::check($deck, $userId)) {
             throw new Exception('Колода не принадлежит пользователю');
         }
-        if (!$deck->card->contains($card)) {
+        if (!ThisCardFromDeck::check($deck, $card)) {
             throw new Exception('Данная карта(' . $cardId . ') не из колоды(' . $deckId . ')');
         }
+
         $deck->cards()->detach($card);
-        return getCardsFromDeckQuery::find($userId, $deckId);
+
+        return GetCardsFromDeckQuery::find($userId, $deckId);
     }
 
 }

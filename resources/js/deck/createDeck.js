@@ -1,7 +1,6 @@
 import { SendRequest } from "../SendRequest";
 import { getDecks } from "./getDecks";
-
-
+import { startLoad,stopLoad } from "../load";
 let createDeckBtn = document.querySelector('#create_deck_btn');
 createDeckBtn.onclick = () =>{
     let data = document.querySelector('#create_deck_form')
@@ -10,8 +9,10 @@ createDeckBtn.onclick = () =>{
 }
 
 function saveNewDeck(data){
+    startLoad('body','Создаем колоду')
     SendRequest("POST", '/deck/create',data)
         .then(responce => {
+            stopLoad('body','Готово')
             getDecks(1);
             location.href = '#close';
         }).catch(err => {

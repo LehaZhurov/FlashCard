@@ -9,8 +9,8 @@ use App\Http\Resources\Card\CardResource;
 use App\Http\Resources\Deck\DeckPaginationResource;
 use App\Http\Resources\Deck\DeckResource;
 use App\Http\Resources\EmptyResource;
-use App\Queries\Card\getCardsFromDeckQuery;
-use App\Queries\Deck\getDecksUserQuery;
+use App\Queries\Card\GetCardsFromDeckQuery;
+use App\Queries\Deck\GetDecksUserQuery;
 use Auth;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -27,7 +27,7 @@ class DeckController extends Controller
     public function getDecks(): DeckPaginationResource
     {
         $userId = Auth::id();
-        $cards = getDecksUserQuery::find($userId, 25);
+        $cards = GetDecksUserQuery::find($userId, 25);
         return new DeckPaginationResource($cards);
     }
 
@@ -41,7 +41,8 @@ class DeckController extends Controller
     public function getCards($deckId): AnonymousResourceCollection
     {
         $userId = Auth::id();
-        $cards = getCardsFromDeckQuery::find($userId, $deckId);
+        $cards = GetCardsFromDeckQuery::find($userId, $deckId);
         return CardResource::collection($cards);
     }
+
 }

@@ -1,11 +1,11 @@
 <?php
 namespace App\Action\Card;
 
-use App\Action\User\CanBeWrittenOffFromTheBalanceAction;
-use App\Action\User\takeAwayFromTheBalanceAction;
+use App\Action\User\TakeAwayFromTheBalanceAction;
 use App\Action\Word\SearchWordAction;
 use App\Models\Card;
-use App\Queries\Card\getCardFromIdQuery;
+use App\Queries\Card\GetCardFromIdQuery;
+use App\Verification\User\CanBeWrittenOffFromTheBalanceAction;
 use Illuminate\Support\Collection;
 
 class CreateCardAction
@@ -19,7 +19,7 @@ class CreateCardAction
         $cardPrice = 1000;
         $wordId = SearchWordAction::execute($word)->id;
 
-        if (!CanBeWrittenOffFromTheBalanceAction::execute($userId, $cardPrice)) {
+        if (!CanBeWrittenOffFromTheBalanceAction::check($userId, $cardPrice)) {
             throw new Exception('Не достаточно пыли');
         }
 
@@ -29,9 +29,9 @@ class CreateCardAction
         $card->word_id = $wordId;
         $card->save();
 
-        takeAwayFromTheBalanceAction::execute($userId, $cardPrice);
+        TakeAwayFromTheBalanceAction::execute($userId, $cardPrice);
 
-        return getCardFromIdQuery::find($card->id);
+        return GetCardFromIdQuery::find($card->id);
     }
 
 }

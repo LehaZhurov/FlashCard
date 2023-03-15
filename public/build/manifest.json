@@ -1,11 +1,11 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.ea2f27dd.js",
+    "file": "assets/app.c76e3887.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
       "_getCardCollection.3a48e209.js",
-      "_getDecks.76117365.js"
+      "_getDecks.c1dac8be.js"
     ]
   },
   "resources/js/slider.js": {
@@ -30,31 +30,31 @@
     ]
   },
   "resources/js/deck/createDeck.js": {
-    "file": "assets/createDeck.b62c8bcc.js",
+    "file": "assets/createDeck.36073cb5.js",
     "src": "resources/js/deck/createDeck.js",
     "isEntry": true,
     "imports": [
       "_getCardCollection.3a48e209.js",
-      "_getDecks.76117365.js"
+      "_getDecks.c1dac8be.js"
     ]
   },
   "_getCardCollection.3a48e209.js": {
     "file": "assets/getCardCollection.3a48e209.js"
   },
-  "_getDecks.76117365.js": {
-    "file": "assets/getDecks.76117365.js",
+  "_getDecks.c1dac8be.js": {
+    "file": "assets/getDecks.c1dac8be.js",
     "imports": [
       "_getCardCollection.3a48e209.js"
     ]
   },
-  "resources/css/app.css": {
-    "file": "assets/app.c0d7133e.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
-  },
   "resources/css/slider.css": {
     "file": "assets/slider.263c5004.css",
     "src": "resources/css/slider.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.c0d7133e.css",
+    "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/modal.css": {

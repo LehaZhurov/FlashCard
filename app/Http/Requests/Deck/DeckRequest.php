@@ -24,7 +24,7 @@ class DeckRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string','min:1']
+            'name' => ['required', 'string', 'min:1'],
         ];
     }
 }

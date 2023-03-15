@@ -24,8 +24,8 @@ class AddCardToDeckRequest extends FormRequest
     public function rules()
     {
         return [
-            'card_id' => ['required','int','min:1'],
-            'deck_id' => ['required','int','min:1'],
+            'card_id' => ['required', 'int', 'min:1'],
+            'deck_id' => ['required', 'int', 'min:1'],
         ];
     }
 }

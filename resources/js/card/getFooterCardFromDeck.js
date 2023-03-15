@@ -1,5 +1,5 @@
 import { deleteCard } from "./deleteCard";
-import { removeCard } from "./removeCardFromDeck";
+import { removeCardFromDeck } from "./removeCardFromDeck";
 
 export function getFooterCardFromDeck(data){
     let cardOption = document.createElement('div');
@@ -17,7 +17,7 @@ export function getFooterCardFromDeck(data){
     removeFromDeckBtn.setAttribute('class', 'danger');
     removeFromDeckBtn.innerText = 'Удалить из колоды';
     removeFromDeckBtn.onclick = () => {
-        removeCard(data.id);
+        removeCardFromDeck(data.id,data.deck_id);
     }
     buttons.appendChild(sprayBtn);
     buttons.appendChild(removeFromDeckBtn);

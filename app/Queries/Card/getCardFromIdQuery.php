@@ -3,7 +3,7 @@ namespace App\Queries\Card;
 
 use App\Models\Card;
 
-class getCardFromIdQuery
+class GetCardFromIdQuery
 {
 
     public static function find(int $id): Card

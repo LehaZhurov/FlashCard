@@ -37,6 +37,7 @@
     @include('elements/createCardModal')
     @include('elements/confimSprayCard')
     @include('elements/confimDeleteDeck')
+    @include('elements/confimRemoveCardFromDeck')
     @include('elements/creatеDeck')
     @include('elements/addCardToDeck')
 @endsection

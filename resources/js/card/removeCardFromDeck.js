@@ -1,32 +1,30 @@
 
 import { SendRequest } from "../SendRequest"
-import { updateCollectionPage } from "./updateCardCollection";
-import { getBalance } from "../balance/getBalance";
 import { startLoad, stopLoad } from "../load";
-
-export function removeCard(id) {
-    console.log(id);
-    // let confimCardButton = document.querySelector('#comfim_delete_card');
-    // let aboardDeleteCardButton = document.querySelector('#aboard_delete_card');
-    // location = "#deleteCard";
-    // confimCardButton.onclick = () => {
-    //     deleteCardRequest(id);
-    //     return true;
-    // }
-    // aboardDeleteCardButton.onclick = () => {
-    //     location = "#close";
-    // }
+import { getCardsDeck } from "./getCardsDeck";
+export function removeCardFromDeck(id, deckId) {
+    let confimRemoveCardButton = document.querySelector('#comfim_remove_card');
+    let aboardRemoveCardButton = document.querySelector('#aboard_remove_card');
+    location = "#removeCardFromDeck";
+    confimRemoveCardButton.onclick = () => {
+        removeCardRequest(id, deckId);
+        return true;
+    }
+    aboardRemoveCardButton.onclick = () => {
+        location = "#close";
+    }
 }
 
-function deleteCardRequest(id) {
-    startLoad('body', 'Распыляю...');
-    SendRequest("GET", '/card/delete/' + id)
+function removeCardRequest(id, deckId) {
+    let form = new FormData();
+    form.append('card_id', id);
+    form.append('deck_id', deckId);
+    startLoad('body', 'Убираем карту из колоды');
+    SendRequest("POST", '/card/removeCardFromDeck', form)
         .then(responce => {
-            console.log(responce);
             location = "#close";
+            getCardsDeck(deckId);
             stopLoad();
-            updateCollectionPage();
-            getBalance();
         }).catch(err => {
             console.log(err);
         })

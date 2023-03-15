@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Word;
+namespace App\Http\Requests\Card;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateWordRequest extends FormRequest
+class RemoveCardFromDeckRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class CreateWordRequest extends FormRequest
     public function rules()
     {
         return [
-            'word' => ['required', 'string', 'min:1'],
+            'card_id' => ['required', 'int', 'min:1'],
+            'deck_id' => ['required', 'int', 'min:1'],
         ];
     }
 }

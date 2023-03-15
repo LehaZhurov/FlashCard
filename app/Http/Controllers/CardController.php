@@ -4,21 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Action\Card\AddCardToDeckAction;
 use App\Action\Card\CreateCardAction;
-use App\Action\Card\sprayCardAction;
+use App\Action\Card\RemoveCardFromDeckAction;
+use App\Action\Card\SprayCardAction;
+use App\Http\Requests\Card\RemoveCardFromDeckRequest;
 use App\Http\Requests\Card\AddCardToDeckRequest;
 use App\Http\Requests\Card\CreateCardRequest;
 use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
 use App\Http\Resources\EmptyResource;
-use App\Queries\Card\getCardsUserQuery;
+use App\Queries\Card\GetCardsUserQuery;
 use Auth;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Http\Response;
 
 class CardController extends Controller
 {
 
-    public function create(CreateCardRequest $request): CardResource | Response
+    public function create(CreateCardRequest $request): CardResource
     {
         $requestCollection = $request->collect();
         $requestCollection->put('user_id', Auth::id());
@@ -28,13 +29,13 @@ class CardController extends Controller
 
     public function getCards(): CardPaginationResource
     {
-        $cards = getCardsUserQuery::find(Auth::id(), 25);
+        $cards = GetCardsUserQuery::find(Auth::id(), 25);
         return new CardPaginationResource($cards);
     }
 
     public function delete(int $cardId): EmptyResource
     {
-        sprayCardAction::execute(Auth::id(), $cardId);
+        SprayCardAction::execute(Auth::id(), $cardId);
         return new EmptyResource();
     }
 
@@ -44,5 +45,13 @@ class CardController extends Controller
         $requestCollection->put('user_id', Auth::id());
         $cardsDeck = AddCardToDeckAction::execute($requestCollection);
         return CardResource::collection($cardsDeck);
+    }
+
+    public function removeCardFromDeck(RemoveCardFromDeckRequest $request)
+    {
+        $requestCollection = $request->collect();
+        $requestCollection->put('user_id', Auth::id());
+        $cardsDeck = RemoveCardFromDeckAction::execute($requestCollection);
+        return new EmptyResource();
     }
 }

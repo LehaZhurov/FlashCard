@@ -5,7 +5,7 @@ use App\Models\Card;
 use App\Pagination\Paginator;
 use Illuminate\Support\Collection;
 
-class getCardsUserQuery
+class GetCardsUserQuery
 {
 
     public static function find(int $userId, int $limit = 25): Collection

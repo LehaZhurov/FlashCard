@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Card;
 
 use Illuminate\Foundation\Http\FormRequest;
+
 class CreateCardRequest extends FormRequest
 {
 
@@ -24,8 +25,8 @@ class CreateCardRequest extends FormRequest
     public function rules()
     {
         return [
-            'word' =>  ['required', 'min:1','string'],
-            'gif' => ['required', 'string','min:1']
+            'word' => ['required', 'min:1', 'string'],
+            'gif' => ['required', 'string', 'min:1'],
         ];
     }
 }
