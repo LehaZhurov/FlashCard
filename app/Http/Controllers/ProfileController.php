@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Http\Resources\User\UserBalanceResource;
-use App\Queries\User\getUser;
+use App\Queries\User\GetUserQuery;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +62,7 @@ class ProfileController extends Controller
 
     public function getBalance(): UserBalanceResource
     {
-        $user = getUser::find(Auth::id());
+        $user = GetUserQuery::find(Auth::id());
         return new UserBalanceResource($user);
     }
 

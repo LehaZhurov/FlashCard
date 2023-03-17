@@ -3,7 +3,7 @@ namespace App\Action\Card;
 
 use App\Action\User\AddToTheBalanceAction;
 use App\Models\Card;
-use App\Verification\Card\ThisCardBelongsToTheUserQuery;
+use App\Verification\Card\ThisCardBelongsToTheUser;
 use Exception;
 
 class SprayCardAction
@@ -35,7 +35,7 @@ class SprayCardAction
 
         $card = Card::query()->findOrFail($cardId);
 
-        if (!ThisCardBelongsToTheUserQuery::check($card, $userId)) {
+        if (!ThisCardBelongsToTheUser::check($card, $userId)) {
             throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');
         }
 

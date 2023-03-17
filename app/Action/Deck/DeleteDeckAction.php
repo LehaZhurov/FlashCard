@@ -9,10 +9,10 @@ class DeleteDeckAction
 
     public static function execute(int $userId, int $deckId): void
     {
-        if (!ThisDeckBelongsToTheUser::check($userId, $deckId)) {
+        $deck = Deck::findOrFail($deckId);
+        if (!ThisDeckBelongsToTheUser::check($deck, $userId)) {
             throw new Exception('Колода не пренадлежит пользователю');
         }
-        $deck = Deck::findOrFail($deckId);
         $deck->cards()->detach();
         $deck->delete();
     }

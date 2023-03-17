@@ -2,9 +2,10 @@
 
 namespace App\Gif;
 
+use App\Gif\GifAbstract;
 use stdClass;
 
-class Giphy
+class Giphy extends GifAbstract
 {
     private $token = 'oWdBUpIKGSnNMPKBQSR03Sj1WjTrcII8';
     private $url = 'https://api.giphy.com/v1/';
@@ -52,7 +53,7 @@ class Giphy
     public function random(string $tag): array
     {
         $zeroOrOne = rand(0, 1);
-        if ($zeroOrOne == 1){
+        if ($zeroOrOne == 1) {
             return $this->randomGif($tag);
         }
         if ($zeroOrOne == 0) {

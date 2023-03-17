@@ -3,7 +3,7 @@ namespace App\Queries\User;
 
 use App\Models\User;
 
-class GetUser
+class GetUserQuery 
 {
 
     public static function find(int $id): User

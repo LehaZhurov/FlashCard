@@ -33,7 +33,7 @@ document.querySelector('#btn-step-too').onclick = () => { stepToo(); }
 
 document.querySelector('#btn-step-one-prev').onclick = () => { prevStepOne(); }
 document.querySelector('#btn-step-too-prev').onclick = () => { prevStepToo(); }
-document.querySelector('#btn-save-new-card').onclick = () => { saveNewCard(card);prevStepOne()}
+document.querySelector('#btn-save-new-card').onclick = () => { saveNewCard(card); prevStepOne() }
 
 
 async function stepOne() {
@@ -80,9 +80,9 @@ function awaitTranslateIndicator() {
 
 async function getGif(word) {
     await SendRequest("GET", 'api/gif/search/' + word)
-        .then(responce => {
-            appendGif(responce['data']);
-            card['gifs'] = responce['data'];
+        .then(response => {
+            appendGif(response['data']);
+            card['gifs'] = response['data'];
         }).catch(err => {
             prevStepOne();
             console.log(err);

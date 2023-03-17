@@ -5,7 +5,7 @@ use App\Action\User\TakeAwayFromTheBalanceAction;
 use App\Action\Word\SearchWordAction;
 use App\Models\Card;
 use App\Queries\Card\GetCardFromIdQuery;
-use App\Verification\User\CanBeWrittenOffFromTheBalanceAction;
+use App\Verification\User\CanBeWrittenOffFromTheBalance;
 use Illuminate\Support\Collection;
 
 class CreateCardAction
@@ -19,7 +19,7 @@ class CreateCardAction
         $cardPrice = 1000;
         $wordId = SearchWordAction::execute($word)->id;
 
-        if (!CanBeWrittenOffFromTheBalanceAction::check($userId, $cardPrice)) {
+        if (!CanBeWrittenOffFromTheBalance::check($userId, $cardPrice)) {
             throw new Exception('Не достаточно пыли');
         }
 
