@@ -58,6 +58,7 @@ async function stepOne() {
 function awaitTranslateIndicator() {
     if (!word.hasAttribute('disabled')) {
         btnStepOne.innerText = "Далее";
+        btnStepOne.disabled = false;
         btnStepOne.setAttribute('style', 'background:var(--secondary-dark)');
         return;
     }

@@ -28,8 +28,8 @@ class Voiceovered extends Command
      */
     public function handle()
     {
-        // $text = readline('Текст:');
-        $src = Voiceover::newClient('back','British','Kate')->get().PHP_EOL;
-        echo $src;
+        $text = readline('Текст:');
+        $src = Voiceover::newClient($text,'British','Malcolm')->get();
+        echo $src.PHP_EOL;
     }
 }

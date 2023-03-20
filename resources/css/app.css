@@ -439,6 +439,9 @@ select:hover {
     min-height: 300px;
     opacity: 0.9;
 }
+.card-preview{
+    width: 50%;
+}
 
 .center-deck {
     width: 100%;
@@ -630,6 +633,9 @@ select:hover {
     .deck {
         display: grid;
         grid-template-columns: 100%;
+    }
+    .card-preview{
+        width: 100%;
     }
 
 }

@@ -10,7 +10,7 @@ use \HeadlessChromium\Page;
 class Voiceover extends VoiceoverAbstract
 {
     protected $url = 'https://ttsdemo.voicereader.org/VoiceReaderHome22_VoicesDemo/';
-    private $devtoolsUrl = "ws://chrome:3000/";
+    protected $devtoolsUrl = "ws://chrome:3000/";
     protected $handless = false;
     protected $languageInputPossibleValue = [
         'British' => 'English (British)',
@@ -64,11 +64,7 @@ class Voiceover extends VoiceoverAbstract
 
     protected function choiceLanguage(Page $page): bool
     {
-        try {
-            $inputValue = $this->languageInputPossibleValue[$this->pronunciation];
-        } catch (Exception $e) {
-            throw new Exception("Error: Такое произнощение не найдено");
-        }
+        $inputValue = $this->languageInputPossibleValue[$this->pronunciation];
         $inputId = '#Content_MainCallbackPanel_MainFormLayout_languagesCombo_I';
         $this->setValue($page, $inputId, $inputValue);
         return true;
@@ -76,11 +72,7 @@ class Voiceover extends VoiceoverAbstract
 
     protected function choiceAnnouncer(Page $page): bool
     {
-        try {
-            $inputValue = $this->possibleAnnouncers[$this->announcer];
-        } catch (Exception $e) {
-            throw new Exception("Error: Такой диктор не найден");
-        }
+        $inputValue = $this->possibleAnnouncers[$this->announcer];
         $inputId = '#Content_MainCallbackPanel_MainFormLayout_voicesCombo_I';
         $this->setValue($page, $inputId, $inputValue);
         return true;
@@ -104,6 +96,7 @@ class Voiceover extends VoiceoverAbstract
     {
         $page = $this->getPage();
         $choicedLanguage = $this->choiceLanguage($page);
+        sleep(0.5);
         $choicedAnnouncer = $this->choiceAnnouncer($page);
         $inputedText = $this->inputText($page);
         if ($choicedLanguage && $choicedAnnouncer && $inputedText) {
@@ -113,7 +106,7 @@ class Voiceover extends VoiceoverAbstract
         return $this->getSrc($page, '#audioObject');
     }
 
-    public static function newClient(string $text, string $pronunciation, string $announcer = 'Malcolm')
+    public static function newClient(string $text, string $pronunciation, string $announcer)
     {
         return (new self($text, $pronunciation, $announcer));
     }

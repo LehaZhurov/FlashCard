@@ -39,7 +39,7 @@
                 <div id="stepThreeDisplay" style='display:none;'>
                     <div id='createCardStepThree' class='modal-flex-box'>
                         <h1>Сохранить карту?</h1>
-                        <div class="card common" style = 'width:100%;'>
+                        <div class="card common card-preview">
                             <div class="card-gif">
                                 <img src="https://i.giphy.com/media/XOrFcrJVjhUkwLr4PH/giphy.webp" alt="" id = 'creatingCardImg'>
                             </div>

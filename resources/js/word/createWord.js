@@ -16,7 +16,7 @@ export function createWord(word) {
 }
 
 function NotAvailabilityAudo(response) {
-    if (response.data.audio == 'def') {
+    if (response.data.audio == 'def' || response.data.audio == "") {
         return true;
     }
     return false;
