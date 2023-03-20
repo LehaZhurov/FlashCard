@@ -67,6 +67,7 @@ function awaitTranslateIndicator() {
     }
     btnStepOne.innerText = "Ищем гифки и перевод"
     setTimeout(() => {
+        btnStepOne.disabled = true;
         btnStepOne.setAttribute('style', `background:linear-gradient(110deg, var(--secondary-dark) 0%, 
         var(--secondary-dark) `+ (i - 5) + `%, rgba(239,239,242,1) ` + i + `%, var(--secondary-dark) ` + (i + 5) + `%, 
         var(--secondary-dark) 100%);`)

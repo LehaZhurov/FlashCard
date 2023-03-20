@@ -436,6 +436,7 @@ select:hover {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     max-height: 400px;
+    min-height: 300px;
     opacity: 0.9;
 }
 
