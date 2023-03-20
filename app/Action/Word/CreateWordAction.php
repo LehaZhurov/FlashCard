@@ -13,6 +13,7 @@ class CreateWordAction
         $word = new Word();
         $word->value = preg_replace('/\s+/', '_', $newWord);
         $word->data = json_encode($translate);
+        $word->audio = 'def';
         $word->save();
         return $word;
     }

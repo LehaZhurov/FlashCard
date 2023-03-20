@@ -17,6 +17,7 @@ class WordResource extends JsonResource
         return [
             'id' => $this->id,
             'word' => str_replace('_',' ',$this->value),
+            'audio' => $this->audio,
             'info' => json_decode($this->data),
             'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at))
         ];

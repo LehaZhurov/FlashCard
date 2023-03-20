@@ -2,9 +2,10 @@
 
 namespace App\Voiceover;
 
-abstract class Voiceover
+abstract class VoiceoverAbstract
 {
 
-    abstract public function voice(string $text): string;
+    abstract public static function newClient(string $text, string $pronunciation, string $announcer);
 
+    abstract public function get(): string;
 }

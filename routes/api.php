@@ -26,3 +26,4 @@ Route::get('/gif/search/{word}/{limit?}/{offset?}/{lang?}', [GifController::clas
 Route::get('/gif/random/{tag?}', [GifController::class, 'random'])->name('randomGif');
 
 Route::post('/word/create', [WordController::class, 'create'])->name('createWord');
+Route::post('/word/audio/create', [WordController::class, 'create'])->name('createAudioWord');

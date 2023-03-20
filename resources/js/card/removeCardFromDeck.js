@@ -21,7 +21,7 @@ function removeCardRequest(id, deckId) {
     form.append('deck_id', deckId);
     startLoad('body', 'Убираем карту из колоды');
     SendRequest("POST", '/card/removeCardFromDeck', form)
-        .then(responce => {
+        .then(response => {
             location = "#close";
             getCardsDeck(deckId);
             stopLoad();

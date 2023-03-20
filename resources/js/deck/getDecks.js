@@ -10,11 +10,11 @@ let decks = document.querySelector('#deck-card-deck');
 export function getDecks(page = 1) {
     startLoad('body', 'Загружаем вашы колоды');
     SendRequest("GET", '/deck/getDecks/?page=' + page)
-        .then(responce => {
+        .then(response => {
             clearDeckPage();
-            appendDeckToPage(responce['data']);
-            fillDeckSelectFromId('select_deck_from_add_card',responce['data']);
-            echoCountDeck(responce['data']);
+            appendDeckToPage(response['data']);
+            fillDeckSelectFromId('select_deck_from_add_card',response['data']);
+            echoCountDeck(response['data']);
             stopLoad();
         }).catch(err => {
             console.log(err);

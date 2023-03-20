@@ -22,7 +22,7 @@ export function deleteDeck(id){
 function deleteDeckRequest(id) {
     startLoad('body', 'Удаляю...');
     SendRequest("GET", '/deck/delete/' + id)
-        .then(responce => {
+        .then(response => {
             location = "#close";
             stopLoad();
             getDecks(1);

@@ -18,11 +18,12 @@ class CardResource extends JsonResource
             'id' => $this->id,
             'deck_id' => $this->deck_id,
             'src' => $this->url,
-            'word' => str_replace('_',' ',$this->value),
+            'word' => str_replace('_', ' ', $this->value),
             'info' => json_decode($this->data),
             'repeats' => $this->repeats,
             'level' => $this->level,
-            'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at))
+            'audio' => $this->audio,
+            'created_at' => date('Y-m-d H:i:s', strtotime($this->created_at)),
         ];
     }
 }

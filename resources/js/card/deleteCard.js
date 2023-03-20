@@ -21,8 +21,8 @@ export function deleteCard(id) {
 function deleteCardRequest(id) {
     startLoad('body', 'Распыляю...');
     SendRequest("GET", '/card/delete/' + id)
-        .then(responce => {
-            console.log(responce);
+        .then(response => {
+            console.log(response);
             location = "#close";
             stopLoad();
             updateCollectionPage();

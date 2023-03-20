@@ -17,11 +17,11 @@ let levels = ['', 'common', 'rare', 'epic', 'legend'];
 export function getCards(page) {
     startLoad('body', 'Загружаем вашу коллекцию');
     SendRequest("GET", '/card/getCards/?page='+page)
-        .then(responce => {
+        .then(response => {
             clearPageCollection();
-            appendCardToPageCollection(responce['data']);
-            cardPagination(responce['pagination']);
-            echoCardsCounts(responce['pagination']);
+            appendCardToPageCollection(response['data']);
+            cardPagination(response['pagination']);
+            echoCardsCounts(response['pagination']);
             stopLoad();
         }).catch(err => {
             console.log(err);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Action\Word\IsThereSuchWordAction;
+use App\Verification\Word\IsThereSuchWord;
 use App\Action\Word\SearchWordAction;
 use App\Translation\Translator;
 use stdClass;
@@ -12,7 +12,7 @@ class TranslatorController extends Controller
 
     public function translate(string $word): array | stdClass
     {
-        if (IsThereSuchWordAction::execute($word)) {
+        if (IsThereSuchWord::check($word)) {
             return Translator::translate($word);
         }
 

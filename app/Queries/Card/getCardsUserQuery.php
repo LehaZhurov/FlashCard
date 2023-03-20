@@ -17,7 +17,7 @@ class GetCardsUserQuery
             ->select(
                 'cards.id', 'cards.level', 'cards.url',
                 'cards.user_id', 'cards.created_at', 'cards.repeats',
-                'words.value', 'words.data'
+                'words.value', 'words.data' , 'words.audio'
             )
             ->orderBy('cards.id', 'DESC');
         $cardsUser = Paginator::build($cardsUserQuery, $limit);

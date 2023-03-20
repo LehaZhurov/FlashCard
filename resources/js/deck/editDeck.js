@@ -18,10 +18,10 @@ let levels = ['', 'common', 'rare', 'epic', 'legend'];
 export async function editDeck(id) {
     viewCardsDeck();
     startLoad('body', 'Просматриваю колоду');
-    let responce = await getCardsDeck(id);
+    let response = await getCardsDeck(id);
     clearPageDeckCollection();
-    appendCardToDeckPageCollection(responce['data']);
-    echoCountCardsFormDeck(responce['data']);
+    appendCardToDeckPageCollection(response['data']);
+    echoCountCardsFormDeck(response['data']);
     stopLoad();
 }
 

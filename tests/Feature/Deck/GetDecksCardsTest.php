@@ -116,7 +116,7 @@ class GetDecksCardsTest extends TestCase
 
     }
 
-    public function test_if_deck_not_belongs_user()
+    public function test_if_deck_not_belongss_user()
     {
         $user = User::factory()->create();
         $deck = Deck::factory()

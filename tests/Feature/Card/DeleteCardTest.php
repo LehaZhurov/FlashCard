@@ -60,7 +60,7 @@ class DeleteCardTest extends TestCase
         $this->assertEquals($userBalanceAfterDelete, $supposedUserBalanceAfterDelete);
     }
 
-    public function test_if_card_does_not_belong()
+    public function test_if_card_does_not_belongs()
     {
         $user = User::factory()->create();
         $card = Card::factory()->create();

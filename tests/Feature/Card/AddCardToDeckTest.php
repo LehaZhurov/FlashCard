@@ -44,13 +44,26 @@ class AddCardToDeckTest extends TestCase
         $response->assertStatus(500);
     }
 
-    public function test_if_deck_not_belong_user()
+    public function test_if_deck_not_belongs_user()
     {
         $user = User::factory()->create();
         $card = Card::factory()->state([
             'user_id' => $user->id,
         ])->create();
         $deck = Deck::factory()->create();
+
+        $request = ['card_id' => $card->id, 'deck_id' => $deck->id];
+        $response = $this->post($this->route, $request);
+        $response->assertStatus(500);
+    }
+
+    public function test_if_card_not_belongs_user()
+    {
+        $user = User::factory()->create();
+        $card = Card::factory()->create();
+        $deck = Deck::factory()->state([
+            'user_id' => $user->id,
+        ])->create();
 
         $request = ['card_id' => $card->id, 'deck_id' => $deck->id];
         $response = $this->post($this->route, $request);
@@ -110,7 +123,7 @@ class AddCardToDeckTest extends TestCase
             'user_id' => $user->id,
         ])->create();
 
-        $request = ['card_id' => rand(1,1000), 'deck_id' => $deck->id];
+        $request = ['card_id' => rand(1, 1000), 'deck_id' => $deck->id];
         $response = $this->actingAs($user)->post($this->route, $request);
         $response->assertStatus(404);
     }
@@ -121,9 +134,8 @@ class AddCardToDeckTest extends TestCase
         $card = Card::factory()->state([
             'user_id' => $user->id,
         ])->create();
-       
 
-        $request = ['card_id' => $card->id, 'deck_id' => rand(1,1000)];
+        $request = ['card_id' => $card->id, 'deck_id' => rand(1, 1000)];
         $response = $this->actingAs($user)->post($this->route, $request);
         $response->assertStatus(404);
     }

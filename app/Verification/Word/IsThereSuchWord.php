@@ -1,12 +1,12 @@
 <?php
-namespace App\Action\Word;
+namespace App\Verification\Word;
 
 use App\Models\Word;
 
-class IsThereSuchWordAction
+class IsThereSuchWord
 {
 
-    public static function execute(string $newWord): bool
+    public static function check(string $newWord): bool
     {
         $newWord = preg_replace('/\s+/', '_', $newWord);
         $word = Word::query()->where('value', '=', $newWord);

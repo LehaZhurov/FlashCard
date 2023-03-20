@@ -19,7 +19,7 @@ class TranslatorTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_if_word_exec_word()
+    public function test_if_word_exec()
     {
         $word = Word::factory()->word('green')->create();
         $response = $this->get($this->route . $word->value);

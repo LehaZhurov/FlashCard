@@ -3,8 +3,8 @@ import {SendRequest} from '../SendRequest';
 
 export function getBalance(){
     SendRequest("GET", '/profile/balance')
-    .then(responce => {
-        updateBalance(responce.data)
+    .then(response => {
+        updateBalance(response.data)
     }).catch(err => {
         console.log(err);
     })

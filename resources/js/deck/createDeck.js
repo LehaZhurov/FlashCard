@@ -11,7 +11,7 @@ createDeckBtn.onclick = () =>{
 function saveNewDeck(data){
     startLoad('body','Создаем колоду')
     SendRequest("POST", '/deck/create',data)
-        .then(responce => {
+        .then(response => {
             stopLoad('body','Готово')
             getDecks(1);
             location.href = '#close';

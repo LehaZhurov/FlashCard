@@ -1,9 +1,9 @@
 <?php
-namespace App\Action\Word;
+namespace App\Queries\Word;
 
 use App\Models\Word;
 
-class SearchWordAction
+class SearchWordQuery
 {
 
     public static function execute(string $word): Word

@@ -11,7 +11,7 @@ export async function saveNewCard(card) {
     form.append('word', word);
     form.append('gif', gif);
     await SendRequest("POST", '/card/create', form)
-        .then(responce => {
+        .then(response => {
             stopLoad();
             location = "#close";
             updateCollectionPage();
