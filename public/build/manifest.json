@@ -1,11 +1,11 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.56e0caf3.js",
+    "file": "assets/app.acdf62a6.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.d0ce7f64.js",
-      "_getDecks.69821d9d.js"
+      "_getCardCollection.24b524bf.js",
+      "_getDecks.ff0240a0.js"
     ]
   },
   "resources/js/slider.js": {
@@ -14,42 +14,42 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.349a78a9.js",
+    "file": "assets/createCard.f5599e78.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.d0ce7f64.js"
+      "_getCardCollection.24b524bf.js"
     ]
   },
   "resources/js/card/getCardCollection.js": {
-    "file": "assets/getCardCollection.48feee7d.js",
+    "file": "assets/getCardCollection.b5b7b268.js",
     "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.d0ce7f64.js"
+      "_getCardCollection.24b524bf.js"
     ]
   },
   "resources/js/deck/createDeck.js": {
-    "file": "assets/createDeck.68809c6a.js",
+    "file": "assets/createDeck.ce79bcee.js",
     "src": "resources/js/deck/createDeck.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.d0ce7f64.js",
-      "_getDecks.69821d9d.js"
+      "_getCardCollection.24b524bf.js",
+      "_getDecks.ff0240a0.js"
     ]
   },
-  "_getCardCollection.d0ce7f64.js": {
-    "file": "assets/getCardCollection.d0ce7f64.js"
+  "_getCardCollection.24b524bf.js": {
+    "file": "assets/getCardCollection.24b524bf.js"
   },
-  "_getDecks.69821d9d.js": {
-    "file": "assets/getDecks.69821d9d.js",
+  "_getDecks.ff0240a0.js": {
+    "file": "assets/getDecks.ff0240a0.js",
     "imports": [
-      "_getCardCollection.d0ce7f64.js"
+      "_getCardCollection.24b524bf.js"
     ]
   },
-  "resources/css/app.css": {
-    "file": "assets/app.c0d7133e.css",
-    "src": "resources/css/app.css",
+  "resources/css/modal.css": {
+    "file": "assets/modal.e1bca27a.css",
+    "src": "resources/css/modal.css",
     "isEntry": true
   },
   "resources/css/slider.css": {
@@ -57,9 +57,9 @@
     "src": "resources/css/slider.css",
     "isEntry": true
   },
-  "resources/css/modal.css": {
-    "file": "assets/modal.e1bca27a.css",
-    "src": "resources/css/modal.css",
+  "resources/css/app.css": {
+    "file": "assets/app.c0d7133e.css",
+    "src": "resources/css/app.css",
     "isEntry": true
   }
 }

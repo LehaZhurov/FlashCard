@@ -13,10 +13,7 @@ class Voiceover extends VoiceoverAbstract
     private $devtoolsUrl = "ws://chrome:3000/";
     protected $handless = false;
     protected $languageInputPossibleValue = [
-        'American' => 'English (American)',
-        'Australian' => 'English (Australian)',
         'British' => 'English (British)',
-        'Indian' => 'English (Indian)',
     ];
     protected $possibleAnnouncers = [
         'Daniel' => 'Daniel',

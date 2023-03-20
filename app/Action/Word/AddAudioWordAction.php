@@ -1,6 +1,7 @@
 <?php
 namespace App\Action\Word;
 
+use App\Models\Word;
 use App\Queries\Word\SearchWordQuery;
 
 class AddAudioWordAction

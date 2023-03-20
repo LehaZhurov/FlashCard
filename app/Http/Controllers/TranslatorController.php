@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Verification\Word\IsThereSuchWord;
-use App\Action\Word\SearchWordAction;
+use App\Queries\Word\SearchWordQuery;
 use App\Translation\Translator;
 use stdClass;
 
@@ -16,7 +16,7 @@ class TranslatorController extends Controller
             return Translator::translate($word);
         }
 
-        return json_decode(SearchWordAction::execute($word)->data);
+        return json_decode(SearchWordQuery::execute($word)->data);
     }
 
 }

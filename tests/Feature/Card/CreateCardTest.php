@@ -105,6 +105,7 @@ class CreateCardTest extends TestCase
                 'repeats',
                 'level',
                 'created_at',
+                'audio',
             ],
         ];
         $response->assertJsonStructure($responseStructure);

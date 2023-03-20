@@ -92,6 +92,7 @@ class AddCardToDeckTest extends TestCase
                     'repeats',
                     'level',
                     'created_at',
+                    'audio',
                 ],
             ],
         ];

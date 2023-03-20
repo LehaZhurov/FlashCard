@@ -61,6 +61,7 @@ class GetCardsTest extends TestCase
                     'repeats',
                     'level',
                     'created_at',
+                    'audio',
                 ],
             ],
             'pagination' => [

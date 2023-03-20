@@ -59,6 +59,7 @@ class CreateWordTest extends TestCase
             'data' => [
                 'id',
                 'word',
+                'audio',
                 'info' => [
                     'dictionary' => [
                         "*" => [
