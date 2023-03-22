@@ -3,7 +3,7 @@ namespace App\Verification\Card;
 
 use App\Models\Card;
 
-class thisCardBelongsToTheUser
+class ThisCardBelongsToTheUser
 {
 
     public static function check(Card $card, int $userId): bool

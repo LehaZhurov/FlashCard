@@ -122,7 +122,7 @@ class RemoveCardFromDeckTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function test_if_card_not_belongss_deck()
+    public function test_if_card_not_belongs_deck()
     {
         $user = User::factory()->create();
         $deck = Deck::factory()->state([

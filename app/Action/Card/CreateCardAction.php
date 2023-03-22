@@ -7,6 +7,7 @@ use App\Queries\Card\GetCardFromIdQuery;
 use App\Queries\Word\SearchWordQuery;
 use App\Verification\User\CanBeWrittenOffFromTheBalance;
 use Illuminate\Support\Collection;
+use Exception;
 
 class CreateCardAction
 {

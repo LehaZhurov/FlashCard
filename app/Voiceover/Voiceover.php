@@ -9,29 +9,55 @@ use \HeadlessChromium\Page;
 
 class Voiceover extends VoiceoverAbstract
 {
+
     protected $url = 'https://ttsdemo.voicereader.org/VoiceReaderHome22_VoicesDemo/';
-    protected $devtoolsUrl = "ws://chrome:3000/";
     protected $handless = false;
-    protected $languageInputPossibleValue = [
-        'British' => 'English (British)',
-    ];
-    protected $possibleAnnouncers = [
-        'Daniel' => 'Daniel',
-        'Kate' => 'Kate',
-        'Malcolm' => 'Malcolm',
-        'Oliver' => 'Oliver',
-        'Serena' => 'Serena',
-        'Stephanie' => 'Stephanie',
-    ];
+    private $devtoolsUrl = "ws://chrome:3000/";
     public $text;
     public $pronunciation;
     public $announcer;
-
+    public $selectOptionsId = [
+        //Доступные прозношения
+        'British' => [
+            'num' => 5,
+            //Доступные дикторы
+            'announcer' => [
+                'Daniel' => 3,
+                'Kate' => 4,
+                'Malcolm' => 5,
+                'Oliver' => 6,
+                'Serena' => 7,
+                'Stephanie' => 8,
+            ],
+        ],
+        'American' => [
+            'num' => 3,
+            'announcer' => [
+                'Ava' => 3,
+                'Evan' => 5,
+                'Nathan' => 5,
+                'Samantha' => 6,
+                'Tom' => 7,
+                'Zoe' => 8,
+            ],
+        ],
+    ];
     public function __construct(string $text, string $pronunciation, string $announcer)
     {
         $this->text = $text;
         $this->pronunciation = $pronunciation;
         $this->announcer = $announcer;
+        $this->validate();
+    }
+
+    protected function validate()
+    {
+        if (!array_key_exists($this->pronunciation, $this->selectOptionsId)) {
+            throw new Exception('Такое произношение не найдено ' . $this->pronunciation);
+        }
+        if (!array_key_exists($this->announcer, $this->selectOptionsId[$this->pronunciation]['announcer'])) {
+            throw new Exception('Такой диктор не найден ' . $this->announcer);
+        }
     }
 
     protected function getPage(): Page
@@ -62,26 +88,33 @@ class Voiceover extends VoiceoverAbstract
         return $script->getReturnValue();
     }
 
-    protected function choiceLanguage(Page $page): bool
+    protected function clickChoiceLanguageList(Page $page)
     {
-        $inputValue = $this->languageInputPossibleValue[$this->pronunciation];
-        $inputId = '#Content_MainCallbackPanel_MainFormLayout_languagesCombo_I';
-        $this->setValue($page, $inputId, $inputValue);
+        $selectId = "#Content_MainCallbackPanel_MainFormLayout_languagesCombo_B-1";
+        $page->mouse()->find($selectId)->click();
         return true;
     }
 
-    protected function choiceAnnouncer(Page $page): bool
+    protected function choiceLanguage(Page $page)
     {
-        $inputValue = $this->possibleAnnouncers[$this->announcer];
-        $inputId = '#Content_MainCallbackPanel_MainFormLayout_voicesCombo_I';
-        $this->setValue($page, $inputId, $inputValue);
+        $optionClass = '.dxeListBoxItemRow_iOS';
+        $optionNum = $this->selectOptionsId[$this->pronunciation]['num'];
+        $page->mouse()->find($optionClass, $optionNum)->click();
         return true;
     }
 
-    protected function inputText(Page $page): bool
+    protected function clickChoiceAnnouncerList(Page $page)
     {
-        $textareaId = '#Content_MainCallbackPanel_MainFormLayout_demoTextEdit_I';
-        $this->setValue($page, $textareaId, $this->text);
+        $selectId = "#Content_MainCallbackPanel_MainFormLayout_voicesCombo_B-1";
+        $page->mouse()->find($selectId)->click();
+        return true;
+    }
+
+    protected function choiceAnnouncer(Page $page)
+    {
+        $optionClass = '.dxeListBoxItemRow_iOS';
+        $optionNum = $this->selectOptionsId[$this->pronunciation]['announcer'][$this->announcer];
+        $page->mouse()->find($optionClass, $optionNum)->click();
         return true;
     }
 
@@ -92,21 +125,33 @@ class Voiceover extends VoiceoverAbstract
         return true;
     }
 
+    protected function inputText(Page $page): bool
+    {
+        $textareaId = '#Content_MainCallbackPanel_MainFormLayout_demoTextEdit_I';
+        $this->setValue($page, $textareaId, $this->text);
+        return true;
+    }
+
     public function get(): string
     {
         $page = $this->getPage();
-        $choicedLanguage = $this->choiceLanguage($page);
-        sleep(0.5);
-        $choicedAnnouncer = $this->choiceAnnouncer($page);
-        $inputedText = $this->inputText($page);
-        if ($choicedLanguage && $choicedAnnouncer && $inputedText) {
-            $this->clickListenButton($page);
+        if ($this->pronunciation != 'American') {
+            $listView = $this->clickChoiceLanguageList($page);
+            $this->choiceLanguage($page);
+            sleep(1);
         }
+        $this->clickChoiceAnnouncerList($page);
+        sleep(1);
+        $this->choiceAnnouncer($page);
+        sleep(1);
+        $this->inputText($page);
+        sleep(1);
+        $this->clickListenButton($page);
         sleep(1);
         return $this->getSrc($page, '#audioObject');
     }
 
-    public static function newClient(string $text, string $pronunciation, string $announcer)
+    public static function voice(string $text, string $pronunciation = 'British', string $announcer = 'Malcolm')
     {
         return (new self($text, $pronunciation, $announcer));
     }

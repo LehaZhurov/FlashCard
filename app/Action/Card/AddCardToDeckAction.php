@@ -6,6 +6,7 @@ use App\Models\Deck;
 use App\Queries\Card\GetCardsFromDeckQuery;
 use App\Verification\Card\ThisCardBelongsToTheUser;
 use App\Verification\Deck\ThisDeckBelongsToTheUser;
+use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as SupportCollection;
 
@@ -17,18 +18,16 @@ class AddCardToDeckAction
         $userId = $collection->get('user_id');
         $deckId = $collection->get('deck_id');
         $cardId = $collection->get('card_id');
-
         $card = Card::findOrFail($cardId);
         $deck = Deck::findOrFail($deckId);
-        if (!ThisDeckBelongsToTheUser::check($deck, $userId)) {
+        if (!ThisDeckBelongsToTheUser::check($deck, $collection->get('user_id'))) {
             throw new Exception('Колода не принадлежит пользователю');
         }
-        if (!ThisCardBelongsToTheUser::check($card, $userId)) {
-            throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');
+        if (!ThisCardBelongsToTheUser::check($card, $collection->get('user_id'))) {
+            throw new Exception('Данная карта(id:' . $cardId . ') не принадлежит пользователю(id:' . $userId . ')');
         }
-
         $deck->cards()->attach($card);
-        return getCardsFromDeckQuery::find($userId, $deckId);
+        return GetCardsFromDeckQuery::find($userId, $deckId);
     }
 
 }

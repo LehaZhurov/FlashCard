@@ -64,7 +64,6 @@ class AddCardToDeckTest extends TestCase
         $deck = Deck::factory()->state([
             'user_id' => $user->id,
         ])->create();
-
         $request = ['card_id' => $card->id, 'deck_id' => $deck->id];
         $response = $this->post($this->route, $request);
         $response->assertStatus(500);

@@ -40,7 +40,7 @@ class DeleteDeckTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function test_if_deck_does_not_belongss_user()
+    public function test_if_deck_does_not_belongs_user()
     {
         $user = User::factory()->create();
         $deck = Deck::factory()->create();

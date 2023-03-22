@@ -3,10 +3,10 @@ namespace App\Verification\Deck;
 
 use App\Models\Deck;
 
-class thisDeckBelongsToTheUser
+class ThisDeckBelongsToTheUser
 {
 
-    public static function check(Deck $deck, int $userId): bool
+    public static function check(Deck $deck, $userId): bool
     {
         if ($deck->user_id == $userId) {
             return true;

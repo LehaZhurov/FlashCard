@@ -6,9 +6,9 @@ use App\Action\Card\AddCardToDeckAction;
 use App\Action\Card\CreateCardAction;
 use App\Action\Card\RemoveCardFromDeckAction;
 use App\Action\Card\SprayCardAction;
-use App\Http\Requests\Card\RemoveCardFromDeckRequest;
 use App\Http\Requests\Card\AddCardToDeckRequest;
 use App\Http\Requests\Card\CreateCardRequest;
+use App\Http\Requests\Card\RemoveCardFromDeckRequest;
 use App\Http\Resources\Card\CardPaginationResource;
 use App\Http\Resources\Card\CardResource;
 use App\Http\Resources\EmptyResource;
@@ -47,7 +47,7 @@ class CardController extends Controller
         return CardResource::collection($cardsDeck);
     }
 
-    public function removeCardFromDeck(RemoveCardFromDeckRequest $request)
+    public function removeCardFromDeck(RemoveCardFromDeckRequest $request): EmptyResource
     {
         $requestCollection = $request->collect();
         $requestCollection->put('user_id', Auth::id());
