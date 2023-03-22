@@ -53,10 +53,10 @@ class Voiceover extends VoiceoverAbstract
     protected function validate()
     {
         if (!array_key_exists($this->pronunciation, $this->selectOptionsId)) {
-            throw new Exception('Такое произношение не найдено ' . $this->pronunciation);
+            throw new \Exception('Такое произношение не найдено ' . $this->pronunciation);
         }
         if (!array_key_exists($this->announcer, $this->selectOptionsId[$this->pronunciation]['announcer'])) {
-            throw new Exception('Такой диктор не найден ' . $this->announcer);
+            throw new \Exception('Такой диктор не найден ' . $this->announcer);
         }
     }
 

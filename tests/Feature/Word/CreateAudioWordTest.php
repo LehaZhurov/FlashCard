@@ -7,15 +7,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 
-class CreateWordTest extends TestCase
+class CreateAudioWordTest extends TestCase
 {
     use RefreshDatabase;
 
-    public $route = 'api/word/create';
+    public $route = 'api/word/audio/create';
 
-    public function test_succeess_create_word()
+    public function test_succeess_audio_create_word()
     {
-        $word = Word::factory()->word('green')->definition()['value'];
+        $word = Word::factory()->word('green')->create()['value'];
         $response = $this->post($this->route, ['word' => $word])
             ->assertJson(fn(AssertableJson $json) =>
                 $json->has('data', fn(AssertableJson $json) =>
@@ -24,7 +24,7 @@ class CreateWordTest extends TestCase
                         ->etc()
                 )
             );
-        $response->assertStatus(201);
+        $response->assertStatus(200);
     }
 
     public function test_if_word_exec()
@@ -52,10 +52,10 @@ class CreateWordTest extends TestCase
 
     public function test_response_structure()
     {
-        $word = Word::factory()->word('green')->definition()['value'];
+        $word = Word::factory()->word('green')->create()['value'];
         $response = $this->post($this->route, ['word' => $word]);
 
-        $response->assertStatus(201)->assertJsonStructure([
+        $response->assertStatus(200)->assertJsonStructure([
             'data' => [
                 'id',
                 'word',
@@ -74,5 +74,12 @@ class CreateWordTest extends TestCase
                 'created_at',
             ],
         ]);
+    }
+
+    public function test_if_not_found_word()
+    {
+        $word = Word::factory()->word('pink')->definition()['value'];
+        $response = $this->post($this->route, ['word' => $word]);
+        $response->assertStatus(500);
     }
 }
