@@ -10,7 +10,7 @@
                     <div id='createCardStepOne' class='modal-flex-box'>
                         <h1>Введите слово</h1>
                         <form action="#">
-                            <label for="word" >Введите слово на английском(50 символов)</label>
+                            <label for="word" >Введите слово на английском (50 символов)</label>
                             <input type="text" name='word' id='word' placeholder="Cлово" maxlength="50">
                             <button id='btn-step-one' type="button">Далее</button>
                         </form>

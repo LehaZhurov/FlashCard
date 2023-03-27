@@ -19,10 +19,10 @@
     --legend-color: rgb(201, 198, 1);
 }
 
-.error{
-    color:var(--red);
+.error {
+    color: var(--red);
 }
- 
+
 * {
     transition: background-color 2s;
     transition: width 0.5s;
@@ -204,13 +204,15 @@ form {
     width: 30%;
 }
 
-form p{
-    font-size:20px;
+form p {
+    font-size: 20px;
 }
-a{
-    text-decoration:none;
-    color:var(--secondary-text);
+
+a {
+    text-decoration: none;
+    color: var(--secondary-text);
 }
+
 label {
     text-align: start;
     width: 100%;
@@ -253,6 +255,7 @@ input:hover {
     border: 2px solid var(--secondary-dark);
     width: 90%;
 }
+
 select {
     height: 50px;
     padding-left: 30px;
@@ -309,14 +312,17 @@ select:hover {
     align-items: center;
     padding: 10px;
 }
+
 #menu span {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
+
 #menu form {
     width: auto;
 }
+
 #menu button {
     width: auto;
 }
@@ -410,17 +416,11 @@ select:hover {
     -webkit-box-shadow: 15px 12px 15px 5px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 15px 12px 15px 5px rgba(34, 60, 80, 0.2);
     box-shadow: 15px 12px 15px 5px rgba(34, 60, 80, 0.2);
-}
-.card:hover .card-text {
-    display: none;
-}
-
-.card:hover .card-option {
-    display: block;
+    position: relative;
 }
 
 .card-text {
-    height: 150px;
+    min-height: 150px;
 }
 
 .card-text p {
@@ -429,9 +429,10 @@ select:hover {
     margin-top: 10px;
 }
 
-.card-gif{
+.card-gif {
     width: 100%;
 }
+
 .card-gif img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -439,7 +440,8 @@ select:hover {
     min-height: 300px;
     opacity: 0.9;
 }
-.card-preview{
+
+.card-preview {
     width: 50%;
 }
 
@@ -470,18 +472,22 @@ select:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .button-group-row {
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: center;
 }
-.center{
+
+.center {
     justify-content: center;
 }
-.space-between{
+
+.space-between {
     justify-content: space-between;
 }
+
 .danger:hover {
     background-color: var(--red);
 }
@@ -539,46 +545,75 @@ select:hover {
     -moz-box-shadow: 13px 14px 17px 11px rgba(0, 0, 0, 0.2);
     box-shadow: 13px 14px 17px 11px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    margin:15px;
+    margin: 15px;
     background-color: var(--secondary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.deck-card h1{
+.deck-card h1 {
     text-align: center;
+    font-size: 20px;
 }
+
 .deck-card div.deck-card-option {
     display: none;
+    width: 90%;
 }
-.deck-card button{
-    font-size:15px;
+
+.deck-card button {
+    font-size: 15px;
 }
-.deck-card:hover div.deck-card-option{
+
+.deck-card:hover div.deck-card-option {
     display: block;
 }
-.deck-card:hover{
+
+.deck-card:hover {
     background-color: var(--secondary-light);
 }
+
 .deck-card:hover h1 {
     display: none;
 }
-.deck-card-option{
-    margin:15px;
+
+.deck-card-option {
+    margin: 15px;
 }
-.nonescroll{
+
+.nonescroll {
     overflow-y: hidden;
 }
-.row-between{
-    display:flex;
+
+.row-between {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.column-between{
-    display:flex;
+
+.column-between {
+    display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
 }
 
+.view-option-and-voice {
+    margin-top: 10px;
+    width: 90%;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1000;
+    bottom: 20px;
+}
+
+.view-option-and-voice i {
+    padding: 5px;
+}
 
 
 
@@ -615,17 +650,32 @@ select:hover {
 
     #logo {
         width: 100%;
+        font-size: 40px;
     }
 
     .deck {
         display: grid;
         grid-template-columns: 50% 50%;
     }
-    .card{
-        height:auto;
+
+    .card {
+        height: auto;
     }
+
     .card-gif img {
         min-width: 100%;
+    }
+
+    .deck-card div.deck-card-option {
+        display: block;
+    }
+
+    .deck-card:hover h1 {
+        display: block;
+    }
+
+    .deck-card div.deck-card-option .button-group-row button {
+        background-color: inherit;
     }
 }
 
@@ -634,7 +684,8 @@ select:hover {
         display: grid;
         grid-template-columns: 100%;
     }
-    .card-preview{
+
+    .card-preview {
         width: 100%;
     }
 

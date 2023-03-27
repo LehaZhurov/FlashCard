@@ -9,7 +9,7 @@ export function getCardBody(data){
     for (let i = 0; i < dataTranslateLength; i++) {
         let punctuatioMark = " , ";
         if (i == dataTranslateLength - 1) {
-            punctuatioMark = ';';
+            punctuatioMark = '.';
         }
         native.innerText += " " + data['info']['translate'][i] + punctuatioMark;
     }

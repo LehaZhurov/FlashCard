@@ -12,7 +12,7 @@ class Translator
     private $translate = ['dictionary' => [], 'translate' => [], 'powered' => 'deepl.com'];
     private $devtoolsUrl = "ws://chrome:3000/";
 
-    function __construct()
+    public function __construct()
     {
         require_once 'SHD.php';
     }
@@ -52,7 +52,7 @@ class Translator
             }
             $context = $tagLemma->find('span.tag_lemma_context', 0);
             if ($context) {
-                $words["context"] = $context->plaintext;
+                $words["context"] = trim('.', $context->plaintext);
             }
             $this->translate['dictionary'][$i] = $words;
             $i++;
@@ -70,6 +70,7 @@ class Translator
                 foreach ($translationDesc as $value) {
                     if ($value != 'Прослушать') {
                         $str = $str . " " . $value;
+                        $str = trim('.', $str);
                     }
                 }
                 $this->translate['dictionary'][$i]['translation'][] = $str;

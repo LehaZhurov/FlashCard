@@ -4,7 +4,7 @@ import { getCardBody } from "../card/getCardBody";
 import { getFooterCardFromDeck } from '../card/getFooterCardFromDeck';
 import { getCardsDeck } from '../card/getCardsDeck';
 import { echoCountCardsFormDeck } from './echoCountCardsFromDeck';
-
+import { getCardOption } from '../card/getCardOption';
 let deckBlock = document.querySelector('#decks-view');
 let cardsFromDeck = document.querySelector('#cards-deck-view');
 let backToDeckButton = document.querySelector('#back-to-decks');
@@ -52,9 +52,11 @@ function getCardFromDeckPage(data) {
     let cardHeader = getCardHeader(data);
     let cardBody = getCardBody(data);
     let cardFooter = getFooterCardFromDeck(data);
+    let cardOption = getCardOption(data, cardFooter, cardBody);
     card.appendChild(cardHeader);
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
+    card.appendChild(cardOption);
     return card;
 }
 
