@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Gif\Giphy;
-use App\Models\Word;
 use App\Models\User;
+use App\Models\Word;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -28,17 +27,11 @@ class CardFactory extends Factory
         } else if ($repeats >= 10000) {
             $level = 4;
         }
-        $word = Word::factory()->create();
-        $gifs = Giphy::newClient()->generalSearch($word->value, 25);
-        if($gifs == []){
-            $gifs = [['src' => 'https://giphy.com/stickers/computer-dev-computador-f7omQNmgiyjj5sffvZ']];
-        }
-        $src = $gifs[rand(0,(count($gifs)-1))]['src'];
         return [
-            'url' => $src,
+            'url' => 'https://giphy.com/stickers/computer-dev-computador-f7omQNmgiyjj5sffvZ',
             'level' => $level,
             'repeats' => $repeats,
-            'word_id' => $word->id,
+            'word_id' => Word::factory()->create()->id,
             'user_id' => User::factory()->create()->id,
         ];
     }

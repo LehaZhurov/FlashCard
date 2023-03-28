@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Card;
 
+use App\Action\Card\AddCardToDeckAction;
 use App\Models\Card;
 use App\Models\Deck;
 use App\Models\User;
@@ -66,6 +67,33 @@ class AddCardToDeckTest extends TestCase
         ])->create();
         $request = ['card_id' => $card->id, 'deck_id' => $deck->id];
         $response = $this->post($this->route, $request);
+        $response->assertStatus(500);
+    }
+
+    public function test_if_card_exceeds_the_limit_deck()
+    {
+        $user = User::factory()->create();
+        $deck = Deck::factory()
+            ->state([
+                'user_id' => $user->id,
+            ])
+            ->create();
+        for ($i = 0; $i <= 30; $i++) {
+            $cardId = Card::factory()
+                ->state(['user_id' => $user->id])
+                ->create()
+                ->id;
+            $collect = collect(['user_id' => $user->id, 'deck_id' => $deck->id, 'card_id' => $cardId]);
+            AddCardToDeckAction::execute($collect);
+        }
+        $newCard = Card::factory()->state([
+            'user_id' => $user->id,
+        ])->create();
+        $request = [
+            'card_id' => $newCard->id,
+            'deck_id' => $deck->id,
+        ];
+        $response = $this->actingAs($user)->post($this->route, $request);
         $response->assertStatus(500);
     }
 

@@ -8,11 +8,7 @@ class CreateVoiceoverAction
 
     public static function execute(string $word): string
     {
-        // $filename = $word . '.mp3';
         $fileUrl = Voiceover::voice($word, 'British', 'Malcolm')->get();
-        // $filePath = storage_path('app/public/'.$filename);
-        // $content = file_get_contents($fileUrl);
-        // file_put_contents($filePath, $content);
         return $fileUrl;
     }
 

@@ -19,7 +19,7 @@ export function addToDeck(id) {
 async function addCardToDeckRequest() {
     let form = document.querySelector('#add_card_to_deck_form');
     let body = new FormData(form);
-    startLoad('body', 'Добовляю в колоду')
+    startLoad('body', 'Добавляю в колоду')
     await SendRequest("POST", '/card/addToDeck', body)
     stopLoad();
     location = "#close";

@@ -5,6 +5,7 @@ use App\Models\Card;
 use App\Models\Deck;
 use App\Queries\Card\GetCardsFromDeckQuery;
 use App\Verification\Card\ThisCardBelongsToTheUser;
+use App\Verification\Deck\CanAddMoreCardInDeck;
 use App\Verification\Deck\ThisDeckBelongsToTheUser;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
@@ -25,6 +26,9 @@ class AddCardToDeckAction
         }
         if (!ThisCardBelongsToTheUser::check($card, $collection->get('user_id'))) {
             throw new Exception('Данная карта(id:' . $cardId . ') не принадлежит пользователю(id:' . $userId . ')');
+        }
+        if (!CanAddMoreCardInDeck::check($deck)) {
+            throw new Exception('В колоде больше нет мест');
         }
         $deck->cards()->attach($card);
         return GetCardsFromDeckQuery::find($userId, $deckId);

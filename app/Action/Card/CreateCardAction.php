@@ -3,11 +3,10 @@ namespace App\Action\Card;
 
 use App\Action\User\TakeAwayFromTheBalanceAction;
 use App\Models\Card;
-use App\Queries\Card\GetCardFromIdQuery;
 use App\Queries\Word\SearchWordQuery;
 use App\Verification\User\CanBeWrittenOffFromTheBalance;
-use Illuminate\Support\Collection;
 use Exception;
+use Illuminate\Support\Collection;
 
 class CreateCardAction
 {
@@ -32,7 +31,7 @@ class CreateCardAction
 
         TakeAwayFromTheBalanceAction::execute($userId, $cardPrice);
 
-        return GetCardFromIdQuery::find($card->id);
+        return $card;
     }
 
 }

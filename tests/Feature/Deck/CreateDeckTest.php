@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Deck;
 
+use App\Action\Deck\CreateDeckAction;
 use App\Models\Deck;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -58,5 +59,19 @@ class CreateDeckTest extends TestCase
             ],
         ];
         $response->assertJsonStructure($responseStructure);
+    }
+
+    public function test_if_new_deck_exceeds_the_limit()
+    {
+        $user = User::factory()->create();
+        for ($i = 0; $i <= 15; $i++) {
+            CreateDeckAction::execute($user->id, 'test_deck');
+        }
+        $request = [
+            'user_id' => $user->id,
+            'name' => 'new_test_deck',
+        ];
+        $response = $this->actingAs($user)->post($this->route, $request);
+        $response->assertStatus(500);
     }
 }
