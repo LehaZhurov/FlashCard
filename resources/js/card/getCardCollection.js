@@ -6,6 +6,7 @@ import { getCardOption } from "./getCardOption";
 import { getFooterCardFromCollection } from "./getFooterCardFromCollection";
 import { cardPagination } from "./cardPagination";
 import { echoCardsCounts } from "./echoCardsCountsFromCollection";
+import { alert } from "../alert";
 
 let cardDeck = document.querySelector('#deck-card');
 /*
@@ -25,7 +26,8 @@ export function getCards(page) {
             echoCardsCounts(response['pagination']);
             stopLoad();
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
+            stopLoad();
         })
 }
 

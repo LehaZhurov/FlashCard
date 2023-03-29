@@ -1,6 +1,8 @@
 import { SendRequest } from "../SendRequest";
 import { getDecks } from "./getDecks";
 import { startLoad,stopLoad } from "../load";
+import { alert } from "../alert";
+
 let createDeckBtn = document.querySelector('#create_deck_btn');
 createDeckBtn.onclick = () =>{
     let data = document.querySelector('#create_deck_form')
@@ -16,6 +18,7 @@ function saveNewDeck(data){
             getDecks(1);
             location.href = '#close';
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
+            stopLoad();
         })
 }

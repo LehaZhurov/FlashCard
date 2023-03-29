@@ -2,6 +2,8 @@
 import { SendRequest } from "../SendRequest"
 import { startLoad, stopLoad } from "../load";
 import { getCardsDeck } from "./getCardsDeck";
+import { alert } from "../alert";
+
 export function removeCardFromDeck(id, deckId) {
     let confimRemoveCardButton = document.querySelector('#comfim_remove_card');
     let aboardRemoveCardButton = document.querySelector('#aboard_remove_card');
@@ -26,6 +28,7 @@ function removeCardRequest(id, deckId) {
             getCardsDeck(deckId);
             stopLoad();
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
+            stopLoad();
         })
 }

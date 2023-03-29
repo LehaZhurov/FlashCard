@@ -1,6 +1,6 @@
-
 import { SendRequest } from "../SendRequest";
 import { createWordAudio } from "./createWordVoiceover";
+import { alert } from "../alert";
 
 export function createWord(word) {
     let form = new FormData;
@@ -11,7 +11,7 @@ export function createWord(word) {
                 createWordAudio(form);
             }
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
         })
 }
 

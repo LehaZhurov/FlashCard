@@ -1,12 +1,9 @@
-
-
-
 import { SendRequest } from "../SendRequest"
 import { startLoad, stopLoad } from "../load";
 import { getDecks } from "./getDecks";
+import { alert } from "../alert";
 
-
-export function deleteDeck(id){
+export function deleteDeck(id) {
     let confimDeckButton = document.querySelector('#comfim_delete_deck');
     let aboardDeleteDeckButton = document.querySelector('#aboard_delete_deck');
     location = "#deleteDeck";
@@ -27,6 +24,7 @@ function deleteDeckRequest(id) {
             stopLoad();
             getDecks(1);
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
+            stopLoad();
         })
 }

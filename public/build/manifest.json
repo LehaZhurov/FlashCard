@@ -1,11 +1,11 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.735c5e56.js",
+    "file": "assets/app.ea3083ba.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.bc4caeff.js",
-      "_getDecks.0c0e7e88.js"
+      "_getCardCollection.0cbd83d5.js",
+      "_getDecks.9e6b902d.js"
     ]
   },
   "resources/js/slider.js": {
@@ -14,41 +14,41 @@
     "isEntry": true
   },
   "resources/js/card/createCard.js": {
-    "file": "assets/createCard.60151ccd.js",
+    "file": "assets/createCard.5432681b.js",
     "src": "resources/js/card/createCard.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.bc4caeff.js"
+      "_getCardCollection.0cbd83d5.js"
     ]
   },
   "resources/js/card/getCardCollection.js": {
-    "file": "assets/getCardCollection.9110f84c.js",
+    "file": "assets/getCardCollection.fb13ce04.js",
     "src": "resources/js/card/getCardCollection.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.bc4caeff.js"
+      "_getCardCollection.0cbd83d5.js"
     ]
   },
   "resources/js/deck/createDeck.js": {
-    "file": "assets/createDeck.5595a0c3.js",
+    "file": "assets/createDeck.afa3e4c4.js",
     "src": "resources/js/deck/createDeck.js",
     "isEntry": true,
     "imports": [
-      "_getCardCollection.bc4caeff.js",
-      "_getDecks.0c0e7e88.js"
+      "_getCardCollection.0cbd83d5.js",
+      "_getDecks.9e6b902d.js"
     ]
   },
-  "_getCardCollection.bc4caeff.js": {
-    "file": "assets/getCardCollection.bc4caeff.js"
+  "_getCardCollection.0cbd83d5.js": {
+    "file": "assets/getCardCollection.0cbd83d5.js"
   },
-  "_getDecks.0c0e7e88.js": {
-    "file": "assets/getDecks.0c0e7e88.js",
+  "_getDecks.9e6b902d.js": {
+    "file": "assets/getDecks.9e6b902d.js",
     "imports": [
-      "_getCardCollection.bc4caeff.js"
+      "_getCardCollection.0cbd83d5.js"
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app.e70e43b6.css",
+    "file": "assets/app.62cec466.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },

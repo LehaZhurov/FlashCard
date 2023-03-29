@@ -1,5 +1,5 @@
 import { SendRequest } from "../SendRequest"
-import { startLoad, stopLoad } from "../load";
+import { alert } from "../alert";
 
 export function addToDeck(id) {
     location = "#addCardToDeck";
@@ -19,8 +19,7 @@ export function addToDeck(id) {
 async function addCardToDeckRequest() {
     let form = document.querySelector('#add_card_to_deck_form');
     let body = new FormData(form);
-    startLoad('body', 'Добавляю в колоду')
-    await SendRequest("POST", '/card/addToDeck', body)
-    stopLoad();
     location = "#close";
+    await SendRequest("POST", '/card/addToDeck', body)
+    alert('Добавлено', 'success');
 }

@@ -27,4 +27,13 @@ class CreateWordRequest extends FormRequest
             'word' => ['required', 'string', 'min:1'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Имя обезательно',
+            'name.string' => 'Имя должно быть строкой',
+            'name.min' => 'Длина имени не должно быть меньше или равна нулю',
+        ];
+    }
 }

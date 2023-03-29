@@ -5,6 +5,7 @@ import { getFooterCardFromDeck } from '../card/getFooterCardFromDeck';
 import { getCardsDeck } from '../card/getCardsDeck';
 import { echoCountCardsFormDeck } from './echoCountCardsFromDeck';
 import { getCardOption } from '../card/getCardOption';
+
 let deckBlock = document.querySelector('#decks-view');
 let cardsFromDeck = document.querySelector('#cards-deck-view');
 let backToDeckButton = document.querySelector('#back-to-decks');

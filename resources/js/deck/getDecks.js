@@ -4,6 +4,7 @@ import { deleteDeck } from "./deleteDeck";
 import { echoCountDeck } from "./echoCountDecks";
 import { editDeck } from "./editDeck";
 import { fillDeckSelectFromId } from './fillDeckSelect';
+import { alert } from "../alert";
 
 let decks = document.querySelector('#deck-card-deck');
 
@@ -13,11 +14,12 @@ export function getDecks(page = 1) {
         .then(response => {
             clearDeckPage();
             appendDeckToPage(response['data']);
-            fillDeckSelectFromId('select_deck_from_add_card',response['data']);
+            fillDeckSelectFromId('select_deck_from_add_card', response['data']);
             echoCountDeck(response['data']);
             stopLoad();
         }).catch(err => {
-            console.log(err);
+            alert(err.message, 'error');
+            stopLoad();
         })
 }
 
@@ -50,7 +52,7 @@ function getDeckLayout(data) {
     let deleteButtonIcon = document.createElement('i')
     deleteButtonIcon.setAttribute('class', 'bx bxs-trash')
     deleteButton.appendChild(deleteButtonIcon);
-    deleteButton.onclick = () =>{
+    deleteButton.onclick = () => {
         deleteDeck(data.id);
     }
     buttonGroup.appendChild(deleteButton);

@@ -26,7 +26,19 @@ class CreateCardRequest extends FormRequest
     {
         return [
             'word' => ['required', 'min:1', 'string'],
-            'gif' => ['required', 'string', 'min:1'],
+            'gif' => ['required', 'min:1', 'string'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'word.required' => 'Слово обезательно',
+            'word.string' => 'Cлово должно быть строкой',
+            'word.min' => 'Длина слова не должно быть меньше или равна нулю',
+            'gif.required' => 'Ссылка гифку обезательно',
+            'gif.string' => 'Ссылка на гифку должна быть строкой',
+            'gif.min' => 'Длина ссылки на гиф не должно быть меньше или равна нулю',
         ];
     }
 }

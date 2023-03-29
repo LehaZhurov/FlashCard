@@ -18,7 +18,7 @@ export async function saveNewCard(card) {
             getBalance();
         }).catch(err => {
             location = "#close";
+            alert(err.message, 'error');
             stopLoad();
-            console.log(err);
         })
 }
