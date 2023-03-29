@@ -23,7 +23,7 @@ class CreateCardTest extends TestCase
 
         $response = $this->actingAs($user)
             ->post($this->route, ['word' => $word, 'gif' => $gif]);
-        $response->assertStatus(200);
+        $response->assertStatus(201);
 
     }
 
