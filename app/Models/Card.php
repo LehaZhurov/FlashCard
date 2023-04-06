@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Deck;
+
 /**
  * App\Models\Card
  *
@@ -33,6 +34,13 @@ use App\Models\Deck;
 class Card extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'url',
+        'repeats',
+        'level',
+        'password',
+    ];
 
     public function decks()
     {

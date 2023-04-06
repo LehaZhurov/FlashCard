@@ -3,7 +3,7 @@ import { getCardsDeck } from "../card/getCardsDeck";
 import { startLoad, stopLoad } from "../load";
 import { alert } from "../alert";
 import { randomEmoji } from "../randomEmogi";
-
+import { upRepeat } from "../card/upRepeat";
 export function fromRusToEngGame(deckId) {
     let game = new RusToEngGame();
     game.init(deckId);
@@ -129,6 +129,7 @@ class RusToEngGame {
         this.upCurrentCard();
         this.showCard();
         this.resetProgress();
+        upRepeat(this.cards[this.currentCard].id);
 
     }
 

@@ -6,6 +6,7 @@ use App\Action\Card\AddCardToDeckAction;
 use App\Action\Card\CreateCardAction;
 use App\Action\Card\RemoveCardFromDeckAction;
 use App\Action\Card\SprayCardAction;
+use App\Action\Card\UpRepeatAction;
 use App\Http\Requests\Card\AddCardToDeckRequest;
 use App\Http\Requests\Card\CreateCardRequest;
 use App\Http\Requests\Card\RemoveCardFromDeckRequest;
@@ -53,5 +54,11 @@ class CardController extends Controller
         $requestCollection->put('user_id', Auth::id());
         $cardsDeck = RemoveCardFromDeckAction::execute($requestCollection);
         return new EmptyResource();
+    }
+
+    public function repeat(int $cardId): CardResource
+    {
+        $card = UpRepeatAction::execute(Auth::id(), $cardId);
+        return new CardResource($card);
     }
 }

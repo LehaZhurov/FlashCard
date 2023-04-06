@@ -110,6 +110,18 @@ class RemoveCardFromDeckTest extends TestCase
         $response->assertStatus(404);
     }
 
+    public function test_if_card_not_belongs_user()
+    {
+        $user = User::factory()->create();
+        $card = Card::factory()->create();
+        $deck = Deck::factory()->state([
+            'user_id' => $user->id,
+        ])->create();
+        $request = ['card_id' => $card->id, 'deck_id' => $deck->id];
+        $response = $this->post($this->route, $request);
+        $response->assertStatus(500);
+    }
+
     public function test_if_deck_not_found()
     {
         $user = User::factory()->create();

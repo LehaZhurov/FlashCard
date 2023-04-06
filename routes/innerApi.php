@@ -10,6 +10,7 @@ Route::get('/card/getCards', [CardController::class, 'getCards'])->name('getCard
 Route::get('/card/delete/{id}', [CardController::class, 'delete'])->name('deleteCard');
 Route::post('/card/addToDeck', [CardController::class, 'addCardToDeck'])->name('addCardToDeck');
 Route::post('/card/removeCardFromDeck', [CardController::class, 'removeCardFromDeck'])->name('removeCardFromDeck');
+Route::get('/card/repeat/{id}', [CardController::class, 'repeat'])->name('repeatCard');
 
 Route::post('deck/create', [DeckController::class, 'create'])->name('createDeck');
 Route::get('/deck/getDecks', [DeckController::class, 'getDecks'])->name('getDecks');

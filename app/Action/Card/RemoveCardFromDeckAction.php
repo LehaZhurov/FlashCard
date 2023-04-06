@@ -6,6 +6,7 @@ use App\Models\Deck;
 use App\Queries\Card\GetCardsFromDeckQuery;
 use App\Verification\Deck\ThisCardFromDeck;
 use App\Verification\Deck\ThisDeckBelongsToTheUser;
+use App\Verification\Card\ThisCardBelongsToTheUser;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as SupportCollection;
@@ -26,6 +27,9 @@ class RemoveCardFromDeckAction
         }
         if (!ThisCardFromDeck::check($deck, $card)) {
             throw new Exception('Данная карта(' . $cardId . ') не из колоды(' . $deckId . ')');
+        }
+        if (!ThisCardBelongsToTheUser::check($card, $userId)) {
+            throw new Exception('Данная карта(id:' . $cardId . ') не пренадлежит пользователю(id:' . $userId . ')');
         }
 
         $deck->cards()->detach($card);
