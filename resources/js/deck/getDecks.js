@@ -5,6 +5,7 @@ import { echoCountDeck } from "./echoCountDecks";
 import { editDeck } from "./editDeck";
 import { fillDeckSelectFromId } from './fillDeckSelect';
 import { alert } from "../alert";
+import { chooseGameMode } from "../game/chooseGameMode";
 
 let decks = document.querySelector('#deck-card-deck');
 
@@ -55,7 +56,6 @@ function getDeckLayout(data) {
     deleteButton.onclick = () => {
         deleteDeck(data.id);
     }
-    buttonGroup.appendChild(deleteButton);
 
     let editButton = document.createElement('button');
     let editButtonIcon = document.createElement('i')
@@ -64,12 +64,17 @@ function getDeckLayout(data) {
     editButton.onclick = () => {
         editDeck(data.id);
     }
-    buttonGroup.appendChild(editButton);
 
     let playButton = document.createElement('button');
     let playButtonIcon = document.createElement('i')
     playButtonIcon.setAttribute('class', 'bx bx-play')
     playButton.appendChild(playButtonIcon);
+    playButton.onclick = () => {
+        chooseGameMode(data.id);
+    }
+
+    buttonGroup.appendChild(editButton);
+    buttonGroup.appendChild(deleteButton);
     buttonGroup.appendChild(playButton);
 
     deckCard.appendChild(deckCardOption);

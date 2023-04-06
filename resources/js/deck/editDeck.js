@@ -5,16 +5,13 @@ import { getFooterCardFromDeck } from '../card/getFooterCardFromDeck';
 import { getCardsDeck } from '../card/getCardsDeck';
 import { echoCountCardsFormDeck } from './echoCountCardsFromDeck';
 import { getCardOption } from '../card/getCardOption';
+import { getCardLevels } from '../card/cardLevels';
 
 let deckBlock = document.querySelector('#decks-view');
 let cardsFromDeck = document.querySelector('#cards-deck-view');
 let backToDeckButton = document.querySelector('#back-to-decks');
 let cardsDeck = document.querySelector('#cards-deck');
-/*
-    Уровень зависит от количества повторений.Также в зависимости от уровня 
-    зависит и цвет.Классы которые задают цевт указаны ниже.
-*/
-let levels = ['', 'common', 'rare', 'epic', 'legend'];
+let levels = getCardLevels();
 
 export async function editDeck(id) {
     viewCardsDeck();

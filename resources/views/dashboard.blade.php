@@ -40,6 +40,8 @@
     @include('elements/confimRemoveCardFromDeck')
     @include('elements/creatеDeck')
     @include('elements/addCardToDeck')
+    @include('elements/chooseGameMode')
+    @include('components/gameField')
 @endsection
 @section('scripts')
     @vite(['resources/js/card/createCard.js', 'resources/js/card/getCardCollection.js','resources/js/deck/createDeck.js'])

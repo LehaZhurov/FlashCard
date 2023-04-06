@@ -19,7 +19,7 @@ services:
       volumes_from:
           - app
       ports:
-          - 80:80
+          - 82:80
   postgres:
     image: postgres:10.1
     container_name: encard_db
